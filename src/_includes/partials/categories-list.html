@@ -1,0 +1,19 @@
+<ul role="list" class="nav__list" data-parent="{{ parentComponent }}">
+  {% for item in categories %}
+
+    {% set itemLinkHref = ('/category/' + ( item | slugify )) | url %}
+    {% set iconFileName = ('/icons/' + ( item | slugify ) + '-icon') | url %}
+    {% if iconFileSize %}
+      {% set iconFileName = iconFileName + '-' + iconFileSize %}
+    {% endif %}
+
+    <li class="[ nav__item ] [ icon ]">
+      <a href="{{ itemLinkHref }}" class="icon__link">
+        <span class="icon__icon-container">
+          <img width="{{ iconSize }}" height="{{ iconSize }}" class="icon__img" src="{{ iconFileName }}.png" alt="">
+        </span>
+        <span class="icon__name">{{ item }}</span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,10 @@
+{% if not navLabel %}
+  {% set navLabel = 'Primary' %}
+{% endif %}
+
+<nav aria-labelledby="nav-label" class="nav" data-parent="{{ parentComponent }}">
+  <span class="visually-hidden" id="nav-label">{{ navLabel }} navigation.</span>
+  {% block navContent %}
+    {% include "partials/categories-list.html" %}
+  {% endblock %}
+</nav>
