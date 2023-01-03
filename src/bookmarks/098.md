@@ -1,0 +1,7 @@
+---
+title: "Maximally optimizing image loading for the web in 2021"
+description: "Image loading optimization techniques to minimize both the bandwidth used for loading images on the web and the CPU usage for image display."
+author: "Malte Ubl"
+url: "https://www.industrialempathy.com/posts/image-optimizations/"
+tags: Performance
+---

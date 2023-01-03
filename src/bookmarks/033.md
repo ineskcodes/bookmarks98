@@ -1,0 +1,7 @@
+---
+title: "Nutrition Cards for Accessible Components"
+description: "A11Y Nutrition Cards is an attempt to digest and simplify the accessibility expectations when it comes to component authoring."
+author: "Dave Rupert"
+url: "https://davatron5000.github.io/a11y-nutrition-cards/"
+tags: Accessibility
+---

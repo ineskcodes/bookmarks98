@@ -1,0 +1,7 @@
+---
+title: "JavaScript Promises in Depth"
+description: "Take an in-depth look at how to use promises to model various kinds of asynchronous operations."
+author: "Marius Schulz"
+url: "https://egghead.io/courses/javascript-promises-in-depth"
+tags: JavaScript
+---
