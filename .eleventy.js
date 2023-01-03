@@ -1,4 +1,6 @@
 module.exports = (eleventyConfig) => {
+	eleventyConfig.addPassthroughCopy({ 'src/assets/images': '/' });
+
 	return {
 		markdownTemplateEngine: 'njk',
 		dataTemplateEngine: 'njk',
