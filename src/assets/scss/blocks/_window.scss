@@ -1,0 +1,40 @@
+.window {
+	display: grid;
+	grid-template-rows: auto 1fr;
+	flex-basis: min(100%, var(--max-window-width));
+	height: 100%;
+	background-color: var(--window-content-background-color);
+
+	@media (min-width: 43.75em) {
+		max-height: var(--max-window-height);
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: 1ch;
+		padding: 3px 1ch;
+		background: var(--window-header-background-color);
+		box-shadow: var(--window-header-box-shadow);
+		color: #fff;
+	}
+
+	&__heading {
+		display: flex;
+		align-items: center;
+		flex: 1;
+		font-weight: 400;
+	}
+
+	&__heading span {
+		margin-bottom: -3px;
+	}
+
+	&__content {
+		overflow: auto;
+	}
+
+	h2 {
+		font-size: 1.1rem;
+	}
+}
