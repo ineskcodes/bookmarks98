@@ -6,6 +6,8 @@ pagination:
   alias: category
   size: 1
 addAllPagesToCollections: true
+isWindowVisible: true
+pageType: 'bookmarks'
 eleventyComputed:
   title: '{{ category }} - {{ site.name }}'
   mainHeading: '{{ category }} bookmarks'

@@ -1,4 +1,7 @@
 ---
 layout: 'layouts/base.html'
-title: 'Hello World!'
+pageType: 'home'
+eleventyComputed:
+  title: '{{ site.name }}'
+  mainHeading: '{{ site.name }}'
 ---
