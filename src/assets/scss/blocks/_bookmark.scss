@@ -1,0 +1,15 @@
+.bookmark {
+	display: grid;
+	gap: 0.5rem;
+	border-bottom: 1px dotted currentColor;
+	padding: 1rem 0;
+
+	&:first-child {
+		padding-top: 0;
+	}
+
+	&:last-child {
+		border-bottom: 0;
+		padding-bottom: 0;
+	}
+}
