@@ -17,6 +17,7 @@
         <img width="{{ headerIconSize }}" height="{{ headerIconSize }}" src="{{ '/icons/close-icon.png' | url }}" alt="">
         <span class="visually-hidden">Go back home</span>
       </a>
+     {% endif %}
     </header>
     <div class="window__content">
       {{ window.content(pageType, collections[category]) }}
