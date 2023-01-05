@@ -1,0 +1,14 @@
+.main {
+	&-container {
+		flex: 1;
+	}
+
+	&[data-has-window='false'] {
+		visibility: hidden;
+	}
+
+	// show the hompepage's main content only if it's targeted through skip-link
+	&[data-has-window='false']:target {
+		visibility: visible;
+	}
+}
