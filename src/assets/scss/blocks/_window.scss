@@ -1,4 +1,7 @@
 .window {
+	--padding-x: 1rem;
+	--padding-y: 1rem;
+
 	display: grid;
 	grid-template-rows: auto 1fr;
 	flex-basis: min(100%, var(--max-window-width));

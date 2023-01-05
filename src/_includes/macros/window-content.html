@@ -1,18 +1,18 @@
 {% macro content(page, bookmarkCollection = '') %}
 
   {% if page === 'home' %}
-    <p>There is no main content. Navigate to one of the categories to view bookmarks.</p>
+    <p class="wrapper">There is no main content. Navigate to one of the categories to view bookmarks.</p>
   {% endif %}
 
   {% if page === 'about' %}
-    <div>{{ content | safe }}</div>
+    <div class="wrapper">{{ content | safe }}</div>
   {% endif %}
 
   {% if page === 'bookmarks' %}
     {% if bookmarkCollection %}
       {% include "partials/bookmarks-list.html" %}
     {% else %}
-      <p>No bookmarks filed under this category yet...</p>
+      <p class="wrapper">No bookmarks filed under this category yet...</p>
     {% endif %}
   {% endif %}
 

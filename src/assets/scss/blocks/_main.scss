@@ -1,5 +1,8 @@
 .main {
 	&-container {
+		--padding-x: 2rem;
+		--padding-y: 2rem;
+
 		display: flex;
 		justify-content: center;
 		flex: 1;
