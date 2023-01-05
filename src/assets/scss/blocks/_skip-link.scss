@@ -1,0 +1,15 @@
+.skip-link {
+	z-index: 1000;
+	position: absolute;
+	left: 1rem;
+	top: 1rem;
+	display: inline-block;
+	padding: 0.1em 0.35em;
+	background-color: var(--skip-link-background-color);
+	box-shadow: var(--skip-link-box-shadow);
+	font-size: 1.15rem;
+
+	&:not(:focus) {
+		@extend .visually-hidden;
+	}
+}

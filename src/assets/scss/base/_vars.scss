@@ -3,7 +3,8 @@
 	--body-background-color: #222;
 	--desktop-background-color: #088488;
 	--taskbar-background-color: #c8b2d1;
-	--window-bar-background: #00007b;
+	--window-bar-background-color: #00007b;
+	--skip-link-background-color: #c0c0c0;
 
 	// foreground colors
 	--text-color: #000;
@@ -16,4 +17,7 @@
 	// sizes
 	--root-max-width: 75rem;
 	--root-max-height: 37rem;
+
+	// shadows
+	--skip-link-box-shadow: inset 1px 1px #f4f4f4, inset -1px -1px #4e4e4e;
 }
