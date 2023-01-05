@@ -1,0 +1,22 @@
+.root {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: min(100%, var(--root-max-width));
+	height: min(100%, var(--root-max-height));
+	overflow: auto;
+
+	&__desktop-view {
+		flex: 1;
+		background-color: var(--desktop-background-color);
+
+		@media (min-width: 43.75em) {
+			display: flex;
+			gap: 1rem;
+		}
+	}
+
+	&__taskbar {
+		background-color: var(--taskbar-background-color);
+	}
+}
