@@ -8,12 +8,18 @@
 		flex: 1;
 	}
 
-	&[data-has-window='false'] {
-		visibility: hidden;
+	[data-has-window='true'] + .root &-container {
+		--padding-x: 0;
+		--padding-y: 0;
+
+		@media (min-width: 43.75em) {
+			--padding-x: 2rem;
+			--padding-y: 2rem;
+		}
 	}
 
 	// show the hompepage's main content only if it's targeted through skip-link
-	&[data-has-window='false']:target {
-		visibility: visible;
+	&[data-has-window='false']:not(:target) {
+		@extend .visually-hidden;
 	}
 }

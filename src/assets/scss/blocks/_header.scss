@@ -1,0 +1,7 @@
+[data-has-window='true'] + .root .header {
+	display: none;
+
+	@media (min-width: 43.75em) {
+		display: inline-block;
+	}
+}
