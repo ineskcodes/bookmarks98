@@ -6,9 +6,12 @@
 	--window-header-background-color: #00007b;
 	--skip-link-background-color: #c0c0c0;
 	--window-content-background-color: #fff;
+	--menu-background-color: #c8b2d1;
+	--menu-item-hover-background-color: #0000a2;
 
 	// foreground colors
 	--text-color: #000;
+	--menu-item-hover-color: #fff;
 
 	// typography
 	--ff-body: 'Windows 95', -apple-system, BlinkMacSystemFont, “Segoe UI”,
@@ -20,8 +23,19 @@
 	--root-max-height: 37rem;
 	--max-window-width: 45rem;
 	--max-window-height: 30rem;
+	--taskbar-height: 1.7rem;
+	--menu-width: 12rem;
+	--menu-height: 30.3rem;
 
 	// shadows
 	--skip-link-box-shadow: inset 1px 1px #f4f4f4, inset -1px -1px #4e4e4e;
 	--window-header-box-shadow: inset 1px 1px #f4f4f4, inset -1px -1px #4e4e4e;
+	--taskbar-box-inactive-box-shadow: inset 1px 1px #dfdfdf, 1px 0 #000,
+		0 1px #000, 1px 1px #000;
+	--taskbar-box-active-box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #000,
+		inset -2px -2px 0 #a0abac, inset 2px 2px 0 #808088;
+	--footer-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #bbc3c4,
+		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
+	--menu-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #bbc3c4,
+		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
 }
