@@ -3,14 +3,16 @@
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
-		"clean": "rm -rf dist",
+		"clean": "rm -rf dist .parcel-cache",
 		"eleventy:build": "npx @11ty/eleventy",
 		"eleventy:watch": "npx @11ty/eleventy --serve",
 		"eleventy:debug": "DEBUG=* eleventy",
 		"sass:build": "sass --no-source-map --style=compressed src/assets/scss:src/assets/css",
 		"sass:watch": "sass --watch --no-source-map src/assets/scss:src/assets/css",
-		"build": "npm-run-all clean sass:build eleventy:build",
-		"start": "npm-run-all clean --parallel sass:watch eleventy:watch"
+		"parcel:build": "parcel build src/assets/js/main.js --dist-dir ./dist/js",
+		"parcel:serve": "parcel serve src/assets/js/main.js --dist-dir ./dist/js",
+		"build": "npm-run-all clean sass:build eleventy:build parcel:build",
+		"start": "npm-run-all clean --parallel sass:watch eleventy:watch parcel:serve"
 	},
 	"license": "MIT",
 	"devDependencies": {
