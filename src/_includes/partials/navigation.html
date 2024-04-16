@@ -1,0 +1,6 @@
+<nav aria-labelledby="{{ navParent }}-nav-label" class="nav" data-parent="{{ navParent }}">
+    <span id="{{ navParent }}-nav-label">{{ navLabel }}</span>
+    {% block navContent %}
+        {% include "partials/navigation-list.html" %}
+    {% endblock %}
+</nav>

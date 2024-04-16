@@ -6,6 +6,8 @@
 		<title>{{ title }}</title>
 	</head>
 	<body>
-		{{ content | safe }}
+		<div class="root">
+			<div class="root__desktop"> {% include "partials/site-head.html" %} </div>
+		</div>
 	</body>
 </html>
