@@ -5,6 +5,7 @@
   {% set iconFileName = ('/' + (item | slugify) + '-' + 'icon') | url %}
   {% if iconFileSize %}
     {% set iconFileName = iconFileName + '-' + iconFileSize %}
+    {% set iconSize = "20" %}
   {% else %}
     {% set iconSize = "32" %}
   {% endif %}

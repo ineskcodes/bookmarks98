@@ -1,0 +1,15 @@
+{% extends "partials/navigation.html" %}
+
+{% set iconFileSize = "medium" %}
+
+{% block navContent %}
+<details class="[ footer__menu ] [ menu ]">
+    <summary class="menu__toggle">
+        <img width="45" height="14" src="{{ '/start-button.png' | url }}" alt="">
+        <span class="visually-hidden">Open footer menu.</span>
+    </summary>
+    <div class="menu__content" id="menu-content">
+      {% include "partials/navigation-list.html" %}
+    </div>
+</details>
+{% endblock %}
