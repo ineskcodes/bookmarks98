@@ -1,0 +1,15 @@
+{% import "macros/window-content.html" as window %}
+
+{% set windowIconSrc = '' %}
+{% set windowIconSize = '16' %}
+
+<div class="[ main-container ] [ wrapper ]">
+    <main class="[ main ] [ window ]" tabindex="-1" id="content" data-page="{{ pageHook }}" data-has-window="{{ not not isWindowVisible }}">
+        <header class="window__header">
+            <h1 class="window__heading">{{ mainHeading }}</h1>
+        </header>
+        <div class="window__content">
+            {{ window.content(pageHook, collections[category]) }}
+        </div>
+    </main>
+</div>
