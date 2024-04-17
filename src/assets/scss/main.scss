@@ -1,0 +1,17 @@
+// base
+@import 'base/reset';
+@import 'base/fonts';
+@import 'base/vars';
+@import 'base/global';
+
+// blocks
+@import 'blocks/skip-link';
+@import 'blocks/main';
+@import 'blocks/footer';
+@import 'blocks/root';
+@import 'blocks/nav';
+@import 'blocks/menu';
+
+// utilities
+@import 'utilities/visually-hidden';
+@import 'utilities/wrapper';

@@ -1,0 +1,50 @@
+body {
+	display: grid;
+	background-color: var(--body-background-color);
+	color: var(--body-foreground-color);
+	font-family: var(--body-font-family, system-ui), serif;
+	font-size: var(--body-font-size);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+}
+
+a {
+	color: inherit;
+}
+
+nav a {
+	text-decoration: none;
+}
+
+summary {
+	list-style: none;
+}
+
+button {
+	border: 0;
+	font: inherit;
+	cursor: pointer;
+	background: transparent;
+	color: currentColor;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+[hidden] {
+	display: none !important;
+}
+
+*:focus {
+	outline: 2px solid transparent;
+}
+
+*:focus-visible {
+	outline-color: var(--outline-color, currentColor);
+}

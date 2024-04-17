@@ -1,0 +1,13 @@
+.footer {
+	background-color: var(--taskbar-background-color);
+	box-shadow: var(--footer-box-shadow);
+
+	&__inner {
+		position: relative;
+		display: flex;
+		justify-content: flex-start;
+		align-content: center;
+		gap: 0.1875rem;
+		padding: 0.25rem 0.375rem;
+	}
+}

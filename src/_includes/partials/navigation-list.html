@@ -1,0 +1,23 @@
+<ul role="list" class="nav__list" data-parent="{{ navParent }}">
+  {% for item in categories %} 
+
+  {% set itemLinkHref = ('/category/' + ( item | slugify ) + '/') | url %}
+  {% set iconFileName = ('/' + (item | slugify) + '-' + 'icon') | url %}
+  {% if iconFileSize %}
+    {% set iconFileName = iconFileName + '-' + iconFileSize %}
+    {% set iconSize = "20" %}
+  {% else %}
+    {% set iconSize = "32" %}
+  {% endif %}
+  {% set iconFileSrc = iconFileName + '.png' %}
+
+  <li class="nav__item">
+    <a href="{{ itemLinkHref }}" class="nav__link">
+      <span class="nav__link--icon icon">
+        <img width="{{ iconSize }}" height="{{ iconSize }}" class="icon__img" src="{{ iconFileSrc }}" alt="" />
+      </span>
+      <span class="nav__link--name">{{ item }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

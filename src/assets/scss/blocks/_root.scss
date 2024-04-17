@@ -1,0 +1,21 @@
+@use '../base/vars';
+
+.root {
+	display: grid;
+	grid-template-rows: 1fr auto;
+	background-color: var(--root-background-color);
+
+	&__desktop {
+		@media (min-width: vars.$breakpoint-desktop) {
+			display: flex;
+			gap: 1rem;
+		}
+	}
+
+	&__taskbar {
+		position: sticky;
+		bottom: 0;
+		left: 0;
+		background-color: var(--taskbar-background-color);
+	}
+}
