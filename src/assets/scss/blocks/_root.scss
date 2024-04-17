@@ -5,6 +5,12 @@
 	grid-template-rows: 1fr auto;
 	background-color: var(--root-background-color);
 
+	@media (min-width: vars.$breakpoint-desktop) {
+		max-width: min(100vw, var(--root-max-width));
+		max-height: min(100vh, var(--root-max-height));
+		overflow: auto;
+	}
+
 	&__desktop {
 		@media (min-width: vars.$breakpoint-desktop) {
 			display: flex;
