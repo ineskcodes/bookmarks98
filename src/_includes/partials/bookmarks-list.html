@@ -1,0 +1,23 @@
+<ul role="list" class="[ bookmarks ] [ wrapper ]">
+	{% for item in bookmarksCollection %}
+		{% set bookmarkTitle = item.data.title %}
+		{% set bookmarkAuthor = item.data.author %}
+		{% set bookmarkDesc = item.data.description %}
+		{% set bookmarkUrl = item.data.url %}
+
+		<li class="[ bookmarks__item ] [ bookmark ]">
+			<h2 class="bookmark__title">
+				<a href="{{ bookmarkUrl | url }}">{{ bookmarkTitle }}</a>
+			</h2>
+			{% if bookmarkDesc %}
+				<p class="bookmark__desc">{{ bookmarkDesc }}</p>
+			{% endif %}
+			{% if bookmarkAuthor %}
+				<p class="bookmark__author">
+					<small>By:
+						{{ bookmarkAuthor }}</small>
+				</p>
+			{% endif %}
+		</li>
+	{% endfor %}
+</ul>
