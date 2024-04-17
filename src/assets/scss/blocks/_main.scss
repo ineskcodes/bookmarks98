@@ -1,0 +1,11 @@
+.main {
+	// show the homepage's main content only if it's focused/targeted through skip-link
+	[data-page='home'] &:not(:focus) {
+		@extend .visually-hidden;
+	}
+
+	&-container[data-page='home'] {
+		--padding-x: 0;
+		--padding-y: 0;
+	}
+}

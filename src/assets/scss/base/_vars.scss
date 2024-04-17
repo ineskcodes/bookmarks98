@@ -1,0 +1,37 @@
+$breakpoint-desktop: 43.75em;
+
+:root {
+	// colors
+	--body-background-color: #222222;
+	--body-foreground-color: #000000;
+	--root-background-color: #008080;
+	--skip-link-background-color: #d1858f;
+	--taskbar-background-color: #dda2b1;
+	--menu-background-color: #dda2b1;
+	--menu-item-hover-background-color: #a9475c;
+	--menu-item-hover-color: #fff;
+
+	// typography
+	--_body-font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”,
+		“Oxygen”, “Ubuntu”, “Cantarell”, “Fira Sans”, “Droid Sans”, “Helvetica Neue”,
+		sans-serif;
+	--body-font-family: 'Windows 95', var(--_body-font-family);
+	--body-font-size: 1rem;
+	--skip-link-font-size: 1.15rem;
+
+	// sizes
+	--taskbar-height: 1.7rem;
+	--menu-width: 12rem;
+	--menu-height: 30.3rem;
+
+	// shadows
+	--skip-link-box-shadow: inset 1px 1px #f4f4f4, inset -1px -1px #4e4e4e;
+	--footer-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #bbc3c4,
+		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
+	--menu-toggle-inactive-box-shadow: inset 1px 1px #dfdfdf, 1px 0 #000,
+		0 1px #000, 1px 1px #000;
+	--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #000,
+		inset -2px -2px 0 #a0abac, inset 2px 2px 0 #808088;
+	--menu-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #bbc3c4,
+		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
+}

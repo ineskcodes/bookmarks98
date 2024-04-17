@@ -1,0 +1,46 @@
+/* Heavily inspired by Piccalilli's Modern CSS Reset:
+** https://piccalil.li/blog/a-modern-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	min-height: 100vh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+ul[role='list'],
+ol[role='list'] {
+	list-style: none;
+}
+
+details summary {
+	cursor: pointer;
+}
+
+details summary > * {
+	display: inline;
+}
