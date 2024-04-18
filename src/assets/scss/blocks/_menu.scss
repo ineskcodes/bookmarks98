@@ -8,21 +8,22 @@
 	}
 
 	&[open] &__toggle {
+		background-color: #fff5;
 		box-shadow: var(--menu-toggle-active-box-shadow);
 	}
 
 	&__content {
 		position: absolute;
-		bottom: 1.6rem;
+		bottom: 1.85rem;
 		left: 1px;
-		padding: 0.1875rem 0.1875rem 0.1875rem 1.5rem;
+		padding: 0.125rem 0.125rem 0.125rem 1.5rem;
 		min-width: var(--menu-width);
 		max-height: calc(var(--root-max-height, 100vh) - var(--taskbar-height));
 		font-size: 0.9rem;
 		background-color: var(--menu-background-color);
 		box-shadow: var(--menu-box-shadow);
 		overflow: auto;
-		background-image: linear-gradient(#a9475c, #c570a9);
+		background-image: var(--menu-gradient);
 		background-size: 1.5rem;
 		background-repeat: no-repeat;
 	}
@@ -46,6 +47,5 @@
 
 	& .nav__item:hover {
 		background-color: var(--menu-item-hover-background-color);
-		color: var(--menu-item-hover-color);
 	}
 }

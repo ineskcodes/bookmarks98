@@ -3,6 +3,8 @@
 .root {
 	display: grid;
 	grid-template-rows: 1fr auto;
+	width: 100%;
+	height: 100%;
 	background-color: var(--root-background-color);
 
 	@media (min-width: vars.$breakpoint-desktop) {
