@@ -8,10 +8,11 @@ $breakpoint-desktop: 43.75em;
 	--skip-link-background-color: #f4c1ca;
 	--taskbar-background-color: #f4c1ca;
 	--menu-background-color: #f4c1ca;
-	--menu-gradient: linear-gradient(#01bba9, #01bba988);
-	--menu-item-hover-background-color: #01bba9;
+	--menu-gradient: linear-gradient(#4511aa, #ca9cb9);
+	--menu-item-hover-background-color: #4511aa;
+	--menu-item-hover-foreground-color: #fff;
 	--window-background-color: #f4c1ca;
-	--window-header-gradient: linear-gradient(to right, #01bba9, #ca9cb9);
+	--window-header-gradient: linear-gradient(to right, #4511aa, #ca9cb9);
 	--window-header-foreground-color: #fff;
 
 	// typography
