@@ -10,6 +10,9 @@ $breakpoint-desktop: 43.75em;
 	--menu-background-color: #f4c1ca;
 	--menu-gradient: linear-gradient(#01bba9, #01bba988);
 	--menu-item-hover-background-color: #01bba9;
+	--window-background-color: #f4c1ca;
+	--window-header-gradient: linear-gradient(to right, #01bba9, #ca9cb9);
+	--window-header-foreground-color: #fff;
 
 	// typography
 	--_body-font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”,
@@ -25,6 +28,8 @@ $breakpoint-desktop: 43.75em;
 	--menu-height: 30.3rem;
 	--root-max-width: 68.75rem;
 	--root-max-height: 37.5rem;
+	--max-window-width: 45rem;
+	--max-window-height: 30rem;
 
 	// shadows
 	--skip-link-box-shadow: inset 2px 2px #f4f4f4, inset -1px -1px #4e4e4e,
