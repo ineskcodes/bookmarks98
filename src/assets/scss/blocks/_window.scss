@@ -1,0 +1,60 @@
+@use '../base/vars';
+
+.window {
+	--padding-x: 0.75rem;
+	--padding-y: 0.75rem;
+
+	display: grid;
+	grid-template-rows: auto auto 1fr;
+	width: min(100%, var(--max-window-width));
+	height: 100%;
+	background-color: var(--window-background-color);
+
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: 1ch;
+		padding: 0 0.1rem 0 0.5ch;
+		margin: 2px;
+		background-image: var(--window-header-gradient);
+		box-shadow: var(--window-header-box-shadow);
+		color: var(--window-header-foreground-color);
+		line-height: 1.3;
+	}
+
+	&__heading {
+		flex: 1;
+	}
+
+	&__navbar {
+		display: flex;
+		align-items: center;
+		margin-bottom: 2px;
+		line-height: 1.3;
+		font-size: 0.85rem;
+	}
+
+	&__navbar span {
+		display: inline-block;
+		padding: 2px 1ch;
+		margin: 0 1px;
+	}
+
+	&__navbar span::first-letter {
+		text-decoration: underline;
+	}
+
+	&__navbar span:hover {
+		box-shadow: var(--menu-toggle-active-box-shadow);
+	}
+
+	@media (min-width: vars.$breakpoint-desktop) {
+		max-height: var(--max-window-height);
+	}
+
+	&__content {
+		overflow: auto;
+		background-color: #fff;
+		margin: 0 2px 2px 2px;
+	}
+}

@@ -1,0 +1,19 @@
+.bookmark {
+	display: grid;
+	gap: 0.25rem;
+	border-bottom: 1px dotted currentColor;
+	padding: var(--padding-x) 0;
+
+	&__title a {
+		text-decoration: none;
+	}
+
+	&:first-child {
+		padding-top: 0;
+	}
+
+	&:last-child {
+		border-bottom: 0;
+		padding-bottom: 0;
+	}
+}

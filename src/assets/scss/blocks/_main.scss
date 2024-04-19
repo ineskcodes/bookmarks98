@@ -1,3 +1,5 @@
+@use '../base/vars';
+
 .main {
 	// show the homepage's main content only if it's focused/targeted through skip-link
 	[data-page='home'] &:not(:focus) {
@@ -7,5 +9,22 @@
 	&-container[data-page='home'] {
 		--padding-x: 0;
 		--padding-y: 0;
+	}
+
+	&-container {
+		display: flex;
+		justify-content: center;
+		flex: 1;
+	}
+
+	:not([data-page='home']) + .root &-container {
+		--padding-x: 0;
+		--padding-y: 0;
+		height: 100%;
+
+		@media (min-width: vars.$breakpoint-desktop) {
+			--padding-x: 2rem;
+			--padding-y: 2rem;
+		}
 	}
 }

@@ -1,5 +1,7 @@
 body {
 	display: grid;
+	justify-items: center;
+	align-items: center;
 	background-color: var(--body-background-color);
 	color: var(--body-foreground-color);
 	font-family: var(--body-font-family, system-ui), serif;

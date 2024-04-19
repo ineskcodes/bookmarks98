@@ -5,11 +5,14 @@ $breakpoint-desktop: 43.75em;
 	--body-background-color: #222222;
 	--body-foreground-color: #000000;
 	--root-background-color: #008080;
-	--skip-link-background-color: #d1858f;
-	--taskbar-background-color: #dda2b1;
-	--menu-background-color: #dda2b1;
-	--menu-item-hover-background-color: #a9475c;
-	--menu-item-hover-color: #fff;
+	--skip-link-background-color: #f4c1ca;
+	--taskbar-background-color: #f4c1ca;
+	--menu-background-color: #f4c1ca;
+	--menu-gradient: linear-gradient(#01bba9, #01bba988);
+	--menu-item-hover-background-color: #01bba9;
+	--window-background-color: #f4c1ca;
+	--window-header-gradient: linear-gradient(to right, #01bba9, #ca9cb9);
+	--window-header-foreground-color: #fff;
 
 	// typography
 	--_body-font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”,
@@ -23,15 +26,20 @@ $breakpoint-desktop: 43.75em;
 	--taskbar-height: 1.7rem;
 	--menu-width: 12rem;
 	--menu-height: 30.3rem;
+	--root-max-width: 68.75rem;
+	--root-max-height: 37.5rem;
+	--max-window-width: 45rem;
+	--max-window-height: 30rem;
 
 	// shadows
-	--skip-link-box-shadow: inset 1px 1px #f4f4f4, inset -1px -1px #4e4e4e;
+	--skip-link-box-shadow: inset 2px 2px #f4f4f4, inset -1px -1px #4e4e4e,
+		inset -2px -2px #de4560;
 	--footer-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #bbc3c4,
 		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
-	--menu-toggle-inactive-box-shadow: inset 1px 1px #dfdfdf, 1px 0 #000,
-		0 1px #000, 1px 1px #000;
-	--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #000,
-		inset -2px -2px 0 #a0abac, inset 2px 2px 0 #808088;
+	--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
+		inset -1px -1px #4e4e4e, inset -2px -2px #de4560;
+	--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
+		inset 1px 1px 0 #de4560, inset -2px -2px 0 #a0abac, inset 2px 2px 0 #808088;
 	--menu-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #bbc3c4,
 		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
 }
