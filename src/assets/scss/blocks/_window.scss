@@ -1,3 +1,5 @@
+@use '../base/vars';
+
 .window {
 	--padding-x: 0.75rem;
 	--padding-y: 0.75rem;
@@ -46,7 +48,7 @@
 		box-shadow: var(--menu-toggle-active-box-shadow);
 	}
 
-	@media (min-width: 43.75em) {
+	@media (min-width: vars.$breakpoint-desktop) {
 		max-height: var(--max-window-height);
 	}
 
