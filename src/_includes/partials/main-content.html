@@ -8,9 +8,11 @@
 		<header class="window__header">
 			<img width="{{ windowIconSize }}" height="{{ windowIconSize }}" alt="" src="{{ windowIconSrc }}" class="window__icon">
 			<h1 class="window__heading">{{ category }}</h1>
-			<a href="{{ '/' | url }}">
-				<img width="{{ windowIconSize }}" height="{{ windowIconSize }}" src="{{ '/close-icon.png' | url }}" alt="Go back to home page.">
-			</a>
+			{% if pageHook != "home" %}
+				<a href="{{ '/' | url }}">
+					<img width="{{ windowIconSize }}" height="{{ windowIconSize }}" src="{{ '/close-icon.png' | url }}" alt="Go back to home page.">
+				</a>
+			{% endif %}
 		</header>
 		<div class="window__navbar" aria-hidden="true">
 			<span>File</span>
