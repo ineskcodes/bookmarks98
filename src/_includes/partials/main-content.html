@@ -1,17 +1,25 @@
 {% import "macros/window-content.html" as window %}
 
-{% set windowIconSrc = ('/' + category | slugify + '-icon-small.png') | url %}
+{% if pageHook == 'bookmarks'  %}
+	{% set windowIconSrc = ('/' + category | slugify + '-icon-small.png') | url %}
+	{% set windowHeading = category %}
+{% elseif pageHook == 'about' %}
+	{% set windowIconSrc = ('/' + page.fileSlug | slugify + '-icon-small.png') | url %}
+	{% set windowHeading = page.fileSlug %}
+{% else %}
+	{% set windowHeading = mainHeading %}
+{% endif %}
 {% set windowIconSize = '16' %}
 
 <div class="[ main-container ] [ wrapper ]" data-page="{{ pageHook }}">
 	<main class="[ main ] [ window ]" tabindex="-1" id="content" data-page="{{ pageHook }}" data-has-window="{{ not not isWindowVisible }}">
 		<header class="window__header">
 			<img width="{{ windowIconSize }}" height="{{ windowIconSize }}" alt="" src="{{ windowIconSrc }}" class="window__icon">
-			<h1 class="window__heading">{{ category }}</h1>
+			<h1 class="window__heading">{{ windowHeading }}</h1>
 			{% if pageHook != "home" %}
-				<a href="{{ '/' | url }}">
-					<img width="{{ windowIconSize }}" height="{{ windowIconSize }}" src="{{ '/close-icon.png' | url }}" alt="Go back to home page.">
-				</a>
+			<a href="{{ '/' | url }}">
+				<img width="{{ windowIconSize }}" height="{{ windowIconSize }}" src="{{ '/close-icon.png' | url }}" alt="Go back to home page.">
+			</a>
 			{% endif %}
 		</header>
 		<div class="window__navbar" aria-hidden="true">
@@ -21,7 +29,7 @@
 			<span>Help</span>
 		</div>
 		<div class="window__content">
-			{{ window.content(pageHook, collections[category]) }}
+			{{ window.content(pageHook, collections[category], content) }}
 		</div>
 	</main>
 </div>
