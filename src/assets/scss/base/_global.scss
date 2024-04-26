@@ -50,3 +50,7 @@ button {
 *:focus-visible {
 	outline-color: var(--outline-color, currentColor);
 }
+
+ul:not([role='list']) {
+	padding-left: 1rem;
+}
