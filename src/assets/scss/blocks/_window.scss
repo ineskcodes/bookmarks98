@@ -57,4 +57,12 @@
 		background-color: #fff;
 		margin: 0 2px 2px 2px;
 	}
+
+	&__content .empty-state {
+		padding: 1rem;
+	}
+
+	h2 {
+		font-size: 1.1rem;
+	}
 }

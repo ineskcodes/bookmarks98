@@ -1,4 +1,4 @@
-{% macro content(page, bookmarksCollection) %}
+{% macro content(page, bookmarksCollection, pageContent = '') %}
 	{% if page === 'home' %}
 		<p class="wrapper">Navigate to one of the categories to view bookmarks.</p>
 	{% endif %}
@@ -9,5 +9,11 @@
 		{% else %}
 			<p class="wrapper">No bookmarks filed under this category yet...</p>
 		{% endif %}
+	{% endif %}
+
+	{% if page === 'about' %}
+		<div class="flow wrapper">
+			{{ pageContent | safe }}
+		</div>
 	{% endif %}
 {% endmacro %}
