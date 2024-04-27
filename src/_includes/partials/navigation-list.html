@@ -3,7 +3,6 @@
 
 <ul role="list" class="nav__list" data-parent="{{ navParent }}">
 	{% for item in navItems %}
-
 		{% set itemLinkHref = ('/category/' + ( item | slugify ) + '/') | url %}
 		{% set iconFileName = ('/' + (item | slugify) + '-' + 'icon') | url %}
 		{% if iconFileSize %}
@@ -13,8 +12,11 @@
 			{% set iconSize = "32" %}
 		{% endif %}
 		{% set iconFileSrc = iconFileName + '.png' %}
+		{% if navParent == 'header' %}
+			{% set isDraggable = true %}
+		{% endif %}
 
-		<li class="nav__item">
+		<li class="nav__item" {% if isDraggable %} data-draggable="icon" {% endif %}>
 			<a href="{{ itemLinkHref }}" class="nav__link">
 				<span class="nav__link--icon icon">
 					<img width="{{ iconSize }}" height="{{ iconSize }}" class="icon__img" src="{{ iconFileSrc }}" alt=""/>
