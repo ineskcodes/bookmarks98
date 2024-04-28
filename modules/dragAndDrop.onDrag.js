@@ -7,7 +7,12 @@ function onItemDrag(draggable) {
 	if (draggableType === 'icon') {
 		const { zIndex, doNotOverlapWith } = draggable.vars;
 		const isOverlapping = checkIfOverlap(draggable, doNotOverlapWith);
-		target.style.zIndex = zIndex.onDragStart;
+
+		if (zIndex) {
+			target.style.zIndex = zIndex.onDragStart;
+			target.parentElement.style.zIndex = zIndex.onDragStart;
+		}
+
 		target.classList.add('on-drag');
 
 		if (isOverlapping) {

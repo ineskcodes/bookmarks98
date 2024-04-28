@@ -24,6 +24,7 @@ function onItemDragEnd(draggable) {
 
 	if (zIndex) {
 		target.style.zIndex = zIndex.onDragEnd;
+		target.parentElement.style.zIndex = zIndex.onDragEnd;
 	}
 
 	target.classList.remove('on-drag');

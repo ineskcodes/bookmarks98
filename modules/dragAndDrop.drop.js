@@ -1,17 +1,28 @@
 import gsap from 'gsap';
-import { getDraggableItemName, populateStorage } from './utils';
+import {
+	getDraggableType,
+	getDraggableItemName,
+	getLastPositionFromLocalStorage,
+	populateStorage,
+} from './utils';
 
 function drop(draggable) {
-	const { x, y, target } = draggable;
+	let { x, y, target } = draggable;
+	const lastPosition = getLastPositionFromLocalStorage(draggable);
+	const draggableType = getDraggableType(draggable);
 	const item = getDraggableItemName(draggable);
+
+	if (lastPosition) {
+		x += lastPosition.x;
+		y += lastPosition.y;
+	}
 
 	populateStorage(item, { x, y });
 
-	gsap.to([target, target.previousElementSibling], {
-		duration: 0,
-		x: x ? x : 0,
-		y: y ? y : 0,
-	});
+	if (draggableType === 'icon') {
+		gsap.to(target, { duration: 0, x: 0, y: 0 });
+		gsap.to(target.parentElement, { duration: 0, x, y });
+	}
 }
 
 export default drop;
