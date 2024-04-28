@@ -5,7 +5,7 @@ function cancelDrop(draggable) {
 	const { target } = draggable;
 	const position = getLastPositionFromLocalStorage(draggable);
 
-	gsap.to(target, {
+	gsap.to([target, target.PreviousElementSibling], {
 		duration: 0,
 		x: position ? position.x : 0,
 		y: position ? position.y : 0,

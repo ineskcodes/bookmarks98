@@ -8,6 +8,7 @@ function onItemDrag(draggable) {
 		const { zIndex, doNotOverlapWith } = draggable.vars;
 		const isOverlapping = checkIfOverlap(draggable, doNotOverlapWith);
 		target.style.zIndex = zIndex.onDragStart;
+		target.classList.add('on-drag');
 
 		if (isOverlapping) {
 			target.setAttribute('data-overlap', '');

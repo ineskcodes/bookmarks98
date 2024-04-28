@@ -8,6 +8,7 @@ export const options = {
 		type: 'x,y',
 		edgeResistance: 0.8,
 		dragClickables: true,
+		cursor: 'pointer',
 		onDragEnd: function () {
 			onItemDragEnd(this);
 		},
