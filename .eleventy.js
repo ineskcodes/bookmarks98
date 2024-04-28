@@ -1,7 +1,6 @@
 module.exports = (eleventyConfig) => {
 	// styles
 	eleventyConfig.addWatchTarget('src/assets/scss');
-	eleventyConfig.addPassthroughCopy({ 'src/assets/css': 'css/' });
 
 	// js
 	eleventyConfig.addPassthroughCopy({ 'src/assets/js': '/' });
