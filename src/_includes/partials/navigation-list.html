@@ -16,13 +16,21 @@
 			{% set isDraggable = true %}
 		{% endif %}
 
-		<li class="nav__item" {% if isDraggable %} data-draggable="icon" data-item="{{ item | slugify }}" {% endif %}>
+		<li class="nav__item">
 			<a href="{{ itemLinkHref }}" class="nav__link">
 				<span class="nav__link--icon icon">
 					<img width="{{ iconSize }}" height="{{ iconSize }}" class="icon__img" src="{{ iconFileSrc }}" alt=""/>
 				</span>
 				<span class="nav__link--name">{{ item }}</span>
 			</a>
+			{% if isDraggable %}
+				<a role="presentation" aria-hidden="true" tabindex="-1" href="{{ itemLinkHref }}" class="nav__link" data-draggable="icon" data-item="{{ item | slugify }}">
+					<span class="nav__link--icon icon">
+						<img width="{{ iconSize }}" height="{{ iconSize }}" class="icon__img" src="{{ iconFileSrc }}" alt=""/>
+					</span>
+					<span class="nav__link--name">{{ item }}</span>
+				</a>
+			{% endif %}
 		</li>
 	{% endfor %}
 </ul>

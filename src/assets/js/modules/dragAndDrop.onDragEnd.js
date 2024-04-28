@@ -12,16 +12,22 @@ function onItemDragEnd(draggable) {
 		return;
 	}
 
-	if (draggableType === 'icon' && isOverlapping) {
-		cancelDrop(draggable);
+	if (draggableType === 'icon') {
+		if (isOverlapping) {
+			cancelDrop(draggable);
+		} else {
+			drop(draggable);
+		}
 	} else {
 		drop(draggable);
 	}
 
 	if (zIndex) {
 		target.style.zIndex = zIndex.onDragEnd;
+		target.parentElement.style.zIndex = zIndex.onDragEnd;
 	}
 
+	target.classList.remove('on-drag');
 	target.removeAttribute('data-overlap');
 }
 

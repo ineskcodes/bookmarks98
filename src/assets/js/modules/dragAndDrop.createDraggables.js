@@ -11,14 +11,14 @@ function createDraggables() {
 
 	Draggable.create(icons, {
 		...options.global,
-		zIndex: options.icons.zIndex,
-		doNotOverlapWith: options.icons.doNotOverlapWith,
+		...options.icons,
 	});
 
 	if (windows) {
 		windows.forEach((windowEl) => {
 			Draggable.create(windowEl, {
 				...options.global,
+				...options.window,
 				trigger: windowEl.querySelector(options.window.triggerSelector),
 			});
 		});

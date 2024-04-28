@@ -6,7 +6,7 @@ export const options = {
 		bounds: 'body',
 		throwProps: true,
 		type: 'x,y',
-		edgeResistance: 0.8,
+		edgeResistance: '300%',
 		dragClickables: true,
 		onDragEnd: function () {
 			onItemDragEnd(this);
@@ -16,6 +16,7 @@ export const options = {
 		},
 	},
 	icons: {
+		cursor: 'pointer',
 		zIndex: {
 			onDragStart: 9999,
 			onDragEnd: 0,
