@@ -2,24 +2,26 @@
 	"name": "bookmarks98",
 	"version": "1.0.0",
 	"description": "",
-	"main": ".eleventy.js",
+	"source": [
+		"src/assets/js/main.js",
+		"src/assets/scss/main.scss"
+	],
 	"scripts": {
 		"clean": "rm -rf dist .parcel-cache",
 		"eleventy:build": "npx @11ty/eleventy",
 		"eleventy:watch": "npx @11ty/eleventy --serve",
 		"eleventy:debug": "DEBUG=* eleventy",
-		"sass:build": "sass --no-source-map --style=compressed src/assets/scss:src/assets/css",
-		"sass:watch": "sass --watch --no-source-map src/assets/scss:src/assets/css",
-		"parcel:build": "parcel build src/assets/js/main.js --dist-dir ./dist/js",
-		"parcel:serve": "parcel serve src/assets/js/main.js --dist-dir ./dist/js",
-		"build": "npm-run-all clean sass:build eleventy:build parcel:build",
-		"start": "npm-run-all clean --parallel sass:watch eleventy:watch parcel:serve"
+		"parcel:build": "parcel build",
+		"parcel:serve": "parcel serve",
+		"build": "npm-run-all clean eleventy:build parcel:build",
+		"start": "npm-run-all clean --parallel eleventy:watch parcel:serve"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
 		"@11ty/eleventy": "^2.0.1",
+		"@parcel/transformer-sass": "^2.12.0",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-prettier": "^5.1.3",
