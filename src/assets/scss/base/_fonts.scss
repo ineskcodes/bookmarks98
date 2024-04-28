@@ -1,7 +1,8 @@
 @font-face {
 	font-family: 'Windows 95';
-	src: url('/bookmarks98/w95fa.woff2') format('woff2'),
-		url('/bookmarks98/w95fa.woff') format('woff');
+	src:
+		url('/src/assets/fonts/w95fa.woff2') format('woff2'),
+		url('/src/assets/fonts/w95fa.woff') format('woff');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
