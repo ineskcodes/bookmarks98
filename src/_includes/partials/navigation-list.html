@@ -16,7 +16,7 @@
 			{% set isDraggable = true %}
 		{% endif %}
 
-		<li class="nav__item" {% if isDraggable %} data-draggable="icon" {% endif %}>
+		<li class="nav__item" {% if isDraggable %} data-draggable="icon" data-item="{{ item | slugify }}" {% endif %}>
 			<a href="{{ itemLinkHref }}" class="nav__link">
 				<span class="nav__link--icon icon">
 					<img width="{{ iconSize }}" height="{{ iconSize }}" class="icon__img" src="{{ iconFileSrc }}" alt=""/>
