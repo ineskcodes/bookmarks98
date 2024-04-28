@@ -28,5 +28,8 @@ export const options = {
 	},
 	window: {
 		triggerSelector: '[data-trigger]',
+		zIndex: {
+			onDragEnd: 0,
+		},
 	},
 };
