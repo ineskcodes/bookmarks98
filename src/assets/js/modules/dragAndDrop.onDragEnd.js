@@ -21,6 +21,8 @@ function onItemDragEnd(draggable) {
 	} else {
 		drop(draggable);
 	}
+
+	target.removeAttribute('data-overlap');
 }
 
 export default onItemDragEnd;
