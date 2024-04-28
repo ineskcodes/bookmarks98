@@ -15,10 +15,16 @@ class Menu {
 	}
 
 	toggleMenu() {
+		const windows = Array.from(document.querySelectorAll('.window'));
+
 		this.ariaExpanded =
 			JSON.parse(this.toggle.getAttribute('aria-expanded')) | 'false';
 
 		this.toggle.setAttribute('aria-expanded', !this.ariaExpanded);
+
+		if (windows) {
+			windows.forEach((window) => (window.style.zIndex = 0));
+		}
 	}
 }
 
