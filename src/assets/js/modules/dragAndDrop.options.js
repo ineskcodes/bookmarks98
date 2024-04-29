@@ -14,13 +14,13 @@ export const options = {
 		onDrag: function () {
 			onItemDrag(this);
 		},
+		zIndex: {
+			onDragStart: 9999,
+			onDragEnd: 'auto',
+		},
 	},
 	icons: {
 		cursor: 'pointer',
-		zIndex: {
-			onDragStart: 9999,
-			onDragEnd: 0,
-		},
 		doNotOverlapWith: [
 			document.querySelectorAll('[data-draggable="window"]'),
 			document.querySelector('.footer'),
@@ -29,8 +29,5 @@ export const options = {
 	},
 	window: {
 		triggerSelector: '[data-trigger]',
-		zIndex: {
-			onDragEnd: 0,
-		},
 	},
 };
