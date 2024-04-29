@@ -16,10 +16,7 @@ $breakpoint-desktop: 43.75em;
 	--window-header-foreground-color: #fff;
 
 	// typography
-	--_body-font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”,
-		“Oxygen”, “Ubuntu”, “Cantarell”, “Fira Sans”, “Droid Sans”, “Helvetica Neue”,
-		sans-serif;
-	--body-font-family: 'Windows 95', var(--_body-font-family);
+	--body-font-family: Arial, system-ui;
 	--body-font-size: 1rem;
 	--skip-link-font-size: 1.15rem;
 

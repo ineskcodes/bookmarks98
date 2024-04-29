@@ -8,9 +8,6 @@ module.exports = (eleventyConfig) => {
 	// icons
 	eleventyConfig.addPassthroughCopy({ 'src/assets/icons': '/' });
 
-	// fonts
-	eleventyConfig.addPassthroughCopy({ 'src/assets/fonts': '/' });
-
 	return {
 		markdownTemplateEngine: 'njk',
 		htmlTemplateEngine: 'njk',
