@@ -1,19 +1,20 @@
 .bookmark {
+	--padding-x: 0.75rem;
 	display: grid;
 	gap: 0.25rem;
-	border-bottom: 1px dotted currentColor;
-	padding: var(--padding-x) 0;
+	padding: var(--padding-x) var(--padding-y);
+	box-shadow: var(--bookmark-box-shadow);
+	margin: 0.75rem 0;
 
-	&__title a {
-		text-decoration: none;
+	&:hover {
+		box-shadow: var(--bookmark-hover-box-shadow);
 	}
 
 	&:first-child {
-		padding-top: 0;
+		margin-top: 0;
 	}
 
 	&:last-child {
-		border-bottom: 0;
-		padding-bottom: 0;
+		margin-bottom: 0;
 	}
 }

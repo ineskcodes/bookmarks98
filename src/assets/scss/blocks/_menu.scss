@@ -18,7 +18,9 @@
 		left: 1px;
 		padding: 0.125rem 0.125rem 0.125rem 1.5rem;
 		min-width: var(--menu-width);
-		max-height: calc(var(--root-max-height, 100vh) - var(--taskbar-height));
+		max-height: calc(
+			min(var(--root-max-height), 100vh) - var(--taskbar-height)
+		);
 		font-size: 0.9rem;
 		background-color: var(--menu-background-color);
 		box-shadow: var(--menu-box-shadow);
@@ -33,6 +35,7 @@
 		grid-template-columns: 1fr;
 		gap: 0;
 		justify-items: stretch;
+		font-size: 0.9em;
 	}
 
 	& .nav__link {

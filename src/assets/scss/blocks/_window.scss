@@ -6,20 +6,28 @@
 
 	display: grid;
 	grid-template-rows: auto auto 1fr;
-	width: min(100%, var(--max-window-width));
+	width: 100%;
 	height: 100%;
 	background-color: var(--window-background-color);
+	overflow: auto;
+
+	@media (min-width: vars.$breakpoint-desktop) {
+		resize: both;
+		max-width: min(100%, var(--max-window-width));
+		max-height: min(100%, var(--max-window-height));
+		min-width: min(100vw, var(--min-window-width));
+		min-height: min(100vh, var(--min-window-height));
+	}
 
 	&__header {
 		display: flex;
 		align-items: center;
 		gap: 1ch;
 		padding: 0 0.1rem 0 0.5ch;
-		margin: 2px;
-		background-image: var(--window-header-gradient);
+		margin: 2px 2px 0 2px;
+		background-image: var(--window-header-background-image);
 		box-shadow: var(--window-header-box-shadow);
 		color: var(--window-header-foreground-color);
-		line-height: 1.3;
 	}
 
 	&__heading {
@@ -29,9 +37,9 @@
 	&__navbar {
 		display: flex;
 		align-items: center;
-		margin-bottom: 2px;
 		line-height: 1.3;
-		font-size: 0.85rem;
+		font-size: 0.75rem;
+		margin: 2px 0.25rem;
 	}
 
 	&__navbar span {
@@ -48,21 +56,13 @@
 		box-shadow: var(--menu-toggle-active-box-shadow);
 	}
 
-	@media (min-width: vars.$breakpoint-desktop) {
-		max-height: var(--max-window-height);
-	}
-
 	&__content {
 		overflow: auto;
-		background-color: #fff;
-		margin: 0 2px 2px 2px;
+		margin: 0 2px 5px 2px;
+		border-top: 1px solid #929292;
 	}
 
 	&__content .empty-state {
 		padding: 1rem;
-	}
-
-	h2 {
-		font-size: 1.1rem;
 	}
 }

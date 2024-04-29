@@ -6,6 +6,7 @@
 	width: 100%;
 	height: 100%;
 	background-color: var(--root-background-color);
+	overflow: hidden;
 
 	@media (min-width: vars.$breakpoint-desktop) {
 		max-width: min(100vw, var(--root-max-width));
@@ -14,6 +15,8 @@
 	}
 
 	&__desktop {
+		overflow: hidden;
+
 		@media (min-width: vars.$breakpoint-desktop) {
 			display: flex;
 			gap: 1rem;

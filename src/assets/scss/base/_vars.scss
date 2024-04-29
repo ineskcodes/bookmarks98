@@ -5,20 +5,20 @@ $breakpoint-desktop: 43.75em;
 	--body-background-color: #222222;
 	--body-foreground-color: #000000;
 	--root-background-color: #008080;
-	--skip-link-background-color: #f4c1ca;
-	--taskbar-background-color: #f4c1ca;
-	--menu-background-color: #f4c1ca;
-	--menu-gradient: linear-gradient(#4511aa, #ca9cb9);
-	--menu-item-hover-background-color: #4511aa;
+	--skip-link-background-color: #c0c0c0;
+	--taskbar-background-color: #c0c0c0;
+	--menu-background-color: #c0c0c0;
+	--menu-gradient: linear-gradient(#050481, #1084d0);
+	--menu-item-hover-background-color: #050481;
 	--menu-item-hover-foreground-color: #fff;
-	--window-background-color: #f4c1ca;
-	--window-header-gradient: linear-gradient(to right, #4511aa, #ca9cb9);
+	--window-background-color: #c0c0c0;
+	--window-header-background-image: linear-gradient(to right, #050481, #1084d0);
 	--window-header-foreground-color: #fff;
 
 	// typography
 	--body-font-family: Arial, system-ui;
-	--body-font-size: 1rem;
-	--skip-link-font-size: 1.15rem;
+	--body-font-size: 0.9rem;
+	--skip-link-font-size: 1rem;
 
 	// sizes
 	--taskbar-height: 1.7rem;
@@ -28,16 +28,22 @@ $breakpoint-desktop: 43.75em;
 	--root-max-height: 37.5rem;
 	--max-window-width: 45rem;
 	--max-window-height: 30rem;
+	--min-window-width: 17rem;
+	--min-window-height: 15rem;
 
 	// shadows
-	--skip-link-box-shadow: inset 2px 2px #f4f4f4, inset -1px -1px #4e4e4e,
-		inset -2px -2px #de4560;
+	--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #414141,
+		inset -2px -2px #414141;
 	--footer-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #bbc3c4,
 		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
 	--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
-		inset -1px -1px #4e4e4e, inset -2px -2px #de4560;
+		inset -1px -1px #414141, inset -2px -2px #414141;
 	--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
-		inset 1px 1px 0 #de4560, inset -2px -2px 0 #a0abac, inset 2px 2px 0 #808088;
+		inset 1px 1px 0 #414141, inset -2px -2px 0 #a0abac, inset 2px 2px 0 #808088;
 	--menu-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #bbc3c4,
+		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
+	--bookmark-hover-box-shadow: inset -1px 0 #f5f5f5, inset 0 -1px #f5f5f5,
+		inset 1px 0 #808088, inset 0 1px #808088;
+	--bookmark-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #bbc3c4,
 		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
 }
