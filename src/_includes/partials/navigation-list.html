@@ -17,20 +17,20 @@
 		{% endif %}
 
 		<li class="nav__item">
-			<a href="{{ itemLinkHref }}" class="nav__link">
+			{% if isDraggable %}
+				<div aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="{{ iconSize }}" height="{{ iconSize }}" class="icon__img" src="{{ iconFileSrc }}" alt=""/>
+					</span>
+					<span class="nav__link--name">{{ item }}</span>
+				</div>
+			{% endif %}
+			<a href="{{ itemLinkHref }}" class="nav__link" {% if isDraggable %} data-draggable="icon" data-item="{{ item | slugify }}" {% endif %}>
 				<span class="nav__link--icon icon">
 					<img width="{{ iconSize }}" height="{{ iconSize }}" class="icon__img" src="{{ iconFileSrc }}" alt=""/>
 				</span>
 				<span class="nav__link--name">{{ item }}</span>
 			</a>
-			{% if isDraggable %}
-				<a role="presentation" aria-hidden="true" tabindex="-1" href="{{ itemLinkHref }}" class="nav__link" data-draggable="icon" data-item="{{ item | slugify }}">
-					<span class="nav__link--icon icon">
-						<img width="{{ iconSize }}" height="{{ iconSize }}" class="icon__img" src="{{ iconFileSrc }}" alt=""/>
-					</span>
-					<span class="nav__link--name">{{ item }}</span>
-				</a>
-			{% endif %}
 		</li>
 	{% endfor %}
 </ul>
