@@ -6,15 +6,24 @@
 	box-shadow: var(--bookmark-box-shadow);
 	margin: 0.75rem 0;
 
-	&:hover {
-		box-shadow: var(--bookmark-hover-box-shadow);
-	}
-
 	&:first-child {
 		margin-top: 0;
 	}
 
 	&:last-child {
 		margin-bottom: 0;
+	}
+
+	&[data-clickable] {
+		cursor: pointer;
+	}
+
+	&[data-clickable] a {
+		text-decoration: none;
+	}
+
+	&[data-clickable]:hover {
+		box-shadow: var(--bookmark-hover-box-shadow);
+		backdrop-filter: brightness(0.95);
 	}
 }
