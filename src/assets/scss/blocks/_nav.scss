@@ -20,11 +20,19 @@
 		gap: 0.25rem;
 	}
 
+	[data-parent='header'] &__link[aria-hidden] {
+		opacity: 1;
+	}
+
 	[data-parent='header'] &__link[data-draggable] {
 		position: absolute;
 		inset: 0;
 		opacity: 0;
 		user-select: none;
+	}
+
+	[data-parent='header'] &__link[data-draggable]:focus-visible {
+		opacity: 1;
 	}
 
 	[data-parent='header'] &__link.on-drag {
