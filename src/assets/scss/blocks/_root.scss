@@ -15,11 +15,12 @@
 	}
 
 	&__desktop {
-		overflow: hidden;
+		display: flex;
+		gap: var(--gap, 0rem);
+		overflow: auto;
 
 		@media (min-width: vars.$breakpoint-desktop) {
-			display: flex;
-			gap: 1rem;
+			--gap: 1rem;
 		}
 	}
 
