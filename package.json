@@ -6,13 +6,16 @@
 		"src/assets/js/main.js",
 		"src/assets/scss/main.scss"
 	],
+	"alias": {
+		"scss": "./src/assets/scss/**/*.scss"
+	},
 	"scripts": {
 		"clean": "rm -rf dist .parcel-cache",
 		"eleventy:build": "npx @11ty/eleventy",
 		"eleventy:watch": "npx @11ty/eleventy --serve",
 		"eleventy:debug": "DEBUG=* eleventy",
 		"parcel:build": "parcel build",
-		"parcel:serve": "parcel serve",
+		"parcel:serve": "parcel watch",
 		"build": "npm-run-all clean eleventy:build parcel:build",
 		"start": "npm-run-all clean --parallel eleventy:watch parcel:serve"
 	},
