@@ -74,7 +74,7 @@ class SettingsPopup {
 
 		switch (displayMode) {
 			case 'center':
-				el.style.setProperty(`---size`, 'auto');
+				el.style.setProperty(`--size`, 'auto');
 				el.style.setProperty('--repeat', 'no-repeat');
 				el.style.setProperty('--position', 'center');
 				break;
