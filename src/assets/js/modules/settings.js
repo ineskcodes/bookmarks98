@@ -75,18 +75,21 @@ class SettingsPopup {
 		switch (displayMode) {
 			case 'center':
 				el.style.setProperty(`--size`, 'auto');
+				el.style.setProperty('--preview-size', 'auto');
 				el.style.setProperty('--repeat', 'no-repeat');
 				el.style.setProperty('--position', 'center');
 				break;
 
 			case 'tile':
-				el.style.setProperty(`--size`, '20px 20px');
+				el.style.setProperty(`--size`, 'auto');
+				el.style.setProperty('--preview-size', '22.5% auto');
 				el.style.setProperty('--repeat', 'repeat');
 				el.style.setProperty('--position', 'auto');
 				break;
 
 			default:
 				el.style.setProperty(`--size`, '100% 100%');
+				el.style.setProperty('--preview-size', '100% 100%');
 				el.style.setProperty('--repeat', 'no-repeat');
 				el.style.setProperty('--position', 'auto');
 				break;

@@ -27,7 +27,7 @@
 		transform: translateX(-1px);
 		background-color: var(--root-background-color, #000);
 		background-image: var(--wallpaper, none);
-		background-size: var(--size, 20px 20px);
+		background-size: var(--preview-size, 22.5% auto);
 		background-repeat: var(--repeat, repeat);
 		background-position: var(--position, auto);
 	}
