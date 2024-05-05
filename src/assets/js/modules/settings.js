@@ -99,6 +99,9 @@ class SettingsPopup {
 
 		this.setWallpaper(null, root, wallpaper);
 		this.setDisplayMode(null, root, displayMode);
+
+		localStorage.setItem('wallpaper', wallpaper);
+		localStorage.setItem('display', displayMode);
 	}
 
 	handleSubmit(e) {
