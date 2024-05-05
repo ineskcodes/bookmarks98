@@ -4,6 +4,9 @@
 	// show the homepage's main content only if it's focused/targeted through skip-link
 	&-container[data-page='home']:not(:target) & {
 		@extend .visually-hidden;
+		display: block;
+		min-height: 0;
+		min-width: 0;
 	}
 
 	&-container:focus {
