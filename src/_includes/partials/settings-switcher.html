@@ -1,0 +1,52 @@
+<div class="[ popup__content window__content  switcher ] [ wrapper ]">
+	<div class="switcher__preview">
+		<h3 class="visually-hidden">Wallpaper preview</h3>
+		<img width="182" height="168" src="{{ '/preview-frame.png' | url }}" alt="">
+		<div id="wallpaper-preview"></div>
+	</div>
+	<form class="switcher__form">
+		<div class="switcher__form--inner">
+			<h3 class="switcher__heading">Wallpaper</h3>
+			<div role="group" class="switcher__fieldset">
+				<legend class="fl-underline">Select a picture or a theme:</legend>
+				<div class="switcher__wallpapers">
+					<label for="default" class="wallpaper">
+						<input type="radio" name="wallpaper" id="default" value="default">
+						<img width="16" height="16" src="{{ '/paint-file-icon.png' | url}}" alt="">
+						<span>Default</span>
+					</label>
+				</div>
+
+				<div class="switcher__controls">
+					<div class="switcher__browse">
+						<label class="switcher__button" for="browse-input">Browse</label>
+						<input type="file" name="browse" id="browse-input" accept="image/png, image/jpeg">
+					</div>
+
+					<div class="switcher__display">
+						<label class="fl-underline" for="display-select">Display:</label>
+						<select name="display" id="display-select">
+							<option value="center">Center</option>
+							<option value="cover">Cover</option>
+							<option value="stretch">Stretch</option>
+						</select>
+					</div>
+
+					<div class="switcher__theme">
+						<label class="fl-underline" for="theme-select">Theme:</label>
+						<select name="theme" id="theme-select">
+							<option value="default">Default</option>
+							<option value="olive">Olive</option>
+							<option value="rose">Rose</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="switcher__buttons">
+				<button class="switcher__button" id="settings-ok-btn" type="submit">OK</button>
+				<button class="switcher__button" id="settings-cancel-btn" type="button">Cancel</button>
+				<button class="switcher__button" id="settings-apply-btn" type="button">Apply</button>
+			</div>
+		</div>
+	</form>
+</div>
