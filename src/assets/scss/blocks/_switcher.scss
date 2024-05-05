@@ -48,7 +48,7 @@
 		font-weight: 400;
 	}
 
-	&__fieldset {
+	&__settings {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.25rem 1rem;
@@ -61,15 +61,17 @@
 			-2px -2px #555 inset;
 	}
 
-	&__fieldset legend {
-		flex: 1 0 100%;
-	}
-
-	&__wallpapers-container {
+	&__fieldset {
+		display: grid;
 		position: relative;
 		flex: 1;
 		height: 8rem;
-		line-height: 1;
+		border: 0 none;
+		gap: 0.25rem 1rem;
+	}
+
+	&__fieldset legend {
+		margin-bottom: 0.25rem;
 	}
 
 	&__wallpapers {
@@ -122,9 +124,11 @@
 	}
 
 	&__controls {
-		display: grid;
-		gap: 1rem;
-		align-content: start;
+		display: flex;
+		justify-content: space-between;
+		align-self: flex-end;
+		flex-direction: column;
+		height: 6.75rem;
 	}
 
 	&__browse {

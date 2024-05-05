@@ -7,22 +7,23 @@
 	<form class="switcher__form">
 		<div class="switcher__form--inner">
 			<h3 class="switcher__heading">Wallpaper</h3>
-			<div role="group" class="switcher__fieldset">
-				<legend class="fl-underline">Select a picture or a theme:</legend>
+			<div class="switcher__settings">
+				<fieldset class="switcher__fieldset">
+					<legend class="fl-underline">Select a picture or a theme:</legend>
 
-				<div class="switcher__wallpapers-container">
-					<div class="switcher__wallpapers" data-placeholder></div>
-					<div class="switcher__wallpapers">
-						{% for wallpaper in wallpapers %}
-							<label for="{{ wallpaper | slugify }}" class="wallpaper">
-								<input {% if wallpaper === "(None)" %} checked {% endif %} type="radio" name="wallpaper" id="{{ wallpaper | slugify }}" value="{{ wallpaper | slugify }}">
-								<img width="16" height="16" src="{{ '/paint-file-icon.png' | url}}" alt="">
-								<span>{{ wallpaper }}</span>
-							</label>
-						{% endfor %}
+					<div class="switcher__wallpapers-container">
+						<div class="switcher__wallpapers" data-placeholder></div>
+						<div class="switcher__wallpapers">
+							{% for wallpaper in wallpapers %}
+								<label for="{{ wallpaper | slugify }}" class="wallpaper">
+									<input {% if wallpaper === "(None)" %} checked {% endif %} type="radio" name="wallpaper" id="{{ wallpaper | slugify }}" value="{{ wallpaper | slugify }}">
+									<img width="16" height="16" src="{{ '/paint-file-icon.png' | url}}" alt="">
+									<span>{{ wallpaper }}</span>
+								</label>
+							{% endfor %}
+						</div>
 					</div>
-				</div>
-
+				</fieldset>
 				<div class="switcher__controls">
 					<div class="switcher__browse">
 						<label class="switcher__button" for="browse-input">Browse</label>
