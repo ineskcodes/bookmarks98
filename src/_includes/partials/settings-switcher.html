@@ -15,7 +15,7 @@
 					<div class="switcher__wallpapers">
 						{% for wallpaper in wallpapers %}
 							<label for="{{ wallpaper | slugify }}" class="wallpaper">
-								<input type="radio" name="wallpaper" id="{{ wallpaper | slugify }}" value="{{ wallpaper | slugify }}">
+								<input {% if wallpaper === "(None)" %} checked {% endif %} type="radio" name="wallpaper" id="{{ wallpaper | slugify }}" value="{{ wallpaper | slugify }}">
 								<img width="16" height="16" src="{{ '/paint-file-icon.png' | url}}" alt="">
 								<span>{{ wallpaper }}</span>
 							</label>
@@ -33,7 +33,7 @@
 						<label class="fl-underline" for="display-select">Display:</label>
 						<select name="display" id="display-select">
 							<option value="center">Center</option>
-							<option value="cover">Cover</option>
+							<option value="tile" selected>Tile</option>
 							<option value="stretch">Stretch</option>
 						</select>
 					</div>

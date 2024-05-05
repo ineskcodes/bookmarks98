@@ -27,7 +27,9 @@
 		transform: translateX(-1px);
 		background-color: var(--root-background-color, #000);
 		background-image: var(--wallpaper, none);
-		background-size: var(--background-size, auto);
+		background-size: var(--size, 20px 20px);
+		background-repeat: var(--repeat, repeat);
+		background-position: var(--position, auto);
 	}
 
 	&__form--inner {
