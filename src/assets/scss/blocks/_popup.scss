@@ -1,0 +1,18 @@
+@use '../base/vars';
+
+.popup {
+	--max-window-width: 25rem;
+	--max-window-height: 100vh;
+	grid-template-rows: auto 1fr;
+	position: absolute;
+	top: var(--top, 0);
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: 100%;
+
+	@media (min-width: vars.$breakpoint-desktop) {
+		--top: 2rem;
+		height: unset;
+	}
+}

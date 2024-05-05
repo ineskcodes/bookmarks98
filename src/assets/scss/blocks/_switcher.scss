@@ -1,0 +1,159 @@
+.switcher {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	margin: 0.5rem;
+	border-radius: 1px;
+	box-shadow:
+		1px 1px #fff inset,
+		2px 2px #ddd inset,
+		-1px -1px #777 inset,
+		-2px -2px #222 inset;
+
+	&__preview {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		padding: 1rem;
+		position: relative;
+	}
+
+	[id='wallpaper-preview'] {
+		width: 153px;
+		height: 112px;
+		position: absolute;
+		top: 2rem;
+		background-size: 16px 16px;
+		transform: translateX(-1px);
+		background-color: var(--root-background-color, #000);
+		background-image: var(--background-image, none);
+		background-size: var(--background-size, auto);
+	}
+
+	&__form--inner {
+		position: relative;
+		padding: 0.5rem;
+		font-size: 0.85em;
+	}
+
+	&__heading {
+		position: absolute;
+		top: 0.6rem;
+		left: 1.25rem;
+		display: inline-block;
+		background-color: #c0c0c0;
+		transform: translateY(-50%);
+		font-weight: 400;
+	}
+
+	&__fieldset {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem 1rem;
+		border: 1px solid rgba(0, 0, 0, 0);
+		padding: 0.75rem;
+		box-shadow:
+			1px 1px #555 inset,
+			2px 2px #fff inset,
+			-1px -1px #fff inset,
+			-2px -2px #555 inset;
+	}
+
+	&__fieldset legend {
+		flex: 1 0 100%;
+	}
+
+	&__wallpapers {
+		flex: 1;
+		height: 8rem;
+		padding: 5px;
+		border: 1px solid rgba(0, 0, 0, 0);
+		box-shadow:
+			2px 2px #555 inset,
+			-2px -2px #eee inset;
+		background-color: #fff;
+		overflow: auto;
+		line-height: 1;
+	}
+
+	.wallpaper {
+		display: block;
+		gap: 0.1rem;
+	}
+
+	.wallpaper input[type='radio'] {
+		position: absolute;
+		opacity: 0.00001;
+		width: 1rem;
+		height: 1rem;
+	}
+
+	.wallpaper input[type='radio']:focus ~ span {
+		border: 1px dotted #fff;
+		margin: 0;
+		background-color: #191970;
+		color: #fff;
+	}
+
+	.wallpaper img {
+		display: inline;
+		width: 1rem;
+		height: 1rem;
+		vertical-align: text-bottom;
+	}
+
+	&__controls {
+		display: grid;
+		gap: 1rem;
+		align-content: start;
+	}
+
+	&__browse {
+		position: relative;
+	}
+
+	&__browse input[name='browse'] {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		min-width: 100%;
+		opacity: 0;
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 0.5rem;
+		margin-top: 1rem;
+	}
+
+	&__button {
+		display: block;
+		padding: 0.15rem 1.25rem;
+		border-radius: 0;
+		background-color: #c0c0c0;
+		box-shadow:
+			1px 1px #fff inset,
+			1px 1px #ddd inset,
+			-1px -1px #777 inset,
+			-1px -1px #222 inset,
+			1px 1px #222;
+		cursor: pointer;
+		flex: 0 1 11ch;
+	}
+
+	&__button[id='settings-ok'] {
+		box-shadow:
+			1px 1px #000 inset,
+			-2px -2px #000 inset,
+			-3px -3px #555 inset,
+			3px 3px #fff inset;
+	}
+
+	select {
+		display: block;
+		width: 100%;
+	}
+}

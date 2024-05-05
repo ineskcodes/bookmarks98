@@ -15,6 +15,7 @@
 	}
 
 	&__desktop {
+		position: relative;
 		display: flex;
 		gap: var(--gap, 0rem);
 		overflow: auto;
