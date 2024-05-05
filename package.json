@@ -6,9 +6,6 @@
 		"src/assets/js/main.js",
 		"src/assets/scss/main.scss"
 	],
-	"alias": {
-		"scss": "./src/assets/scss/**/*.scss"
-	},
 	"scripts": {
 		"clean": "rm -rf dist .parcel-cache",
 		"eleventy:build": "npx @11ty/eleventy",
