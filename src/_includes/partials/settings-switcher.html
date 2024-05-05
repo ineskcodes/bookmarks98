@@ -9,12 +9,18 @@
 			<h3 class="switcher__heading">Wallpaper</h3>
 			<div role="group" class="switcher__fieldset">
 				<legend class="fl-underline">Select a picture or a theme:</legend>
-				<div class="switcher__wallpapers">
-					<label for="default" class="wallpaper">
-						<input type="radio" name="wallpaper" id="default" value="default">
-						<img width="16" height="16" src="{{ '/paint-file-icon.png' | url}}" alt="">
-						<span>Default</span>
-					</label>
+
+				<div class="switcher__wallpapers-container">
+					<div class="switcher__wallpapers" data-placeholder></div>
+					<div class="switcher__wallpapers">
+						{% for wallpaper in wallpapers %}
+							<label for="{{ wallpaper | slugify }}" class="wallpaper">
+								<input type="radio" name="wallpaper" id="{{ wallpaper | slugify }}" value="{{ wallpaper | slugify }}">
+								<img width="16" height="16" src="{{ '/paint-file-icon.png' | url}}" alt="">
+								<span>{{ wallpaper }}</span>
+							</label>
+						{% endfor %}
+					</div>
 				</div>
 
 				<div class="switcher__controls">
