@@ -34,6 +34,14 @@
 					const wallpaper = localStorage.getItem('wallpaper');
 					const displayMode = localStorage.getItem('display');
 					const root = document.documentElement;
+					const icons = Object.keys(localStorage).filter(item => item !== "wallpaper" && item !== "display");
+
+					
+					icons.forEach((item) => {
+						const pos = JSON.parse(localStorage.getItem(item));
+						document.documentElement.style.setProperty(`--${item}-x`, `${pos.x}px`);
+						document.documentElement.style.setProperty(`--${item}-y`, `${pos.y}px`);
+					});
 
 					if (wallpaper) {
 						root.style.setProperty('--wallpaper', `url('../${wallpaper}.png')`);

@@ -16,7 +16,7 @@
 			{% set isDraggable = true %}
 		{% endif %}
 
-		<li class="nav__item">
+		<li class="nav__item" data-item="{{ item | slugify }}">
 			{% if isDraggable %}
 				<div aria-hidden="true" class="nav__link">
 					<span class="nav__link--icon icon">
