@@ -109,8 +109,11 @@
 		height: 1rem;
 	}
 
+	.wallpaper input[type='radio'].applied ~ span {
+		border: 1px dotted currentColor;
+	}
+
 	.wallpaper input[type='radio']:focus ~ span {
-		border: 1px dotted #fff;
 		margin: 0;
 		background-color: #191970;
 		color: #fff;
