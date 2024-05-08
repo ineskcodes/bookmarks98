@@ -81,15 +81,23 @@
 							document.querySelectorAll("select[name='display'] option")
 						);
 
-						const currentWallpaperRadio = wallpaper
-							? wallpaperRadios.find((radio) => radio.value === wallpaper)
-							: wallpaperRadios.find((radio) => radio.value === 'none');
+						let currentWallpaperRadio = wallpaperRadios.find((radio) => radio.value === "none");
+						
+						if (wallpaper && wallpaperRadios.find((radio) => radio.value === wallpaper)) {
+							currentWallpaperRadio = wallpaperRadios.find((radio) => radio.value === wallpaper);
+						}				
 
 						const currentDisplayMode = displayMode
 						? displayOptions.find((option) => option.value === displayMode)
 						: displayOptions.find((option) => option.value === 'tile');
 
-						currentWallpaperRadio.checked = true;			
+						
+						wallpaperRadios.forEach(el => {
+							el.checked = false;
+							el.classList.remove("applied");	
+						});
+						currentWallpaperRadio.checked = true;
+						currentWallpaperRadio.classList.add("applied");		
 						currentDisplayMode.selected = true;		
 					});
 				}
