@@ -31,34 +31,40 @@
 				}
 
 				if (storageAvailable) {
-					const wallpaper = localStorage.getItem('wallpaper');
+					const wallpapers = JSON.parse(localStorage.getItem('wallpapers'));
 					const displayMode = localStorage.getItem('display');
 					const root = document.documentElement;
-					const icons = Object.keys(localStorage).filter(item => item !== "wallpaper" && item !== "display");
+					const icons = Object.keys(localStorage).filter(item => item !== "wallpaper" && item !== "display" && item !== "switcher" && item !== "previewSize");
+					const previewSize = localStorage.getItem("previewSize");
 
-					
 					icons.forEach((item) => {
 						const pos = JSON.parse(localStorage.getItem(item));
 						document.documentElement.style.setProperty(`--${item}-x`, `${pos.x}px`);
 						document.documentElement.style.setProperty(`--${item}-y`, `${pos.y}px`);
 					});
 
-					if (wallpaper) {
-						root.style.setProperty('--wallpaper', `url('../${wallpaper}.png')`);
+					if (previewSize) {
+						root.style.setProperty('--preview-size', previewSize);
+					}
+
+					if (wallpapers) {
+						const wallpaper = wallpapers.find(item => item.enabled === true);
+						const url = wallpaper.custom ? wallpaper.base64 : wallpaper.url;
+						root.style.setProperty('--wallpaper', `url('${url}')`);
 					}
 
 					if (displayMode) {
 						switch (displayMode) {
 							case 'center':
 								root.style.setProperty(`--size`, 'auto');
-								root.style.setProperty(`--preview-size`, 'auto');
+								root.style.setProperty(`--preview-size`, previewSize ? previewSize : 'auto');
 								root.style.setProperty('--repeat', 'no-repeat');
 								root.style.setProperty('--position', 'center');
 								break;
 
 							case 'tile':
 								root.style.setProperty(`--size`, 'auto');
-								root.style.setProperty(`--preview-size`, '22.5% auto');
+								root.style.setProperty(`--preview-size`, previewSize ? previewSize : '22.5% auto');
 								root.style.setProperty('--repeat', 'repeat');
 								root.style.setProperty('--position', 'auto');
 								break;
@@ -73,31 +79,21 @@
 						}
 					}
 
-					window.addEventListener('DOMContentLoaded', () => {
-						const wallpaperRadios = Array.from(
-							document.querySelectorAll('input[type="radio"]')
-						);
+					window.addEventListener('load', () => {
+						const switcher = document.querySelector('.switcher__wallpapers:not([data-placeholder])');
+						
+						if (localStorage.getItem('switcher')) {
+							switcher.innerHTML = JSON.parse(localStorage.getItem("switcher")).innerHTML;
+						}
+						
 						const displayOptions = Array.from(
 							document.querySelectorAll("select[name='display'] option")
 						);
-
-						let currentWallpaperRadio = wallpaperRadios.find((radio) => radio.value === "none");
-						
-						if (wallpaper && wallpaperRadios.find((radio) => radio.value === wallpaper)) {
-							currentWallpaperRadio = wallpaperRadios.find((radio) => radio.value === wallpaper);
-						}				
-
+							
 						const currentDisplayMode = displayMode
 						? displayOptions.find((option) => option.value === displayMode)
 						: displayOptions.find((option) => option.value === 'tile');
 
-						
-						wallpaperRadios.forEach(el => {
-							el.checked = false;
-							el.classList.remove("applied");	
-						});
-						currentWallpaperRadio.checked = true;
-						currentWallpaperRadio.classList.add("applied");		
 						currentDisplayMode.selected = true;		
 					});
 				}
