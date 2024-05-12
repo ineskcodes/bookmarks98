@@ -121,4 +121,59 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		--switcher-wallpapers-box-shadow: 2px 2px #ff4d6d inset,
 			-2px -2px #eee inset;
 	}
+
+	&[data-theme='olive'] {
+		// colors
+		--body-background-color: #222222;
+		--body-foreground-color: #000000;
+		--root-background-color: #94bc5c;
+		--skip-link-background-color: #bbca8d;
+		--taskbar-background-color: #bbca8d;
+		--menu-background-color: #bbca8d;
+		--menu-gradient: linear-gradient(#11270b, #94bc5c);
+		--menu-item-hover-background-color: #11270b;
+		--menu-item-hover-foreground-color: #fff;
+		--window-background-color: #bbca8d;
+		--window-header-background-image: linear-gradient(
+			to right,
+			#11270b,
+			#94bc5c
+		);
+		--window-header-foreground-color: #fff;
+		--window-content-border-top-color: #ff4d6d;
+		--buttons-background-color: #bbca8d;
+		--switcher-input-active-background-color: #11270b;
+
+		// scrollbar
+		--scrollbar-color: #bbca8d;
+		--scrollbar-border-color-dark: #11270b;
+		--scrollbar-border-color-light: #94bc5c;
+
+		// shadows
+		--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #94bc5c,
+			inset -2px -2px #94bc5c;
+		--footer-box-shadow: inset -1px -1px 0 #11270b, inset 1px 1px 0 #bbc3c4,
+			inset -2px -2px 0 #94bc5c, inset 2px 2px 0 #fff;
+		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
+			inset -1px -1px #94bc5c, inset -2px -2px #3c5a14;
+		--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
+			inset 1px 1px 0 #94bc5c, inset -2px -2px 0 #94bc5c,
+			inset 2px 2px 0 #3c5a14;
+		--menu-box-shadow: inset -1px -1px 0 #3c5a14, inset 1px 1px 0 #ffc6c7,
+			inset -2px -2px 0 #94bc5c, inset 2px 2px 0 #fff;
+		--bookmark-hover-box-shadow: inset -1px 0 #f5f5f5, inset 0 -1px #f5f5f5,
+			inset 1px 0 #3c5a14, inset 0 1px #3c5a14;
+		--bookmark-box-shadow: inset -1px -1px 0 #3c5a14, inset 1px 1px 0 #ffc6c7,
+			inset -2px -2px 0 #94bc5c, inset 2px 2px 0 #fff;
+		--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
+			-1px -1px #94bc5c inset, -1px -1px #3c5a14 inset, 1px 1px #3c5a14;
+		--ok-button-box-shadow: 1px 1px #3c5a14 inset, -2px -2px #3c5a14 inset,
+			-3px -3px #94bc5c inset, 3px 3px #fff inset;
+		--switcher-box-shadow: 1px 1px #fff inset, 2px 2px #94bc5c inset,
+			-1px -1px #94bc5c inset, -2px -2px #3c5a14 inset;
+		--switcher-fieldset-box-shadow: 1px 1px #3c5a14 inset, 2px 2px #fff inset,
+			-1px -1px #fff inset, -2px -2px #3c5a14 inset;
+		--switcher-wallpapers-box-shadow: 2px 2px #3c5a14 inset,
+			-2px -2px #eee inset;
+	}
 }
