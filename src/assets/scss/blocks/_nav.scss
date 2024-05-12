@@ -67,7 +67,10 @@
 @each $icon in vars.$icons {
 	.nav__item[data-item='#{$icon}'] .nav__link {
 		@media screen and (min-width: vars.$breakpoint-desktop) {
-			transform: translate(var(--#{$icon}-x, 0), var(--#{$icon}-y, 0));
+			transform: translate(
+				var(--#{$icon}-position-x, 0),
+				var(--#{$icon}-position-y, 0)
+			);
 		}
 	}
 }

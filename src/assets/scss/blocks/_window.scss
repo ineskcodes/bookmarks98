@@ -65,4 +65,11 @@
 	&__content .empty-state {
 		padding: 1rem;
 	}
+
+	&[data-item='window'] {
+		transform: translate(
+			var(--window-position-x, 0),
+			var(--window-position-y, 0)
+		);
+	}
 }

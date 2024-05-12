@@ -10,7 +10,7 @@ function drop(draggable) {
 	const draggableType = getDraggableType(draggable);
 	const item = getDraggableItemName(draggable);
 
-	populateStorage(item, { x, y });
+	populateStorage(`${item}-position`, { x, y });
 
 	if (draggableType === 'icon') {
 		gsap.to(target.previousElementSibling, { duration: 0, x, y });
