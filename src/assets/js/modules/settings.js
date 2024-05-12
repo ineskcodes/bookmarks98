@@ -102,7 +102,6 @@ class SettingsPopup {
 			'a[href], button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
 		);
 
-		element.inert = isInert;
 		element.setAttribute('aria-hidden', `${isInert}`);
 		focusablesInsideElements.forEach(
 			(focusableEl) => (focusableEl.tabIndex = Number(isInert))
@@ -308,11 +307,9 @@ class SettingsPopup {
 			(wallpaper) => wallpaper.name === wallpaperName
 		);
 
-		if (this.selectedWallpaper) {
-			this.wallpapers.forEach((wallpaper) => {
-				wallpaper.isEnabled = wallpaper === this.selectedWallpaper;
-			});
-		}
+		this.wallpapers.forEach((wallpaper) => {
+			wallpaper.isEnabled = wallpaper === this.selectedWallpaper;
+		});
 	}
 
 	validateFile(size, name) {
