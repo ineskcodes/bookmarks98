@@ -2,25 +2,27 @@
 	*::-webkit-scrollbar-thumb {
 		width: 16px;
 		height: 40px;
-		background: silver;
+		background: var(--scrollbar-color);
 		border-radius: 0;
-		border-top: 1px solid #dfdfdf;
-		border-right: 1px solid #222;
-		border-bottom: 1px solid #222;
-		border-left: 1px solid #dfdfdf;
+		border-top: 1px solid var(--scrollbar-border-color-light);
+		border-right: 1px solid var(--scrollbar-border-color-dark);
+		border-bottom: 1px solid var(--scrollbar-border-color-dark);
+		border-left: 1px solid var(--scrollbar-border-color-light);
 		box-shadow:
-			inset -1px 0 silver,
+			inset -1px 0 var(--scrollbar-color),
 			inset -1px 1px #fff,
-			inset -1px -1px silver,
+			inset -1px -1px var(--scrollbar-color),
 			inset 0 0 0 1px #fff;
 	}
 
 	*::-webkit-scrollbar-track {
 		width: 16px;
 		background:
-			linear-gradient(silver 0 50%, #fff0 50% 100%) 1px 0/1px 2px,
-			linear-gradient(to right, silver 0 50%, #fff 50% 100%) 0 0/2px 1px;
-		border: 1px solid #222;
+			linear-gradient(var(--scrollbar-color) 0 50%, #fff0 50% 100%) 1px 0/1px
+				2px,
+			linear-gradient(to right, var(--scrollbar-color) 0 50%, #fff 50% 100%) 0 0/2px
+				1px;
+		border: 1px solid var(--scrollbar-border-color-dark);
 		border-bottom-color: #fff;
 		border-right-color: #fff;
 		padding: 14px 0;
@@ -32,53 +34,77 @@
 
 	/* Buttons */
 	*::-webkit-scrollbar-button:single-button {
-		background-color: silver;
+		background-color: var(--scrollbar-color);
 		display: block;
 		height: 16px;
 		width: 16px;
-		border-top: 1px solid #dfdfdf;
-		border-right: 1px solid #222;
-		border-bottom: 1px solid #222;
-		border-left: 1px solid #dfdfdf;
+		border-top: 1px solid var(--scrollbar-border-color-light);
+		border-right: 1px solid var(--scrollbar-border-color-dark);
+		border-bottom: 1px solid var(--scrollbar-border-color-dark);
+		border-left: 1px solid var(--scrollbar-border-color-light);
 		box-shadow:
-			inset -1px 0 silver,
+			inset -1px 0 var(--scrollbar-color),
 			inset -1px 1px #fff,
-			inset -1px -1px silver,
+			inset -1px -1px var(--scrollbar-color),
 			inset 0 0 0 1px #fff;
 	}
 
 	*::-webkit-scrollbar-button:single-button:active {
-		border: 1px solid #222;
+		border: 1px solid var(--scrollbar-border-color-dark);
 	}
 
 	/* Up */
 	*::-webkit-scrollbar-button:single-button:vertical:decrement {
 		background:
-			linear-gradient(-135deg, silver 0% 50%, transparent 50% 100%) 0 25%/100%
-				50% no-repeat,
-			linear-gradient(135deg, transparent 0% 50%, #222 50% 100%) 0 25%/100% 50%
-				no-repeat,
-			silver;
+			linear-gradient(
+					-135deg,
+					var(--scrollbar-color) 0% 50%,
+					transparent 50% 100%
+				)
+				0 25%/100% 50% no-repeat,
+			linear-gradient(
+					135deg,
+					transparent 0% 50%,
+					var(--scrollbar-border-color-dark) 50% 100%
+				)
+				0 25%/100% 50% no-repeat,
+			var(--scrollbar-color);
 	}
 
 	/* Down */
 	*::-webkit-scrollbar-button:single-button:vertical:increment {
 		background:
-			linear-gradient(-45deg, silver 0 50%, transparent 50% 100%) 0 75% / 100%
-				50% no-repeat,
-			linear-gradient(45deg, transparent 0 50%, #222 50% 100%) 0 75% / 100% 50%
-				no-repeat,
-			silver;
+			linear-gradient(
+					-45deg,
+					var(--scrollbar-color) 0 50%,
+					transparent 50% 100%
+				)
+				0 75% / 100% 50% no-repeat,
+			linear-gradient(
+					45deg,
+					transparent 0 50%,
+					var(--scrollbar-border-color-dark) 50% 100%
+				)
+				0 75% / 100% 50% no-repeat,
+			var(--scrollbar-color);
 	}
 
 	/* Left */
 	*::-webkit-scrollbar-button:single-button:horizontal:decrement {
 		background:
-			linear-gradient(-45deg, transparent 0 50%, silver 50% 100%) 25% 0 / 50%
-				100% no-repeat,
-			linear-gradient(45deg, transparent 0 50%, #222 50% 100%) 25% 0 / 50% 100%
-				no-repeat,
-			silver;
+			linear-gradient(
+					-45deg,
+					transparent 0 50%,
+					var(--scrollbar-color) 50% 100%
+				)
+				25% 0 / 50% 100% no-repeat,
+			linear-gradient(
+					45deg,
+					transparent 0 50%,
+					var(--scrollbar-border-color-dark) 50% 100%
+				)
+				25% 0 / 50% 100% no-repeat,
+			var(--scrollbar-color);
 	}
 
 	/* Right */
@@ -86,8 +112,12 @@
 		background:
 			linear-gradient(-45deg, silver 0 50%, transparent 50% 100%) 75% 0 / 50%
 				100% no-repeat,
-			linear-gradient(45deg, #222 0 50%, transparent 50% 100%) 75% 0 / 50% 100%
-				no-repeat,
+			linear-gradient(
+					45deg,
+					var(--scrollbar-border-color-dark) 0 50%,
+					transparent 50% 100%
+				)
+				75% 0 / 50% 100% no-repeat,
 			silver;
 	}
 }

@@ -4,11 +4,8 @@
 	justify-content: space-evenly;
 	margin: 0.5rem;
 	border-radius: 1px;
-	box-shadow:
-		1px 1px #fff inset,
-		2px 2px #ddd inset,
-		-1px -1px #777 inset,
-		-2px -2px #222 inset;
+	box-shadow: var(--switcher-box-shadow);
+	border: none;
 
 	&__preview {
 		display: flex;
@@ -43,7 +40,7 @@
 		top: 0.6rem;
 		left: 1.25rem;
 		display: inline-block;
-		background-color: #c0c0c0;
+		background-color: var(--window-background-color);
 		transform: translateY(-50%);
 		font-weight: 400;
 	}
@@ -54,11 +51,7 @@
 		gap: 0.25rem 1rem;
 		border: 1px solid rgba(0, 0, 0, 0);
 		padding: 0.75rem;
-		box-shadow:
-			1px 1px #555 inset,
-			2px 2px #fff inset,
-			-1px -1px #fff inset,
-			-2px -2px #555 inset;
+		box-shadow: var(--switcher-fieldset-box-shadow);
 	}
 
 	&__fieldset {
@@ -81,9 +74,7 @@
 		overflow: auto;
 		padding: 5px;
 		border: 1px solid rgba(0, 0, 0, 0);
-		box-shadow:
-			2px 2px #555 inset,
-			-2px -2px #eee inset;
+		box-shadow: var(--switcher-wallpapers-box-shadow);
 	}
 
 	&__wallpapers[data-placeholder] {
@@ -115,7 +106,7 @@
 
 	.wallpaper input[type='radio']:focus ~ span {
 		margin: 0;
-		background-color: #191970;
+		background-color: var(--switcher-input-active-background-color);
 		color: #fff;
 	}
 
@@ -159,23 +150,14 @@
 		display: block;
 		padding: 0.15rem 1.25rem;
 		border-radius: 0;
-		background-color: #c0c0c0;
-		box-shadow:
-			1px 1px #fff inset,
-			1px 1px #ddd inset,
-			-1px -1px #777 inset,
-			-1px -1px #222 inset,
-			1px 1px #222;
+		background-color: var(--buttons-background-color);
+		box-shadow: var(--buttons-box-shadow);
 		cursor: pointer;
 		flex: 0 1 11ch;
 	}
 
-	&__button[id='settings-ok'] {
-		box-shadow:
-			1px 1px #000 inset,
-			-2px -2px #000 inset,
-			-3px -3px #555 inset,
-			3px 3px #fff inset;
+	&__button[id='settings-ok-btn'] {
+		box-shadow: var(--ok-button-box-shadow);
 	}
 
 	select {

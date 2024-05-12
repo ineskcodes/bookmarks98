@@ -17,6 +17,14 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 	--window-background-color: #c0c0c0;
 	--window-header-background-image: linear-gradient(to right, #050481, #1084d0);
 	--window-header-foreground-color: #fff;
+	--window-content-border-top-color: #929292;
+	--buttons-background-color: #c0c0c0;
+	--switcher-input-active-background-color: #050481;
+
+	// scrollbar
+	--scrollbar-color: #c0c0c0;
+	--scrollbar-border-color-dark: #222;
+	--scrollbar-border-color-light: #dfdfdf;
 
 	// typography
 	--body-font-family: Arial, system-ui;
@@ -37,16 +45,80 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 	// shadows
 	--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #414141,
 		inset -2px -2px #414141;
-	--footer-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #bbc3c4,
+	--footer-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #ffc6c7,
 		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
 	--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
 		inset -1px -1px #414141, inset -2px -2px #414141;
 	--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
 		inset 1px 1px 0 #414141, inset -2px -2px 0 #a0abac, inset 2px 2px 0 #808088;
-	--menu-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #bbc3c4,
+	--menu-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #ffc6c7,
 		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
 	--bookmark-hover-box-shadow: inset -1px 0 #f5f5f5, inset 0 -1px #f5f5f5,
 		inset 1px 0 #808088, inset 0 1px #808088;
-	--bookmark-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #bbc3c4,
+	--bookmark-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #ffc6c7,
 		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
+	--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
+		-1px -1px #777 inset, -1px -1px #222 inset, 1px 1px #222;
+	--ok-button-box-shadow: 1px 1px #000 inset, -2px -2px #000 inset,
+		-3px -3px #555 inset, 3px 3px #fff inset;
+	--switcher-box-shadow: 1px 1px #fff inset, 2px 2px #ddd inset,
+		-1px -1px #777 inset, -2px -2px #222 inset;
+	--switcher-fieldset-box-shadow: 1px 1px #555 inset, 2px 2px #fff inset,
+		-1px -1px #fff inset, -2px -2px #555 inset;
+	--switcher-wallpapers-box-shadow: 2px 2px #555 inset, -2px -2px #eee inset;
+
+	&[data-theme='rose'] {
+		// colors
+		--body-background-color: #222222;
+		--body-foreground-color: #000000;
+		--root-background-color: #ff8fa3;
+		--skip-link-background-color: #ffccd5;
+		--taskbar-background-color: #ffccd5;
+		--menu-background-color: #ffccd5;
+		--menu-gradient: linear-gradient(#c9184a, #ffb3c1);
+		--menu-item-hover-background-color: #c9184a;
+		--menu-item-hover-foreground-color: #fff;
+		--window-background-color: #ffccd5;
+		--window-header-background-image: linear-gradient(
+			to right,
+			#c9184a,
+			#ffb3c1
+		);
+		--window-header-foreground-color: #fff;
+		--window-content-border-top-color: #ff4d6d;
+		--buttons-background-color: #ffccd5;
+		--switcher-input-active-background-color: #c9184a;
+
+		// scrollbar
+		--scrollbar-color: #ffccd5;
+		--scrollbar-border-color-dark: #c9184a;
+		--scrollbar-border-color-light: #ffb3c1;
+
+		// shadows
+		--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #ffb3c1,
+			inset -2px -2px #ffb3c1;
+		--footer-box-shadow: inset -1px -1px 0 #c9184a, inset 1px 1px 0 #bbc3c4,
+			inset -2px -2px 0 #ffb3c1, inset 2px 2px 0 #fff;
+		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
+			inset -1px -1px #ffb3c1, inset -2px -2px #ff4d6d;
+		--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
+			inset 1px 1px 0 #ffb3c1, inset -2px -2px 0 #ffb3c1,
+			inset 2px 2px 0 #ff4d6d;
+		--menu-box-shadow: inset -1px -1px 0 #ff4d6d, inset 1px 1px 0 #ffc6c7,
+			inset -2px -2px 0 #ffb3c1, inset 2px 2px 0 #fff;
+		--bookmark-hover-box-shadow: inset -1px 0 #f5f5f5, inset 0 -1px #f5f5f5,
+			inset 1px 0 #ff4d6d, inset 0 1px #ff4d6d;
+		--bookmark-box-shadow: inset -1px -1px 0 #ff4d6d, inset 1px 1px 0 #ffc6c7,
+			inset -2px -2px 0 #ffb3c1, inset 2px 2px 0 #fff;
+		--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
+			-1px -1px #ffb3c1 inset, -1px -1px #ff4d6d inset, 1px 1px #ff4d6d;
+		--ok-button-box-shadow: 1px 1px #ff4d6d inset, -2px -2px #ff4d6d inset,
+			-3px -3px #ffb3c1 inset, 3px 3px #fff inset;
+		--switcher-box-shadow: 1px 1px #fff inset, 2px 2px #ffb3c1 inset,
+			-1px -1px #ffb3c1 inset, -2px -2px #ff4d6d inset;
+		--switcher-fieldset-box-shadow: 1px 1px #ff4d6d inset, 2px 2px #fff inset,
+			-1px -1px #fff inset, -2px -2px #ff4d6d inset;
+		--switcher-wallpapers-box-shadow: 2px 2px #ff4d6d inset,
+			-2px -2px #eee inset;
+	}
 }
