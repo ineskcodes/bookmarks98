@@ -287,8 +287,7 @@ class SettingsPopup {
 		};
 
 		this.wallpapers.push(newWallpaper);
-		this.setActiveWallpaper(newWallpaper.name);
-		this.saveSettings();
+		this.setLocalStorageItem('wallpapers', this.wallpapers);
 		this.updateSwitcher(newWallpaper);
 	}
 
@@ -363,6 +362,7 @@ class SettingsPopup {
 
 		this.loadWallpaperInputs(true);
 		input.dispatchEvent(new Event('input'));
+		this.setLocalStorageItem('switcher', this.switcher.innerHTML);
 	}
 
 	setTheme(e) {
