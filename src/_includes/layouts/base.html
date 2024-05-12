@@ -96,6 +96,12 @@
 				if (previewRatio) {
 					root.style.setProperty(`--preview-size`, previewRatio);
 				}
+
+				if (theme) {
+					const themeSelect = document.querySelector("#theme-select");
+					themeSelect.value = theme;
+				}
+				
 			});
 		}
 		})();
