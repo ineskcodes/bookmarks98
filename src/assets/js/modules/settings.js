@@ -24,6 +24,7 @@ class SettingsPopup {
 		};
 		this.previewBox = this.query('#wallpaper-preview', this.popup);
 		this.displaySelect = this.query('#display-select', this.form);
+		this.themeSelect = this.query('#theme-select', this.form);
 		this.browseInput = this.query('#browse-input', this.popup);
 		this.wallpaperLabels = this.switcher.children;
 	}
@@ -82,6 +83,7 @@ class SettingsPopup {
 			this.updateDisplayMode.bind(this)
 		);
 		this.browseInput.addEventListener('input', this.handleUpload.bind(this));
+		this.themeSelect.addEventListener('input', this.setTheme.bind(this));
 	}
 
 	togglePopup(isOpen) {
@@ -159,6 +161,7 @@ class SettingsPopup {
 		this.setLocalStorageItem('display-mode', this.displayMode);
 		this.setLocalStorageItem('preview-ratio', this.previewRatio);
 		this.setLocalStorageItem('switcher', this.switcher.innerHTML);
+		this.setLocalStorageItem('theme', this.theme);
 	}
 
 	setLocalStorageItem(key, value) {
@@ -360,6 +363,11 @@ class SettingsPopup {
 
 		this.loadWallpaperInputs(true);
 		input.dispatchEvent(new Event('input'));
+	}
+
+	setTheme(e) {
+		this.theme = e.currentTarget.value;
+		document.documentElement.dataset.theme = this.theme;
 	}
 }
 

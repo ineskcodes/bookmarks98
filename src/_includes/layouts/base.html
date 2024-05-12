@@ -36,6 +36,7 @@
 			const wallpapers = JSON.parse(localStorage.getItem("wallpapers"));
 			const displayMode = localStorage.getItem("display-mode");
 			const previewRatio = localStorage.getItem("preview-ratio");
+			const theme = localStorage.getItem("theme");
 
 			for (const [key, value] of Object.entries(localStorage)) {
 				if (key.includes("-position")) {
@@ -64,6 +65,10 @@
 				Object.entries(selectedStyle).forEach(([prop, value]) =>
 					root.style.setProperty(`--${prop}`, value)
 				);
+			}
+
+			if (theme) {
+				root.dataset.theme = theme;
 			}
 
 			window.addEventListener("DOMContentLoaded", () => {
