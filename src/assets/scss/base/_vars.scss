@@ -69,9 +69,6 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 
 	&[data-theme='blush'] {
 		// colors
-		--body-background-color: #222222;
-		--body-foreground-color: #000000;
-		--root-background-color: #ff8fa3;
 		--skip-link-background-color: #ffccd5;
 		--taskbar-background-color: #ffccd5;
 		--menu-background-color: #ffccd5;
@@ -124,9 +121,6 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 
 	&[data-theme='olive'] {
 		// colors
-		--body-background-color: #222222;
-		--body-foreground-color: #000000;
-		--root-background-color: #94bc5c;
 		--skip-link-background-color: #bbca8d;
 		--taskbar-background-color: #bbca8d;
 		--menu-background-color: #bbca8d;
@@ -179,9 +173,6 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 
 	&[data-theme='ocean'] {
 		// colors
-		--body-background-color: #222222;
-		--body-foreground-color: #000000;
-		--root-background-color: #48cae4;
 		--skip-link-background-color: #90e0ef;
 		--taskbar-background-color: #90e0ef;
 		--menu-background-color: #90e0ef;
@@ -234,9 +225,6 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 
 	&[data-theme='peach'] {
 		// colors
-		--body-background-color: #222222;
-		--body-foreground-color: #000000;
-		--root-background-color: #f79d65;
 		--skip-link-background-color: #ffcc84;
 		--taskbar-background-color: #ffcc84;
 		--menu-background-color: #ffcc84;
@@ -289,9 +277,6 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 
 	&[data-theme='lavender'] {
 		// colors
-		--body-background-color: #222222;
-		--body-foreground-color: #000000;
-		--root-background-color: #c77dff;
 		--skip-link-background-color: #e0aaff;
 		--taskbar-background-color: #e0aaff;
 		--menu-background-color: #e0aaff;
@@ -344,9 +329,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 
 	&[data-theme='midnight'] {
 		// colors
-		--body-background-color: #222222;
 		--body-foreground-color: #fff;
-		--root-background-color: #002657;
 		--skip-link-background-color: #00132d;
 		--taskbar-background-color: #00132d;
 		--menu-background-color: #00132d;
