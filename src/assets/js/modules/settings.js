@@ -383,6 +383,7 @@ class SettingsPopup {
 		const selectedTheme = shouldRevert ? this.theme : this.tempTheme;
 		this.theme = selectedTheme;
 		this.tempTheme = this.theme;
+		this.themeSelect.value = this.theme;
 		document.documentElement.dataset.theme = this.theme;
 	}
 }
