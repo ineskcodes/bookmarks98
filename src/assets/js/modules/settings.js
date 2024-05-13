@@ -5,6 +5,7 @@ class SettingsPopup {
 	constructor() {
 		this.setupElements();
 		this.loadWallpapers();
+		this.loadTheme();
 		this.initPopup();
 	}
 
@@ -54,6 +55,11 @@ class SettingsPopup {
 		);
 	}
 
+	loadTheme() {
+		this.theme = document.documentElement.dataset.theme || 'default';
+		this.tempTheme = this.theme;
+	}
+
 	formatName(wallpaper) {
 		return wallpaper
 			.replaceAll(' ', '-')
@@ -73,7 +79,7 @@ class SettingsPopup {
 	bindEvents() {
 		this.buttons.open.addEventListener('click', () => this.togglePopup(true));
 		[this.buttons.close, this.buttons.cancel].forEach((button) =>
-			button.addEventListener('click', () => this.togglePopup(false))
+			button.addEventListener('click', this.cancelSettings.bind(this))
 		);
 		this.handleWallpaperInput.bind(this);
 		this.form.addEventListener('submit', this.handleSubmit.bind(this));
@@ -83,7 +89,7 @@ class SettingsPopup {
 			this.updateDisplayMode.bind(this)
 		);
 		this.browseInput.addEventListener('input', this.handleUpload.bind(this));
-		this.themeSelect.addEventListener('input', this.setTheme.bind(this));
+		this.themeSelect.addEventListener('input', this.previewTheme.bind(this));
 	}
 
 	togglePopup(isOpen) {
@@ -95,6 +101,11 @@ class SettingsPopup {
 		inerts.forEach((el) => this.toggleInertState(isOpen, el));
 		elementToFocusOn.focus();
 		this.loadWallpaperInputs(isOpen);
+	}
+
+	cancelSettings() {
+		this.setTheme(true);
+		this.togglePopup(false);
 	}
 
 	toggleInertState(isInert, element) {
@@ -192,6 +203,7 @@ class SettingsPopup {
 		this.setDisplayStyle(root, this.displayMode);
 		this.setActiveWallpaper(wallpaperName);
 		this.resetAppliedClass(wallpaperInput);
+		this.setTheme(false);
 		this.saveSettings();
 	}
 
@@ -362,8 +374,15 @@ class SettingsPopup {
 		this.setLocalStorageItem('switcher', this.switcher.innerHTML);
 	}
 
-	setTheme(e) {
-		this.theme = e.currentTarget.value;
+	previewTheme(e) {
+		this.tempTheme = e.currentTarget.value;
+		document.documentElement.dataset.theme = this.tempTheme;
+	}
+
+	setTheme(shouldRevert) {
+		const selectedTheme = shouldRevert ? this.theme : this.tempTheme;
+		this.theme = selectedTheme;
+		this.tempTheme = this.theme;
 		document.documentElement.dataset.theme = this.theme;
 	}
 }
