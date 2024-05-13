@@ -1,12 +1,110 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Accessibility - Bookmarks98</title>
-		<link rel="stylesheet" href="/bookmarks98/scss/main.css">
+		<link rel="stylesheet" href="/bookmarks98/scss/main.css" />
 		<script>
-			localStorage.clear();
+			(function () {
+			// Check if localStorage is supported and available
+			// source: https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
+			function storageAvailable(type) {
+				let storage;
+				try {
+					storage = window[type];
+					const x = '__storage_test__';
+					storage.setItem(x, x);
+					storage.removeItem(x);
+					return true;
+				} catch (e) {
+					return (
+						e instanceof DOMException &&
+						(e.code === 22 ||
+							e.code === 1014 ||
+							e.name === 'QuotaExceededError' ||
+							e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+						storage &&
+						storage.length !== 0
+					);
+				}
+			}
+
+		if (storageAvailable) {
+			const root = document.documentElement;
+			const switcher = localStorage.getItem("switcher");
+			const wallpapers = JSON.parse(localStorage.getItem("wallpapers"));
+			const displayMode = localStorage.getItem("display-mode");
+			const previewRatio = localStorage.getItem("preview-ratio");
+			const theme = localStorage.getItem("theme");
+
+			for (const [key, value] of Object.entries(localStorage)) {
+				if (key.includes("-position")) {
+					root.style.setProperty(`--${key}-x`, `${JSON.parse(value).x}px`);
+					root.style.setProperty(`--${key}-y`, `${JSON.parse(value).y}px`);
+				}
+			}
+
+			let selectedWallpaper = null;
+
+			if (wallpapers) {
+				selectedWallpaper = wallpapers.find(wallpaper => wallpaper.isEnabled);
+
+				if (selectedWallpaper) {
+					root.style.setProperty("--wallpaper", `url("${selectedWallpaper.src}")`);
+				}
+			}
+
+			if (displayMode) {
+				const styleMap = {
+					center: { size: 'auto', repeat: 'no-repeat', position: 'center' },
+					tile: { size: 'auto', repeat: 'repeat', position: 'auto' },
+					stretch: { size: '100% 100%', repeat: 'no-repeat', position: 'auto' },
+				};
+				const selectedStyle = styleMap[displayMode];
+				Object.entries(selectedStyle).forEach(([prop, value]) =>
+					root.style.setProperty(`--${prop}`, value)
+				);
+			}
+
+			if (theme) {
+				root.dataset.theme = theme;
+			}
+
+			window.addEventListener("DOMContentLoaded", () => {
+				const switcherEl = document.querySelector('.switcher__wallpapers:not([data-placeholder])');
+
+				if (switcher) {
+					switcherEl.innerHTML = switcher; 
+				}
+
+				const wallpaperInputs = document.querySelectorAll('input[name="wallpaper"]');
+				const wallpaperName = selectedWallpaper ? selectedWallpaper.name : "none";
+				const selectedWallpaperInput = [...wallpaperInputs].find(input => input.value === wallpaperName);
+				
+				if (selectedWallpaperInput) {
+					wallpaperInputs.forEach(input => input.classList.remove("applied"));
+					selectedWallpaperInput.checked = true;
+					selectedWallpaperInput.classList.add("applied");
+				}
+
+				if (displayMode) {
+					const displaySelect = document.querySelector("#display-select");
+					displaySelect.value = displayMode;
+				}
+
+				if (previewRatio) {
+					root.style.setProperty(`--preview-size`, previewRatio);
+				}
+
+				if (theme) {
+					const themeSelect = document.querySelector("#theme-select");
+					themeSelect.value = theme;
+				}
+				
+			});
+		}
+		})();
 		</script>
 	</head>
 	<body>
@@ -37,21 +135,21 @@
 			
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/html/" class="nav__link">
+		<li class="nav__item" data-item="html">
+			
+				<div aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="32" height="32" class="icon__img" src="/bookmarks98/html-icon.png" alt=""/>
+					</span>
+					<span class="nav__link--name">HTML</span>
+				</div>
+			
+			<a href="/bookmarks98/category/html/" class="nav__link"  data-draggable="icon" data-item="html" >
 				<span class="nav__link--icon icon">
 					<img width="32" height="32" class="icon__img" src="/bookmarks98/html-icon.png" alt=""/>
 				</span>
 				<span class="nav__link--name">HTML</span>
 			</a>
-			
-				<a role="presentation" aria-hidden="true" tabindex="-1" href="/bookmarks98/category/html/" class="nav__link" data-draggable="icon" data-item="html">
-					<span class="nav__link--icon icon">
-						<img width="32" height="32" class="icon__img" src="/bookmarks98/html-icon.png" alt=""/>
-					</span>
-					<span class="nav__link--name">HTML</span>
-				</a>
-			
 		</li>
 	
 		
@@ -64,21 +162,21 @@
 			
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/css/" class="nav__link">
+		<li class="nav__item" data-item="css">
+			
+				<div aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="32" height="32" class="icon__img" src="/bookmarks98/css-icon.png" alt=""/>
+					</span>
+					<span class="nav__link--name">CSS</span>
+				</div>
+			
+			<a href="/bookmarks98/category/css/" class="nav__link"  data-draggable="icon" data-item="css" >
 				<span class="nav__link--icon icon">
 					<img width="32" height="32" class="icon__img" src="/bookmarks98/css-icon.png" alt=""/>
 				</span>
 				<span class="nav__link--name">CSS</span>
 			</a>
-			
-				<a role="presentation" aria-hidden="true" tabindex="-1" href="/bookmarks98/category/css/" class="nav__link" data-draggable="icon" data-item="css">
-					<span class="nav__link--icon icon">
-						<img width="32" height="32" class="icon__img" src="/bookmarks98/css-icon.png" alt=""/>
-					</span>
-					<span class="nav__link--name">CSS</span>
-				</a>
-			
 		</li>
 	
 		
@@ -91,21 +189,21 @@
 			
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/javascript/" class="nav__link">
+		<li class="nav__item" data-item="javascript">
+			
+				<div aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="32" height="32" class="icon__img" src="/bookmarks98/javascript-icon.png" alt=""/>
+					</span>
+					<span class="nav__link--name">JavaScript</span>
+				</div>
+			
+			<a href="/bookmarks98/category/javascript/" class="nav__link"  data-draggable="icon" data-item="javascript" >
 				<span class="nav__link--icon icon">
 					<img width="32" height="32" class="icon__img" src="/bookmarks98/javascript-icon.png" alt=""/>
 				</span>
 				<span class="nav__link--name">JavaScript</span>
 			</a>
-			
-				<a role="presentation" aria-hidden="true" tabindex="-1" href="/bookmarks98/category/javascript/" class="nav__link" data-draggable="icon" data-item="javascript">
-					<span class="nav__link--icon icon">
-						<img width="32" height="32" class="icon__img" src="/bookmarks98/javascript-icon.png" alt=""/>
-					</span>
-					<span class="nav__link--name">JavaScript</span>
-				</a>
-			
 		</li>
 	
 		
@@ -118,21 +216,21 @@
 			
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/accessibility/" class="nav__link">
+		<li class="nav__item" data-item="accessibility">
+			
+				<div aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="32" height="32" class="icon__img" src="/bookmarks98/accessibility-icon.png" alt=""/>
+					</span>
+					<span class="nav__link--name">Accessibility</span>
+				</div>
+			
+			<a href="/bookmarks98/category/accessibility/" class="nav__link"  data-draggable="icon" data-item="accessibility" >
 				<span class="nav__link--icon icon">
 					<img width="32" height="32" class="icon__img" src="/bookmarks98/accessibility-icon.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Accessibility</span>
 			</a>
-			
-				<a role="presentation" aria-hidden="true" tabindex="-1" href="/bookmarks98/category/accessibility/" class="nav__link" data-draggable="icon" data-item="accessibility">
-					<span class="nav__link--icon icon">
-						<img width="32" height="32" class="icon__img" src="/bookmarks98/accessibility-icon.png" alt=""/>
-					</span>
-					<span class="nav__link--name">Accessibility</span>
-				</a>
-			
 		</li>
 	
 		
@@ -145,21 +243,21 @@
 			
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/animation/" class="nav__link">
+		<li class="nav__item" data-item="animation">
+			
+				<div aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="32" height="32" class="icon__img" src="/bookmarks98/animation-icon.png" alt=""/>
+					</span>
+					<span class="nav__link--name">Animation</span>
+				</div>
+			
+			<a href="/bookmarks98/category/animation/" class="nav__link"  data-draggable="icon" data-item="animation" >
 				<span class="nav__link--icon icon">
 					<img width="32" height="32" class="icon__img" src="/bookmarks98/animation-icon.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Animation</span>
 			</a>
-			
-				<a role="presentation" aria-hidden="true" tabindex="-1" href="/bookmarks98/category/animation/" class="nav__link" data-draggable="icon" data-item="animation">
-					<span class="nav__link--icon icon">
-						<img width="32" height="32" class="icon__img" src="/bookmarks98/animation-icon.png" alt=""/>
-					</span>
-					<span class="nav__link--name">Animation</span>
-				</a>
-			
 		</li>
 	
 		
@@ -172,21 +270,21 @@
 			
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/eleventy/" class="nav__link">
+		<li class="nav__item" data-item="eleventy">
+			
+				<div aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="32" height="32" class="icon__img" src="/bookmarks98/eleventy-icon.png" alt=""/>
+					</span>
+					<span class="nav__link--name">Eleventy</span>
+				</div>
+			
+			<a href="/bookmarks98/category/eleventy/" class="nav__link"  data-draggable="icon" data-item="eleventy" >
 				<span class="nav__link--icon icon">
 					<img width="32" height="32" class="icon__img" src="/bookmarks98/eleventy-icon.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Eleventy</span>
 			</a>
-			
-				<a role="presentation" aria-hidden="true" tabindex="-1" href="/bookmarks98/category/eleventy/" class="nav__link" data-draggable="icon" data-item="eleventy">
-					<span class="nav__link--icon icon">
-						<img width="32" height="32" class="icon__img" src="/bookmarks98/eleventy-icon.png" alt=""/>
-					</span>
-					<span class="nav__link--name">Eleventy</span>
-				</a>
-			
 		</li>
 	
 		
@@ -199,21 +297,21 @@
 			
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/svg/" class="nav__link">
+		<li class="nav__item" data-item="svg">
+			
+				<div aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="32" height="32" class="icon__img" src="/bookmarks98/svg-icon.png" alt=""/>
+					</span>
+					<span class="nav__link--name">SVG</span>
+				</div>
+			
+			<a href="/bookmarks98/category/svg/" class="nav__link"  data-draggable="icon" data-item="svg" >
 				<span class="nav__link--icon icon">
 					<img width="32" height="32" class="icon__img" src="/bookmarks98/svg-icon.png" alt=""/>
 				</span>
 				<span class="nav__link--name">SVG</span>
 			</a>
-			
-				<a role="presentation" aria-hidden="true" tabindex="-1" href="/bookmarks98/category/svg/" class="nav__link" data-draggable="icon" data-item="svg">
-					<span class="nav__link--icon icon">
-						<img width="32" height="32" class="icon__img" src="/bookmarks98/svg-icon.png" alt=""/>
-					</span>
-					<span class="nav__link--name">SVG</span>
-				</a>
-			
 		</li>
 	
 		
@@ -226,21 +324,21 @@
 			
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/git/" class="nav__link">
+		<li class="nav__item" data-item="git">
+			
+				<div aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="32" height="32" class="icon__img" src="/bookmarks98/git-icon.png" alt=""/>
+					</span>
+					<span class="nav__link--name">Git</span>
+				</div>
+			
+			<a href="/bookmarks98/category/git/" class="nav__link"  data-draggable="icon" data-item="git" >
 				<span class="nav__link--icon icon">
 					<img width="32" height="32" class="icon__img" src="/bookmarks98/git-icon.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Git</span>
 			</a>
-			
-				<a role="presentation" aria-hidden="true" tabindex="-1" href="/bookmarks98/category/git/" class="nav__link" data-draggable="icon" data-item="git">
-					<span class="nav__link--icon icon">
-						<img width="32" height="32" class="icon__img" src="/bookmarks98/git-icon.png" alt=""/>
-					</span>
-					<span class="nav__link--name">Git</span>
-				</a>
-			
 		</li>
 	
 		
@@ -253,21 +351,21 @@
 			
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/colors/" class="nav__link">
+		<li class="nav__item" data-item="colors">
+			
+				<div aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="32" height="32" class="icon__img" src="/bookmarks98/colors-icon.png" alt=""/>
+					</span>
+					<span class="nav__link--name">Colors</span>
+				</div>
+			
+			<a href="/bookmarks98/category/colors/" class="nav__link"  data-draggable="icon" data-item="colors" >
 				<span class="nav__link--icon icon">
 					<img width="32" height="32" class="icon__img" src="/bookmarks98/colors-icon.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Colors</span>
 			</a>
-			
-				<a role="presentation" aria-hidden="true" tabindex="-1" href="/bookmarks98/category/colors/" class="nav__link" data-draggable="icon" data-item="colors">
-					<span class="nav__link--icon icon">
-						<img width="32" height="32" class="icon__img" src="/bookmarks98/colors-icon.png" alt=""/>
-					</span>
-					<span class="nav__link--name">Colors</span>
-				</a>
-			
 		</li>
 	
 		
@@ -280,21 +378,21 @@
 			
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/design/" class="nav__link">
+		<li class="nav__item" data-item="design">
+			
+				<div aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="32" height="32" class="icon__img" src="/bookmarks98/design-icon.png" alt=""/>
+					</span>
+					<span class="nav__link--name">Design</span>
+				</div>
+			
+			<a href="/bookmarks98/category/design/" class="nav__link"  data-draggable="icon" data-item="design" >
 				<span class="nav__link--icon icon">
 					<img width="32" height="32" class="icon__img" src="/bookmarks98/design-icon.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Design</span>
 			</a>
-			
-				<a role="presentation" aria-hidden="true" tabindex="-1" href="/bookmarks98/category/design/" class="nav__link" data-draggable="icon" data-item="design">
-					<span class="nav__link--icon icon">
-						<img width="32" height="32" class="icon__img" src="/bookmarks98/design-icon.png" alt=""/>
-					</span>
-					<span class="nav__link--name">Design</span>
-				</a>
-			
 		</li>
 	
 		
@@ -307,21 +405,21 @@
 			
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/performance/" class="nav__link">
+		<li class="nav__item" data-item="performance">
+			
+				<div aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="32" height="32" class="icon__img" src="/bookmarks98/performance-icon.png" alt=""/>
+					</span>
+					<span class="nav__link--name">Performance</span>
+				</div>
+			
+			<a href="/bookmarks98/category/performance/" class="nav__link"  data-draggable="icon" data-item="performance" >
 				<span class="nav__link--icon icon">
 					<img width="32" height="32" class="icon__img" src="/bookmarks98/performance-icon.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Performance</span>
 			</a>
-			
-				<a role="presentation" aria-hidden="true" tabindex="-1" href="/bookmarks98/category/performance/" class="nav__link" data-draggable="icon" data-item="performance">
-					<span class="nav__link--icon icon">
-						<img width="32" height="32" class="icon__img" src="/bookmarks98/performance-icon.png" alt=""/>
-					</span>
-					<span class="nav__link--name">Performance</span>
-				</a>
-			
 		</li>
 	
 		
@@ -334,21 +432,21 @@
 			
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/assets/" class="nav__link">
+		<li class="nav__item" data-item="assets">
+			
+				<div aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="32" height="32" class="icon__img" src="/bookmarks98/assets-icon.png" alt=""/>
+					</span>
+					<span class="nav__link--name">Assets</span>
+				</div>
+			
+			<a href="/bookmarks98/category/assets/" class="nav__link"  data-draggable="icon" data-item="assets" >
 				<span class="nav__link--icon icon">
 					<img width="32" height="32" class="icon__img" src="/bookmarks98/assets-icon.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Assets</span>
 			</a>
-			
-				<a role="presentation" aria-hidden="true" tabindex="-1" href="/bookmarks98/category/assets/" class="nav__link" data-draggable="icon" data-item="assets">
-					<span class="nav__link--icon icon">
-						<img width="32" height="32" class="icon__img" src="/bookmarks98/assets-icon.png" alt=""/>
-					</span>
-					<span class="nav__link--name">Assets</span>
-				</a>
-			
 		</li>
 	
 		
@@ -361,21 +459,21 @@
 			
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/tools/" class="nav__link">
+		<li class="nav__item" data-item="tools">
+			
+				<div aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="32" height="32" class="icon__img" src="/bookmarks98/tools-icon.png" alt=""/>
+					</span>
+					<span class="nav__link--name">Tools</span>
+				</div>
+			
+			<a href="/bookmarks98/category/tools/" class="nav__link"  data-draggable="icon" data-item="tools" >
 				<span class="nav__link--icon icon">
 					<img width="32" height="32" class="icon__img" src="/bookmarks98/tools-icon.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Tools</span>
 			</a>
-			
-				<a role="presentation" aria-hidden="true" tabindex="-1" href="/bookmarks98/category/tools/" class="nav__link" data-draggable="icon" data-item="tools">
-					<span class="nav__link--icon icon">
-						<img width="32" height="32" class="icon__img" src="/bookmarks98/tools-icon.png" alt=""/>
-					</span>
-					<span class="nav__link--name">Tools</span>
-				</a>
-			
 		</li>
 	
 		
@@ -388,21 +486,21 @@
 			
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/react/" class="nav__link">
+		<li class="nav__item" data-item="react">
+			
+				<div aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="32" height="32" class="icon__img" src="/bookmarks98/react-icon.png" alt=""/>
+					</span>
+					<span class="nav__link--name">React</span>
+				</div>
+			
+			<a href="/bookmarks98/category/react/" class="nav__link"  data-draggable="icon" data-item="react" >
 				<span class="nav__link--icon icon">
 					<img width="32" height="32" class="icon__img" src="/bookmarks98/react-icon.png" alt=""/>
 				</span>
 				<span class="nav__link--name">React</span>
 			</a>
-			
-				<a role="presentation" aria-hidden="true" tabindex="-1" href="/bookmarks98/category/react/" class="nav__link" data-draggable="icon" data-item="react">
-					<span class="nav__link--icon icon">
-						<img width="32" height="32" class="icon__img" src="/bookmarks98/react-icon.png" alt=""/>
-					</span>
-					<span class="nav__link--name">React</span>
-				</a>
-			
 		</li>
 	
 		
@@ -415,21 +513,21 @@
 			
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/other/" class="nav__link">
+		<li class="nav__item" data-item="other">
+			
+				<div aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="32" height="32" class="icon__img" src="/bookmarks98/other-icon.png" alt=""/>
+					</span>
+					<span class="nav__link--name">Other</span>
+				</div>
+			
+			<a href="/bookmarks98/category/other/" class="nav__link"  data-draggable="icon" data-item="other" >
 				<span class="nav__link--icon icon">
 					<img width="32" height="32" class="icon__img" src="/bookmarks98/other-icon.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Other</span>
 			</a>
-			
-				<a role="presentation" aria-hidden="true" tabindex="-1" href="/bookmarks98/category/other/" class="nav__link" data-draggable="icon" data-item="other">
-					<span class="nav__link--icon icon">
-						<img width="32" height="32" class="icon__img" src="/bookmarks98/other-icon.png" alt=""/>
-					</span>
-					<span class="nav__link--name">Other</span>
-				</a>
-			
 		</li>
 	
 		
@@ -442,21 +540,21 @@
 			
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/about/" class="nav__link">
+		<li class="nav__item" data-item="about">
+			
+				<div aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="32" height="32" class="icon__img" src="/bookmarks98/about-icon.png" alt=""/>
+					</span>
+					<span class="nav__link--name">About</span>
+				</div>
+			
+			<a href="/bookmarks98/category/about/" class="nav__link"  data-draggable="icon" data-item="about" >
 				<span class="nav__link--icon icon">
 					<img width="32" height="32" class="icon__img" src="/bookmarks98/about-icon.png" alt=""/>
 				</span>
 				<span class="nav__link--name">About</span>
 			</a>
-			
-				<a role="presentation" aria-hidden="true" tabindex="-1" href="/bookmarks98/category/about/" class="nav__link" data-draggable="icon" data-item="about">
-					<span class="nav__link--icon icon">
-						<img width="32" height="32" class="icon__img" src="/bookmarks98/about-icon.png" alt=""/>
-					</span>
-					<span class="nav__link--name">About</span>
-				</a>
-			
 		</li>
 	
 </ul>
@@ -465,8 +563,7 @@
 </nav>
     </div>
 </header>
-
-				
+ 
 
 
 	
@@ -474,8 +571,8 @@
 
 
 
-<div class="[ main-container ] [ wrapper ]" data-page="bookmarks">
-	<main data-draggable="window" data-item="window" class="[ main ] [ window ]" tabindex="-1" id="content" data-page="bookmarks" data-has-window="false">
+<div tabindex="-1" id="content" class="[ main-container ] [ wrapper ]" data-page="bookmarks">
+	<main data-draggable="window" data-item="window" class="[ main ] [ window ]" data-page="bookmarks" data-has-window="false">
 		<header data-trigger class="window__header">
 			<img width="16" height="16" alt="" src="/bookmarks98/accessibility-icon-small.png" class="window__icon">
 			<h1 class="window__heading">Accessibility</h1>
@@ -922,10 +1019,214 @@
 		</div>
 	</main>
 </div>
+ <aside class="[ settings ] [ wrapper ]" data-js-required>
+	<div class="nav__item" data-item="settings">
+		<div aria-hidden="true" class="nav__link">
+			<span class="nav__link--icon icon">
+				<img width="32" height="32" class="icon__img" src="/bookmarks98/settings-icon.png" alt=""/>
+			</span>
+			<span class="nav__link--name">Settings</span>
+		</div>
+		<button id="settings-open-btn" type="button" class="nav__link" data-draggable="icon" data-item="settings">
+			<span class="nav__link--icon icon">
+				<img width="32" height="32" class="icon__img" src="/bookmarks98/settings-icon.png" alt=""/>
+			</span>
+			<span class="nav__link--name">Settings</span>
+		</button>
+	</div>
+	<section role="dialog" tabindex="-1" class="[ window ] [ popup ]" aria-labelledby="settings-popup-label" data-draggable="window" data-item="popup" hidden>
+	<header class="[ popup__header ] [ window__header ]" data-trigger>
+		<img width="16" height="16" src="/bookmarks98/settings-icon.png" alt="">
+		<h2 class="[ popup__heading ] [ window__heading ]" id="settings-popup-label">Settings</h2>
+		<button type="button" id="settings-close-btn">
+			<img width="16" height="16" src="/bookmarks98/close-icon.png" alt="">
+			<span class="visually-hidden">Close settings</span>
+		</button>
+	</header>
+	<div class="[ popup__content window__content  switcher ] [ wrapper ]">
+	<div class="switcher__preview">
+		<h3 class="visually-hidden">Wallpaper preview</h3>
+		<img width="182" height="168" src="/bookmarks98/preview-frame.png" alt="">
+		<div id="wallpaper-preview"></div>
+	</div>
+	<form class="switcher__form">
+		<div class="switcher__form--inner">
+			<h3 class="switcher__heading">Wallpaper</h3>
+			<div class="switcher__settings">
+				<fieldset class="switcher__fieldset">
+					<legend class="fl-underline">Select a picture or a theme:</legend>
+
+					<div class="switcher__wallpapers-container">
+						<div class="switcher__wallpapers" data-placeholder></div>
+						<div class="switcher__wallpapers">
+							
+								<label for="none" class="wallpaper">
+									<input  checked  type="radio" name="wallpaper" id="none" value="none">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>(None)</span>
+								</label>
+							
+								<label for="black-thatch" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="black-thatch" value="black-thatch">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Black Thatch</span>
+								</label>
+							
+								<label for="blue-rivets" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="blue-rivets" value="blue-rivets">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Blue Rivets</span>
+								</label>
+							
+								<label for="bubbles" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="bubbles" value="bubbles">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Bubbles</span>
+								</label>
+							
+								<label for="carved-stone" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="carved-stone" value="carved-stone">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Carved Stone</span>
+								</label>
+							
+								<label for="circles" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="circles" value="circles">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Circles</span>
+								</label>
+							
+								<label for="clouds" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="clouds" value="clouds">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Clouds</span>
+								</label>
+							
+								<label for="forest" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="forest" value="forest">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Forest</span>
+								</label>
+							
+								<label for="gold-weave" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="gold-weave" value="gold-weave">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Gold Weave</span>
+								</label>
+							
+								<label for="houndstooth" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="houndstooth" value="houndstooth">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Houndstooth</span>
+								</label>
+							
+								<label for="metal-links" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="metal-links" value="metal-links">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Metal Links</span>
+								</label>
+							
+								<label for="pinstripe" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="pinstripe" value="pinstripe">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Pinstripe</span>
+								</label>
+							
+								<label for="red-blocks" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="red-blocks" value="red-blocks">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Red Blocks</span>
+								</label>
+							
+								<label for="sandstone" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="sandstone" value="sandstone">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Sandstone</span>
+								</label>
+							
+								<label for="setup" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="setup" value="setup">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Setup</span>
+								</label>
+							
+								<label for="stitches" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="stitches" value="stitches">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Stitches</span>
+								</label>
+							
+								<label for="straw-mat" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="straw-mat" value="straw-mat">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Straw Mat</span>
+								</label>
+							
+								<label for="tiles" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="tiles" value="tiles">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Tiles</span>
+								</label>
+							
+								<label for="triangles" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="triangles" value="triangles">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Triangles</span>
+								</label>
+							
+								<label for="waves" class="wallpaper">
+									<input  type="radio" name="wallpaper" id="waves" value="waves">
+									<img width="16" height="16" src="/bookmarks98/paint-file-icon.png" alt="">
+									<span>Waves</span>
+								</label>
+							
+						</div>
+					</div>
+				</fieldset>
+				<div class="switcher__controls">
+					<div class="switcher__browse">
+						<label class="switcher__button" for="browse-input">Browse</label>
+						<input type="file" name="browse" id="browse-input" accept="image/png, image/jpeg">
+					</div>
+
+					<div class="switcher__display">
+						<label class="fl-underline" for="display-select">Display:</label>
+						<select name="display" id="display-select">
+							<option value="center">Center</option>
+							<option value="tile" selected>Tile</option>
+							<option value="stretch">Stretch</option>
+						</select>
+					</div>
+
+					<div class="switcher__theme">
+						<label class="fl-underline" for="theme-select">Theme:</label>
+						<select name="theme" id="theme-select">
+							<option value="default">Default</option>
+							<option value="olive">Olive</option>
+							<option value="blush">Blush</option>
+							<option value="ocean">Ocean</option>
+							<option value="peach">Peach</option>
+							<option value="lavender">Lavender</option>
+							<option value="midnight">Midnight</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="switcher__buttons">
+				<button class="switcher__button" id="settings-ok-btn" type="submit">OK</button>
+				<button class="switcher__button" id="settings-cancel-btn" type="button">Cancel</button>
+				<button class="switcher__button" id="settings-apply-btn" type="button">Apply</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+</section>
+
+</aside>
 
 			</div>
-			<div class="root__taskbar">
-				
+			<div class="root__taskbar"> 
 
 
 <footer class="footer">
@@ -953,14 +1254,14 @@
 		
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/html/" class="nav__link">
+		<li class="nav__item" data-item="html">
+			
+			<a href="/bookmarks98/category/html/" class="nav__link" >
 				<span class="nav__link--icon icon">
 					<img width="20" height="20" class="icon__img" src="/bookmarks98/html-icon-medium.png" alt=""/>
 				</span>
 				<span class="nav__link--name">HTML</span>
 			</a>
-			
 		</li>
 	
 		
@@ -972,14 +1273,14 @@
 		
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/css/" class="nav__link">
+		<li class="nav__item" data-item="css">
+			
+			<a href="/bookmarks98/category/css/" class="nav__link" >
 				<span class="nav__link--icon icon">
 					<img width="20" height="20" class="icon__img" src="/bookmarks98/css-icon-medium.png" alt=""/>
 				</span>
 				<span class="nav__link--name">CSS</span>
 			</a>
-			
 		</li>
 	
 		
@@ -991,14 +1292,14 @@
 		
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/javascript/" class="nav__link">
+		<li class="nav__item" data-item="javascript">
+			
+			<a href="/bookmarks98/category/javascript/" class="nav__link" >
 				<span class="nav__link--icon icon">
 					<img width="20" height="20" class="icon__img" src="/bookmarks98/javascript-icon-medium.png" alt=""/>
 				</span>
 				<span class="nav__link--name">JavaScript</span>
 			</a>
-			
 		</li>
 	
 		
@@ -1010,14 +1311,14 @@
 		
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/accessibility/" class="nav__link">
+		<li class="nav__item" data-item="accessibility">
+			
+			<a href="/bookmarks98/category/accessibility/" class="nav__link" >
 				<span class="nav__link--icon icon">
 					<img width="20" height="20" class="icon__img" src="/bookmarks98/accessibility-icon-medium.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Accessibility</span>
 			</a>
-			
 		</li>
 	
 		
@@ -1029,14 +1330,14 @@
 		
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/animation/" class="nav__link">
+		<li class="nav__item" data-item="animation">
+			
+			<a href="/bookmarks98/category/animation/" class="nav__link" >
 				<span class="nav__link--icon icon">
 					<img width="20" height="20" class="icon__img" src="/bookmarks98/animation-icon-medium.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Animation</span>
 			</a>
-			
 		</li>
 	
 		
@@ -1048,14 +1349,14 @@
 		
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/eleventy/" class="nav__link">
+		<li class="nav__item" data-item="eleventy">
+			
+			<a href="/bookmarks98/category/eleventy/" class="nav__link" >
 				<span class="nav__link--icon icon">
 					<img width="20" height="20" class="icon__img" src="/bookmarks98/eleventy-icon-medium.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Eleventy</span>
 			</a>
-			
 		</li>
 	
 		
@@ -1067,14 +1368,14 @@
 		
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/svg/" class="nav__link">
+		<li class="nav__item" data-item="svg">
+			
+			<a href="/bookmarks98/category/svg/" class="nav__link" >
 				<span class="nav__link--icon icon">
 					<img width="20" height="20" class="icon__img" src="/bookmarks98/svg-icon-medium.png" alt=""/>
 				</span>
 				<span class="nav__link--name">SVG</span>
 			</a>
-			
 		</li>
 	
 		
@@ -1086,14 +1387,14 @@
 		
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/git/" class="nav__link">
+		<li class="nav__item" data-item="git">
+			
+			<a href="/bookmarks98/category/git/" class="nav__link" >
 				<span class="nav__link--icon icon">
 					<img width="20" height="20" class="icon__img" src="/bookmarks98/git-icon-medium.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Git</span>
 			</a>
-			
 		</li>
 	
 		
@@ -1105,14 +1406,14 @@
 		
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/colors/" class="nav__link">
+		<li class="nav__item" data-item="colors">
+			
+			<a href="/bookmarks98/category/colors/" class="nav__link" >
 				<span class="nav__link--icon icon">
 					<img width="20" height="20" class="icon__img" src="/bookmarks98/colors-icon-medium.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Colors</span>
 			</a>
-			
 		</li>
 	
 		
@@ -1124,14 +1425,14 @@
 		
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/design/" class="nav__link">
+		<li class="nav__item" data-item="design">
+			
+			<a href="/bookmarks98/category/design/" class="nav__link" >
 				<span class="nav__link--icon icon">
 					<img width="20" height="20" class="icon__img" src="/bookmarks98/design-icon-medium.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Design</span>
 			</a>
-			
 		</li>
 	
 		
@@ -1143,14 +1444,14 @@
 		
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/performance/" class="nav__link">
+		<li class="nav__item" data-item="performance">
+			
+			<a href="/bookmarks98/category/performance/" class="nav__link" >
 				<span class="nav__link--icon icon">
 					<img width="20" height="20" class="icon__img" src="/bookmarks98/performance-icon-medium.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Performance</span>
 			</a>
-			
 		</li>
 	
 		
@@ -1162,14 +1463,14 @@
 		
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/assets/" class="nav__link">
+		<li class="nav__item" data-item="assets">
+			
+			<a href="/bookmarks98/category/assets/" class="nav__link" >
 				<span class="nav__link--icon icon">
 					<img width="20" height="20" class="icon__img" src="/bookmarks98/assets-icon-medium.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Assets</span>
 			</a>
-			
 		</li>
 	
 		
@@ -1181,14 +1482,14 @@
 		
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/tools/" class="nav__link">
+		<li class="nav__item" data-item="tools">
+			
+			<a href="/bookmarks98/category/tools/" class="nav__link" >
 				<span class="nav__link--icon icon">
 					<img width="20" height="20" class="icon__img" src="/bookmarks98/tools-icon-medium.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Tools</span>
 			</a>
-			
 		</li>
 	
 		
@@ -1200,14 +1501,14 @@
 		
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/react/" class="nav__link">
+		<li class="nav__item" data-item="react">
+			
+			<a href="/bookmarks98/category/react/" class="nav__link" >
 				<span class="nav__link--icon icon">
 					<img width="20" height="20" class="icon__img" src="/bookmarks98/react-icon-medium.png" alt=""/>
 				</span>
 				<span class="nav__link--name">React</span>
 			</a>
-			
 		</li>
 	
 		
@@ -1219,14 +1520,14 @@
 		
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/other/" class="nav__link">
+		<li class="nav__item" data-item="other">
+			
+			<a href="/bookmarks98/category/other/" class="nav__link" >
 				<span class="nav__link--icon icon">
 					<img width="20" height="20" class="icon__img" src="/bookmarks98/other-icon-medium.png" alt=""/>
 				</span>
 				<span class="nav__link--name">Other</span>
 			</a>
-			
 		</li>
 	
 		
@@ -1238,14 +1539,14 @@
 		
 		
 
-		<li class="nav__item">
-			<a href="/bookmarks98/category/about/" class="nav__link">
+		<li class="nav__item" data-item="about">
+			
+			<a href="/bookmarks98/category/about/" class="nav__link" >
 				<span class="nav__link--icon icon">
 					<img width="20" height="20" class="icon__img" src="/bookmarks98/about-icon-medium.png" alt=""/>
 				</span>
 				<span class="nav__link--name">About</span>
 			</a>
-			
 		</li>
 	
 </ul>
@@ -1255,8 +1556,7 @@
 
 </nav>
     </div>
-</footer>
-			</div>
+</footer> </div>
 		</div>
 
 		<script defer type="module" src="/bookmarks98/js/main.js"></script>
