@@ -7,8 +7,11 @@
 		box-shadow: var(--menu-toggle-inactive-box-shadow);
 	}
 
+	&__toggle img {
+		filter: invert(var(--start-btn-invert, 0));
+	}
+
 	&[open] &__toggle {
-		background-color: #fff5;
 		box-shadow: var(--menu-toggle-active-box-shadow);
 	}
 

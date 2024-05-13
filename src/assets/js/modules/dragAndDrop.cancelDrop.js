@@ -7,8 +7,8 @@ function cancelDrop(draggable) {
 
 	gsap.to(target, {
 		duration: 0,
-		x: 0,
-		y: 0,
+		x: lastPosition ? lastPosition.x : 0,
+		y: lastPosition ? lastPosition.y : 0,
 	});
 
 	target.style.zIndex = draggable.vars.zIndex.onDragEnd;

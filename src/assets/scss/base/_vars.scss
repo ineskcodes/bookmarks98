@@ -1,4 +1,7 @@
 $breakpoint-desktop: 43.75em;
+$icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
+	'svg', 'git', 'colors', 'design', 'performance', 'assets', 'tools', 'react',
+	'other', 'settings', 'about';
 
 :root {
 	// colors
@@ -14,6 +17,14 @@ $breakpoint-desktop: 43.75em;
 	--window-background-color: #c0c0c0;
 	--window-header-background-image: linear-gradient(to right, #050481, #1084d0);
 	--window-header-foreground-color: #fff;
+	--window-content-border-top-color: #929292;
+	--buttons-background-color: #c0c0c0;
+	--switcher-input-active-background-color: #050481;
+
+	// scrollbar
+	--scrollbar-color: #c0c0c0;
+	--scrollbar-border-color-dark: #222;
+	--scrollbar-border-color-light: #dfdfdf;
 
 	// typography
 	--body-font-family: Arial, system-ui;
@@ -34,16 +45,357 @@ $breakpoint-desktop: 43.75em;
 	// shadows
 	--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #414141,
 		inset -2px -2px #414141;
-	--footer-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #bbc3c4,
+	--footer-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #ffc6c7,
 		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
 	--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
 		inset -1px -1px #414141, inset -2px -2px #414141;
 	--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
 		inset 1px 1px 0 #414141, inset -2px -2px 0 #a0abac, inset 2px 2px 0 #808088;
-	--menu-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #bbc3c4,
+	--menu-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #ffc6c7,
 		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
 	--bookmark-hover-box-shadow: inset -1px 0 #f5f5f5, inset 0 -1px #f5f5f5,
 		inset 1px 0 #808088, inset 0 1px #808088;
-	--bookmark-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #bbc3c4,
+	--bookmark-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #ffc6c7,
 		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
+	--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
+		-1px -1px #777 inset, -1px -1px #222 inset, 1px 1px #222;
+	--ok-button-box-shadow: 1px 1px #000 inset, -2px -2px #000 inset,
+		-3px -3px #555 inset, 3px 3px #fff inset;
+	--switcher-box-shadow: 1px 1px #fff inset, 2px 2px #ddd inset,
+		-1px -1px #777 inset, -2px -2px #222 inset;
+	--switcher-fieldset-box-shadow: 1px 1px #555 inset, 2px 2px #fff inset,
+		-1px -1px #fff inset, -2px -2px #555 inset;
+	--switcher-wallpapers-box-shadow: 2px 2px #555 inset, -2px -2px #eee inset;
+
+	&[data-theme='blush'] {
+		// colors
+		--body-background-color: #222222;
+		--body-foreground-color: #000000;
+		--root-background-color: #ff8fa3;
+		--skip-link-background-color: #ffccd5;
+		--taskbar-background-color: #ffccd5;
+		--menu-background-color: #ffccd5;
+		--menu-gradient: linear-gradient(#c9184a, #ffb3c1);
+		--menu-item-hover-background-color: #c9184a;
+		--menu-item-hover-foreground-color: #fff;
+		--window-background-color: #ffccd5;
+		--window-header-background-image: linear-gradient(
+			to right,
+			#c9184a,
+			#ffb3c1
+		);
+		--window-header-foreground-color: #fff;
+		--window-content-border-top-color: #ff4d6d;
+		--buttons-background-color: #ffccd5;
+		--switcher-input-active-background-color: #c9184a;
+
+		// scrollbar
+		--scrollbar-color: #ffccd5;
+		--scrollbar-border-color-dark: #c9184a;
+		--scrollbar-border-color-light: #ffb3c1;
+
+		// shadows
+		--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #ffb3c1,
+			inset -2px -2px #ffb3c1;
+		--footer-box-shadow: inset -1px -1px 0 #c9184a, inset 1px 1px 0 #bbc3c4,
+			inset -2px -2px 0 #ffb3c1, inset 2px 2px 0 #fff;
+		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
+			inset -1px -1px #ffb3c1, inset -2px -2px #ff4d6d;
+		--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
+			inset 1px 1px 0 #ffb3c1, inset -2px -2px 0 #ffb3c1,
+			inset 2px 2px 0 #ff4d6d;
+		--menu-box-shadow: inset -1px -1px 0 #ff4d6d, inset 1px 1px 0 #ffc6c7,
+			inset -2px -2px 0 #ffb3c1, inset 2px 2px 0 #fff;
+		--bookmark-hover-box-shadow: inset -1px 0 #f5f5f5, inset 0 -1px #f5f5f5,
+			inset 1px 0 #ff4d6d, inset 0 1px #ff4d6d;
+		--bookmark-box-shadow: inset -1px -1px 0 #ff4d6d, inset 1px 1px 0 #ffc6c7,
+			inset -2px -2px 0 #ffb3c1, inset 2px 2px 0 #fff;
+		--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
+			-1px -1px #ffb3c1 inset, -1px -1px #ff4d6d inset, 1px 1px #ff4d6d;
+		--ok-button-box-shadow: 1px 1px #ff4d6d inset, -2px -2px #ff4d6d inset,
+			-3px -3px #ffb3c1 inset, 3px 3px #fff inset;
+		--switcher-box-shadow: 1px 1px #fff inset, 2px 2px #ffb3c1 inset,
+			-1px -1px #ffb3c1 inset, -2px -2px #ff4d6d inset;
+		--switcher-fieldset-box-shadow: 1px 1px #ff4d6d inset, 2px 2px #fff inset,
+			-1px -1px #fff inset, -2px -2px #ff4d6d inset;
+		--switcher-wallpapers-box-shadow: 2px 2px #ff4d6d inset,
+			-2px -2px #eee inset;
+	}
+
+	&[data-theme='olive'] {
+		// colors
+		--body-background-color: #222222;
+		--body-foreground-color: #000000;
+		--root-background-color: #94bc5c;
+		--skip-link-background-color: #bbca8d;
+		--taskbar-background-color: #bbca8d;
+		--menu-background-color: #bbca8d;
+		--menu-gradient: linear-gradient(#11270b, #94bc5c);
+		--menu-item-hover-background-color: #11270b;
+		--menu-item-hover-foreground-color: #fff;
+		--window-background-color: #bbca8d;
+		--window-header-background-image: linear-gradient(
+			to right,
+			#11270b,
+			#94bc5c
+		);
+		--window-header-foreground-color: #fff;
+		--window-content-border-top-color: #3c5a14;
+		--buttons-background-color: #bbca8d;
+		--switcher-input-active-background-color: #11270b;
+
+		// scrollbar
+		--scrollbar-color: #bbca8d;
+		--scrollbar-border-color-dark: #11270b;
+		--scrollbar-border-color-light: #94bc5c;
+
+		// shadows
+		--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #94bc5c,
+			inset -2px -2px #94bc5c;
+		--footer-box-shadow: inset -1px -1px 0 #11270b, inset 1px 1px 0 #bbc3c4,
+			inset -2px -2px 0 #94bc5c, inset 2px 2px 0 #fff;
+		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
+			inset -1px -1px #94bc5c, inset -2px -2px #3c5a14;
+		--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
+			inset 1px 1px 0 #94bc5c, inset -2px -2px 0 #94bc5c,
+			inset 2px 2px 0 #3c5a14;
+		--menu-box-shadow: inset -1px -1px 0 #3c5a14, inset 1px 1px 0 #94bc5c,
+			inset -2px -2px 0 #94bc5c, inset 2px 2px 0 #fff;
+		--bookmark-hover-box-shadow: inset -1px 0 #f5f5f5, inset 0 -1px #f5f5f5,
+			inset 1px 0 #3c5a14, inset 0 1px #3c5a14;
+		--bookmark-box-shadow: inset -1px -1px 0 #3c5a14, inset 1px 1px 0 #94bc5c,
+			inset -2px -2px 0 #94bc5c, inset 2px 2px 0 #fff;
+		--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
+			-1px -1px #94bc5c inset, -1px -1px #3c5a14 inset, 1px 1px #3c5a14;
+		--ok-button-box-shadow: 1px 1px #3c5a14 inset, -2px -2px #3c5a14 inset,
+			-3px -3px #94bc5c inset, 3px 3px #fff inset;
+		--switcher-box-shadow: 1px 1px #fff inset, 2px 2px #94bc5c inset,
+			-1px -1px #94bc5c inset, -2px -2px #3c5a14 inset;
+		--switcher-fieldset-box-shadow: 1px 1px #3c5a14 inset, 2px 2px #fff inset,
+			-1px -1px #fff inset, -2px -2px #3c5a14 inset;
+		--switcher-wallpapers-box-shadow: 2px 2px #3c5a14 inset,
+			-2px -2px #eee inset;
+	}
+
+	&[data-theme='ocean'] {
+		// colors
+		--body-background-color: #222222;
+		--body-foreground-color: #000000;
+		--root-background-color: #48cae4;
+		--skip-link-background-color: #90e0ef;
+		--taskbar-background-color: #90e0ef;
+		--menu-background-color: #90e0ef;
+		--menu-gradient: linear-gradient(#03045e, #00b4d8);
+		--menu-item-hover-background-color: #03045e;
+		--menu-item-hover-foreground-color: #fff;
+		--window-background-color: #90e0ef;
+		--window-header-background-image: linear-gradient(
+			to right,
+			#03045e,
+			#00b4d8
+		);
+		--window-header-foreground-color: #fff;
+		--window-content-border-top-color: #023e8a;
+		--buttons-background-color: #90e0ef;
+		--switcher-input-active-background-color: #03045e;
+
+		// scrollbar
+		--scrollbar-color: #90e0ef;
+		--scrollbar-border-color-dark: #03045e;
+		--scrollbar-border-color-light: #00b4d8;
+
+		// shadows
+		--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #00b4d8,
+			inset -2px -2px #00b4d8;
+		--footer-box-shadow: inset -1px -1px 0 #03045e, inset 1px 1px 0 #bbc3c4,
+			inset -2px -2px 0 #00b4d8, inset 2px 2px 0 #fff;
+		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
+			inset -1px -1px #00b4d8, inset -2px -2px #023e8a;
+		--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
+			inset 1px 1px 0 #00b4d8, inset -2px -2px 0 #00b4d8,
+			inset 2px 2px 0 #023e8a;
+		--menu-box-shadow: inset -1px -1px 0 #023e8a, inset 1px 1px 0 #caf0f8,
+			inset -2px -2px 0 #00b4d8, inset 2px 2px 0 #fff;
+		--bookmark-hover-box-shadow: inset -1px 0 #f5f5f5, inset 0 -1px #f5f5f5,
+			inset 1px 0 #023e8a, inset 0 1px #023e8a;
+		--bookmark-box-shadow: inset -1px -1px 0 #023e8a, inset 1px 1px 0 #caf0f8,
+			inset -2px -2px 0 #00b4d8, inset 2px 2px 0 #fff;
+		--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
+			-1px -1px #00b4d8 inset, -1px -1px #023e8a inset, 1px 1px #023e8a;
+		--ok-button-box-shadow: 1px 1px #023e8a inset, -2px -2px #023e8a inset,
+			-3px -3px #00b4d8 inset, 3px 3px #fff inset;
+		--switcher-box-shadow: 1px 1px #fff inset, 2px 2px #00b4d8 inset,
+			-1px -1px #00b4d8 inset, -2px -2px #023e8a inset;
+		--switcher-fieldset-box-shadow: 1px 1px #023e8a inset, 2px 2px #fff inset,
+			-1px -1px #fff inset, -2px -2px #023e8a inset;
+		--switcher-wallpapers-box-shadow: 2px 2px #023e8a inset,
+			-2px -2px #eee inset;
+	}
+
+	&[data-theme='peach'] {
+		// colors
+		--body-background-color: #222222;
+		--body-foreground-color: #000000;
+		--root-background-color: #f79d65;
+		--skip-link-background-color: #ffcc84;
+		--taskbar-background-color: #ffcc84;
+		--menu-background-color: #ffcc84;
+		--menu-gradient: linear-gradient(#cd3b2d, #ffcc84);
+		--menu-item-hover-background-color: #cd3b2d;
+		--menu-item-hover-foreground-color: #fff;
+		--window-background-color: #ffcc84;
+		--window-header-background-image: linear-gradient(
+			to right,
+			#cd3b2d,
+			#ffcc84
+		);
+		--window-header-foreground-color: #fff;
+		--window-content-border-top-color: #f25c54;
+		--buttons-background-color: #ffcc84;
+		--switcher-input-active-background-color: #cd3b2d;
+
+		// scrollbar
+		--scrollbar-color: #ffcc84;
+		--scrollbar-border-color-dark: #cd3b2d;
+		--scrollbar-border-color-light: #ffcc84;
+
+		// shadows
+		--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #f7b267,
+			inset -2px -2px #f7b267;
+		--footer-box-shadow: inset -1px -1px 0 #cd3b2d, inset 1px 1px 0 #bbc3c4,
+			inset -2px -2px 0 #f7b267, inset 2px 2px 0 #fff;
+		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
+			inset -1px -1px #f7b267, inset -2px -2px #f25c54;
+		--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
+			inset 1px 1px 0 #f7b267, inset -2px -2px 0 #f7b267,
+			inset 2px 2px 0 #f25c54;
+		--menu-box-shadow: inset -1px -1px 0 #f25c54, inset 1px 1px 0 #f7b267,
+			inset -2px -2px 0 #f7b267, inset 2px 2px 0 #fff;
+		--bookmark-hover-box-shadow: inset -1px 0 #f5f5f5, inset 0 -1px #f5f5f5,
+			inset 1px 0 #f25c54, inset 0 1px #f25c54;
+		--bookmark-box-shadow: inset -1px -1px 0 #f25c54, inset 1px 1px 0 #f7b267,
+			inset -2px -2px 0 #f7b267, inset 2px 2px 0 #fff;
+		--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
+			-1px -1px #f7b267 inset, -1px -1px #f25c54 inset, 1px 1px #f25c54;
+		--ok-button-box-shadow: 1px 1px #f25c54 inset, -2px -2px #f25c54 inset,
+			-3px -3px #f7b267 inset, 3px 3px #fff inset;
+		--switcher-box-shadow: 1px 1px #fff inset, 2px 2px #f7b267 inset,
+			-1px -1px #f7b267 inset, -2px -2px #f25c54 inset;
+		--switcher-fieldset-box-shadow: 1px 1px #f25c54 inset, 2px 2px #fff inset,
+			-1px -1px #fff inset, -2px -2px #f25c54 inset;
+		--switcher-wallpapers-box-shadow: 2px 2px #f25c54 inset,
+			-2px -2px #eee inset;
+	}
+
+	&[data-theme='lavender'] {
+		// colors
+		--body-background-color: #222222;
+		--body-foreground-color: #000000;
+		--root-background-color: #c77dff;
+		--skip-link-background-color: #e0aaff;
+		--taskbar-background-color: #e0aaff;
+		--menu-background-color: #e0aaff;
+		--menu-gradient: linear-gradient(#3c096c, #7b2cbf);
+		--menu-item-hover-background-color: #3c096c;
+		--menu-item-hover-foreground-color: #fff;
+		--window-background-color: #e0aaff;
+		--window-header-background-image: linear-gradient(
+			to right,
+			#3c096c,
+			#7b2cbf
+		);
+		--window-header-foreground-color: #fff;
+		--window-content-border-top-color: #7b2cbf;
+		--buttons-background-color: #e0aaff;
+		--switcher-input-active-background-color: #3c096c;
+
+		// scrollbar
+		--scrollbar-color: #e0aaff;
+		--scrollbar-border-color-dark: #3c096c;
+		--scrollbar-border-color-light: #7b2cbf;
+
+		// shadows
+		--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #7b2cbf,
+			inset -2px -2px #7b2cbf;
+		--footer-box-shadow: inset -1px -1px 0 #3c096c, inset 1px 1px 0 #bbc3c4,
+			inset -2px -2px 0 #7b2cbf, inset 2px 2px 0 #fff;
+		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
+			inset -1px -1px #7b2cbf, inset -2px -2px #3c096c;
+		--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
+			inset 1px 1px 0 #7b2cbf, inset -2px -2px 0 #7b2cbf,
+			inset 2px 2px 0 #3c096c;
+		--menu-box-shadow: inset -1px -1px 0 #3c096c, inset 1px 1px 0 #e0aaff,
+			inset -2px -2px 0 #7b2cbf, inset 2px 2px 0 #fff;
+		--bookmark-hover-box-shadow: inset -1px 0 #f5f5f5, inset 0 -1px #f5f5f5,
+			inset 1px 0 #3c096c, inset 0 1px #3c096c;
+		--bookmark-box-shadow: inset -1px -1px 0 #3c096c, inset 1px 1px 0 #e0aaff,
+			inset -2px -2px 0 #7b2cbf, inset 2px 2px 0 #fff;
+		--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
+			-1px -1px #7b2cbf inset, -1px -1px #3c096c inset, 1px 1px #3c096c;
+		--ok-button-box-shadow: 1px 1px #3c096c inset, -2px -2px #3c096c inset,
+			-3px -3px #7b2cbf inset, 3px 3px #fff inset;
+		--switcher-box-shadow: 1px 1px #fff inset, 2px 2px #7b2cbf inset,
+			-1px -1px #7b2cbf inset, -2px -2px #3c096c inset;
+		--switcher-fieldset-box-shadow: 1px 1px #3c096c inset, 2px 2px #fff inset,
+			-1px -1px #fff inset, -2px -2px #3c096c inset;
+		--switcher-wallpapers-box-shadow: 2px 2px #3c096c inset,
+			-2px -2px #eee inset;
+	}
+
+	&[data-theme='midnight'] {
+		// colors
+		--body-background-color: #222222;
+		--body-foreground-color: #fff;
+		--root-background-color: #002657;
+		--skip-link-background-color: #00132d;
+		--taskbar-background-color: #00132d;
+		--menu-background-color: #00132d;
+		--menu-gradient: linear-gradient(#002657, #00377e);
+		--menu-item-hover-background-color: #002657;
+		--menu-item-hover-foreground-color: #fff;
+		--window-background-color: #00132d;
+		--window-header-background-image: linear-gradient(
+			to right,
+			#002657,
+			#00377e
+		);
+		--window-header-foreground-color: #fff;
+		--window-content-border-top-color: #00377e;
+		--buttons-background-color: #00132d;
+		--switcher-input-active-background-color: #002657;
+		--switcher-wallpapers-background-color: #000a17;
+		--start-btn-invert: 1;
+
+		// scrollbar
+		--scrollbar-color: #00132d;
+		--scrollbar-border-color-dark: #fff;
+		--scrollbar-border-color-light: #00377e;
+
+		// shadows
+		--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #00377e,
+			inset -2px -2px #00377e;
+		--footer-box-shadow: inset -1px -1px 0 #002657, inset 1px 1px 0 #bbc3c4,
+			inset -2px -2px 0 #00377e, inset 2px 2px 0 #fff;
+		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
+			inset -1px -1px #00377e, inset -2px -2px #002657;
+		--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
+			inset 1px 1px 0 #00377e, inset -2px -2px 0 #00377e,
+			inset 2px 2px 0 #002657;
+		--menu-box-shadow: inset -1px -1px 0 #002657, inset 1px 1px 0 #e0aaff,
+			inset -2px -2px 0 #00377e, inset 2px 2px 0 #fff;
+		--bookmark-hover-box-shadow: inset -1px 0 #f5f5f5, inset 0 -1px #f5f5f5,
+			inset 1px 0 #002657, inset 0 1px #002657;
+		--bookmark-box-shadow: inset -1px -1px 0 #002657, inset 1px 1px 0 #e0aaff,
+			inset -2px -2px 0 #00377e, inset 2px 2px 0 #fff;
+		--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
+			-1px -1px #00377e inset, -1px -1px #002657 inset, 1px 1px #002657;
+		--ok-button-box-shadow: 1px 1px #002657 inset, -2px -2px #002657 inset,
+			-3px -3px #00377e inset, 3px 3px #fff inset;
+		--switcher-box-shadow: 1px 1px #fff inset, 2px 2px #00377e inset,
+			-1px -1px #00377e inset, -2px -2px #002657 inset;
+		--switcher-fieldset-box-shadow: 1px 1px #002657 inset, 2px 2px #fff inset,
+			-1px -1px #fff inset, -2px -2px #002657 inset;
+		--switcher-wallpapers-box-shadow: 2px 2px #002657 inset,
+			-2px -2px #eee inset;
+	}
 }

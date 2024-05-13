@@ -18,5 +18,7 @@ export const populateStorage = (item, value) => {
 };
 
 export const getLastPositionFromLocalStorage = (draggable) => {
-	return JSON.parse(localStorage.getItem(draggable.target.dataset.item));
+	return JSON.parse(
+		localStorage.getItem(`${draggable.target.dataset.item}-position`)
+	);
 };

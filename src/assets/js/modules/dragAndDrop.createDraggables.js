@@ -1,7 +1,6 @@
 import { gsap } from 'gsap';
 import { Draggable } from 'gsap/Draggable';
 import { options } from './dragAndDrop.options';
-import onItemDragEnd from './dragAndDrop.onDragEnd';
 
 gsap.registerPlugin(Draggable);
 

@@ -14,6 +14,9 @@
 @import 'blocks/bookmark';
 @import 'blocks/header';
 @import 'blocks/icon';
+@import 'blocks/settings';
+@import 'blocks/switcher';
+@import 'blocks/popup';
 
 // utilities
 @import 'utilities/visually-hidden';
@@ -21,3 +24,4 @@
 @import 'utilities/flow';
 @import 'utilities/divider';
 @import 'utilities/scrollbar';
+@import 'utilities/fl-underline';

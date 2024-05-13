@@ -1,0 +1,10 @@
+@use '../base/vars';
+
+:not([data-page='home']) + .root .settings {
+	display: none;
+
+	@media (min-width: vars.$breakpoint-desktop) {
+		display: flex;
+		align-items: flex-start;
+	}
+}

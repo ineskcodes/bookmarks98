@@ -1,0 +1,7 @@
+.fl-underline {
+	display: block;
+
+	&::first-letter {
+		text-decoration: underline;
+	}
+}

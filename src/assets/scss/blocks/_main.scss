@@ -2,8 +2,25 @@
 
 .main {
 	// show the homepage's main content only if it's focused/targeted through skip-link
-	[data-page='home'] &:not(:focus) {
+	&-container[data-page='home']:not(:target) & {
 		@extend .visually-hidden;
+		display: block;
+		min-height: 0;
+		min-width: 0;
+	}
+
+	&-container:focus {
+		outline: none;
+	}
+
+	&-container:focus & {
+		outline: 2px solid currentColor;
+	}
+
+	[data-page='home'] & {
+		--padding-x: 2rem;
+		--padding-y: 2rem;
+		margin: var(--padding-x) var(--padding-y);
 	}
 
 	&-container[data-page='home'] {
@@ -20,7 +37,6 @@
 	:not([data-page='home']) + .root &-container {
 		--padding-x: 0;
 		--padding-y: 0;
-		height: 100%;
 
 		@media (min-width: vars.$breakpoint-desktop) {
 			--padding-x: 2rem;
