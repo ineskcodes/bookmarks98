@@ -6,7 +6,7 @@ class SettingsPopup {
 		this.setupElements();
 		this.loadWallpapers();
 		this.loadTheme();
-		this.initPopup();
+		this.init();
 	}
 
 	setupElements() {
@@ -35,6 +35,7 @@ class SettingsPopup {
 		this.displaySelect = this.query('#display-select', this.form);
 		this.themeSelect = this.query('#theme-select', this.form);
 		this.browseInput = this.query('#browse-input', this.popup);
+		this.dialogs = [this.popup, this.alert.container];
 		this.wallpaperLabels = this.switcher.children;
 	}
 
@@ -79,8 +80,9 @@ class SettingsPopup {
 		return `/bookmarks98/${this.formatName(wallpaper)}.png`;
 	}
 
-	initPopup() {
+	init() {
 		this.buttons.open.setAttribute('aria-expanded', 'false');
+		this.dialogs.forEach((dialogEl) => this.trapFocusInside(dialogEl));
 		this.bindEvents();
 	}
 
@@ -115,7 +117,37 @@ class SettingsPopup {
 		this.popup.hidden = !isOpen;
 		inerts.forEach((el) => this.toggleInertState(isOpen, el));
 		elementToFocusOn.focus();
+
 		this.loadWallpaperInputs(isOpen);
+	}
+
+	trapFocusInside(el) {
+		const focusablesInsideElement = el.querySelectorAll(
+			'a[href], button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+		);
+		const firstFocusable = focusablesInsideElement[0];
+		const lastFocusable =
+			focusablesInsideElement[focusablesInsideElement.length - 1];
+
+		this.addFocusTrapListeners(firstFocusable, lastFocusable);
+	}
+
+	addFocusTrapListeners(firstFocusable, lastFocusable) {
+		const trapFocusKeydown = (e) => {
+			if (e.key === 'Tab') {
+				if (e.shiftKey && e.target === firstFocusable) {
+					e.preventDefault();
+					lastFocusable.focus();
+				} else if (!e.shiftKey && e.target === lastFocusable) {
+					e.preventDefault();
+					firstFocusable.focus();
+				}
+			}
+		};
+
+		[firstFocusable, lastFocusable].forEach((focusable) =>
+			focusable.addEventListener('keydown', trapFocusKeydown)
+		);
 	}
 
 	cancelSettings() {
