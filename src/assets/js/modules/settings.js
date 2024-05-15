@@ -311,6 +311,7 @@ class SettingsPopup {
 		const fileSize = file.size;
 
 		if (!this.validateFile(fileSize, fileName)) {
+			this.browseInput.value = null;
 			return;
 		}
 
