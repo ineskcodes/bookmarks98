@@ -1,0 +1,28 @@
+.alert {
+	max-width: min(100%, 20rem);
+	max-height: initial;
+	min-height: initial;
+	min-width: inherit;
+	width: auto;
+	height: auto;
+	resize: none;
+	font-size: 0.85rem;
+
+	&-container {
+		position: absolute;
+		inset: 0;
+		z-index: 999;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__content {
+		padding: 1rem;
+
+		button {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}

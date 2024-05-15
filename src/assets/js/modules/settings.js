@@ -12,6 +12,14 @@ class SettingsPopup {
 	setupElements() {
 		this.container = this.query('.settings');
 		this.popup = this.query('.popup', this.container);
+		this.alert = {
+			container: this.query('.alert', this.container),
+			firstFocusable: this.query('#alert-close-btn', this.container),
+			closeButtons: this.query('.alert button', this.container, true),
+			heading: this.query('.alert__heading', this.container),
+			message: this.query('.alert__message', this.container),
+			outer: this.query('#alert-outer', this.container),
+		};
 		this.form = this.query('form', this.container);
 		this.switcher = this.query(
 			'.switcher__wallpapers:not([data-placeholder])',
@@ -90,6 +98,13 @@ class SettingsPopup {
 		);
 		this.browseInput.addEventListener('input', this.handleUpload.bind(this));
 		this.themeSelect.addEventListener('input', this.previewTheme.bind(this));
+		this.alert.closeButtons.forEach((button) => {
+			button.addEventListener('click', this.hideAlert.bind(this));
+		});
+		this.alert.outer.addEventListener(
+			'click',
+			this.handleClickOutsideAlert.bind(this)
+		);
 	}
 
 	togglePopup(isOpen) {
@@ -117,6 +132,7 @@ class SettingsPopup {
 		focusablesInsideElements.forEach(
 			(focusableEl) => (focusableEl.tabIndex = Number(isInert))
 		);
+		element.inert = isInert;
 	}
 
 	loadWallpaperInputs(addListeners) {
@@ -330,20 +346,44 @@ class SettingsPopup {
 		});
 
 		if (size > 1_048_576) {
-			alert(
+			this.showAlert(
+				'File Size Exceeds Limit',
 				'The file size exceeds the limit of 1MB. Please upload a smaller file.'
 			);
 			return false;
 		}
 
 		if (isDuplicate) {
-			alert(
+			this.showAlert(
+				'Duplicate File Name',
 				`A file named "${name}" has already been uploaded. Please upload a different file.`
 			);
 			return false;
 		}
 
 		return true;
+	}
+
+	showAlert(title, message) {
+		const inerts = [main, header, footer, this.buttons.open, this.popup];
+		this.alert.heading.innerText = title;
+		this.alert.message.innerText = message;
+		inerts.forEach((el) => this.toggleInertState(true, el));
+		this.alert.outer.hidden = false;
+		this.alert.container.focus();
+	}
+
+	hideAlert() {
+		const inerts = [main, header, footer, this.buttons.open, this.popup];
+		this.alert.outer.hidden = true;
+		inerts.forEach((el) => this.toggleInertState(false, el));
+		this.browseInput.focus();
+	}
+
+	handleClickOutsideAlert(e) {
+		if (e.target === this.alert.outer) {
+			this.hideAlert();
+		}
 	}
 
 	updateSwitcher(wallpaper) {
