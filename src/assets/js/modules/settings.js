@@ -110,14 +110,11 @@ class SettingsPopup {
 	}
 
 	togglePopup(isOpen) {
-		const inerts = [main, header, footer, this.buttons.open];
 		const elementToFocusOn = isOpen ? this.popup : this.buttons.open;
 
 		this.buttons.open.setAttribute('aria-expanded', `${isOpen}`);
 		this.popup.hidden = !isOpen;
-		inerts.forEach((el) => this.toggleInertState(isOpen, el));
 		elementToFocusOn.focus();
-
 		this.loadWallpaperInputs(isOpen);
 	}
 
@@ -153,18 +150,6 @@ class SettingsPopup {
 	cancelSettings() {
 		this.setTheme(true);
 		this.togglePopup(false);
-	}
-
-	toggleInertState(isInert, element) {
-		const focusablesInsideElements = element.querySelectorAll(
-			'a[href], button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
-		);
-
-		element.setAttribute('aria-hidden', `${isInert}`);
-		focusablesInsideElements.forEach(
-			(focusableEl) => (focusableEl.tabIndex = Number(isInert))
-		);
-		element.inert = isInert;
 	}
 
 	loadWallpaperInputs(addListeners) {
@@ -397,18 +382,14 @@ class SettingsPopup {
 	}
 
 	showAlert(title, message) {
-		const inerts = [main, header, footer, this.buttons.open, this.popup];
 		this.alert.heading.innerText = title;
 		this.alert.message.innerText = message;
-		inerts.forEach((el) => this.toggleInertState(true, el));
 		this.alert.outer.hidden = false;
 		this.alert.container.focus();
 	}
 
 	hideAlert() {
-		const inerts = [main, header, footer, this.buttons.open, this.popup];
 		this.alert.outer.hidden = true;
-		inerts.forEach((el) => this.toggleInertState(false, el));
 		this.browseInput.focus();
 	}
 
