@@ -3,6 +3,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPassthroughCopy({ 'src/assets/icons': '/' });
 	eleventyConfig.addPassthroughCopy({ 'src/assets/misc': '/' });
 	eleventyConfig.addPassthroughCopy({ 'src/assets/wallpapers': '/' });
+	eleventyConfig.addPassthroughCopy({ 'src/assets/themes': '/' });
 
 	return {
 		markdownTemplateEngine: 'njk',

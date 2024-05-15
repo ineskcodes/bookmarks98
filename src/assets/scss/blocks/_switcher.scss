@@ -27,6 +27,17 @@
 		background-size: var(--preview-size, 22.5% auto);
 		background-repeat: var(--repeat, repeat);
 		background-position: var(--position, auto);
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-image: var(
+				--theme-preview,
+				url('/src/assets/themes/default.png')
+			);
+			background-size: 100% 100%;
+		}
 	}
 
 	&__form--inner {

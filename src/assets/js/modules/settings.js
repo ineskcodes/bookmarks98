@@ -376,11 +376,14 @@ class SettingsPopup {
 
 	previewTheme(e) {
 		this.tempTheme = e.currentTarget.value;
-		document.documentElement.dataset.theme = this.tempTheme;
+		const previewImageSrc = `/bookmarks98/${this.tempTheme}.png`;
+		root.style.setProperty('--theme-preview', `url("${previewImageSrc}")`);
 	}
 
 	setTheme(shouldRevert) {
 		const selectedTheme = shouldRevert ? this.theme : this.tempTheme;
+		const previewImageSrc = `/bookmarks98/${selectedTheme}.png`;
+		root.style.setProperty('--theme-preview', `url("${previewImageSrc}")`);
 		this.theme = selectedTheme;
 		this.tempTheme = this.theme;
 		this.themeSelect.value = this.theme;
