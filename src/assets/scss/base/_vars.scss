@@ -20,6 +20,9 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 	--window-content-border-top-color: #929292;
 	--buttons-background-color: #c0c0c0;
 	--switcher-input-active-background-color: #050481;
+	--dropdown-arrow-box-background-color: #c0c0c0;
+	--dropdown-focus-background-color: #050481;
+	--dropdown-focus-foreground-color: #fff;
 
 	// scrollbar
 	--scrollbar-color: #c0c0c0;
@@ -66,6 +69,10 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 	--switcher-fieldset-box-shadow: 1px 1px #555 inset, 2px 2px #fff inset,
 		-1px -1px #fff inset, -2px -2px #555 inset;
 	--switcher-wallpapers-box-shadow: 2px 2px #555 inset, -2px -2px #eee inset;
+	--dropdown-box-shadow: inset -1px -1px #fff, inset 1px 1px #808080,
+		inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+	--dropdown-arrow-box-box-shadow: -1px -1px #000 inset, 1px 1px #dfdfdf inset,
+		2px 2px #fff inset, -2px -2px #808080 inset;
 
 	&[data-theme='blush'] {
 		// colors
@@ -85,6 +92,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		--window-content-border-top-color: #ff4d6d;
 		--buttons-background-color: #ffccd5;
 		--switcher-input-active-background-color: #c9184a;
+		--dropdown-arrow-box-background-color: #ffccd5;
+		--dropdown-focus-background-color: #c9184a;
 
 		// scrollbar
 		--scrollbar-color: #ffccd5;
@@ -117,6 +126,10 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			-1px -1px #fff inset, -2px -2px #ff4d6d inset;
 		--switcher-wallpapers-box-shadow: 2px 2px #ff4d6d inset,
 			-2px -2px #eee inset;
+		--dropdown-box-shadow: inset -1px -1px #fff, inset 1px 1px #ff4d6d,
+			inset -2px -2px #ffb3c1, inset 2px 2px #c9184a;
+		--dropdown-arrow-box-box-shadow: -1px -1px #c9184a inset,
+			1px 1px #ffb3c1 inset, 2px 2px #fff inset, -2px -2px #ff4d6d inset;
 	}
 
 	&[data-theme='olive'] {
@@ -137,6 +150,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		--window-content-border-top-color: #3c5a14;
 		--buttons-background-color: #bbca8d;
 		--switcher-input-active-background-color: #11270b;
+		--dropdown-arrow-box-background-color: #bbca8d;
+		--dropdown-focus-background-color: #11270b;
 
 		// scrollbar
 		--scrollbar-color: #bbca8d;
@@ -169,6 +184,10 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			-1px -1px #fff inset, -2px -2px #3c5a14 inset;
 		--switcher-wallpapers-box-shadow: 2px 2px #3c5a14 inset,
 			-2px -2px #eee inset;
+		--dropdown-box-shadow: inset -1px -1px #fff, inset 1px 1px #3c5a14,
+			inset -2px -2px #94bc5c, inset 2px 2px #11270b;
+		--dropdown-arrow-box-box-shadow: -1px -1px #11270b inset,
+			1px 1px #94bc5c inset, 2px 2px #fff inset, -2px -2px #3c5a14 inset;
 	}
 
 	&[data-theme='ocean'] {
@@ -189,6 +208,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		--window-content-border-top-color: #023e8a;
 		--buttons-background-color: #90e0ef;
 		--switcher-input-active-background-color: #03045e;
+		--dropdown-arrow-box-background-color: #90e0ef;
+		--dropdown-focus-background-color: #03045e;
 
 		// scrollbar
 		--scrollbar-color: #90e0ef;
@@ -221,6 +242,10 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			-1px -1px #fff inset, -2px -2px #023e8a inset;
 		--switcher-wallpapers-box-shadow: 2px 2px #023e8a inset,
 			-2px -2px #eee inset;
+		--dropdown-box-shadow: inset -1px -1px #fff, inset 1px 1px #023e8a,
+			inset -2px -2px #00b4d8, inset 2px 2px #03045e;
+		--dropdown-arrow-box-box-shadow: -1px -1px #03045e inset,
+			1px 1px #00b4d8 inset, 2px 2px #fff inset, -2px -2px #023e8a inset;
 	}
 
 	&[data-theme='peach'] {
@@ -241,6 +266,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		--window-content-border-top-color: #f25c54;
 		--buttons-background-color: #ffcc84;
 		--switcher-input-active-background-color: #cd3b2d;
+		--dropdown-arrow-box-background-color: #ffcc84;
+		--dropdown-focus-background-color: #cd3b2d;
 
 		// scrollbar
 		--scrollbar-color: #ffcc84;
@@ -273,6 +300,10 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			-1px -1px #fff inset, -2px -2px #f25c54 inset;
 		--switcher-wallpapers-box-shadow: 2px 2px #f25c54 inset,
 			-2px -2px #eee inset;
+		--dropdown-box-shadow: inset -1px -1px #fff, inset 1px 1px #f25c54,
+			inset -2px -2px #f7b267, inset 2px 2px #cd3b2d;
+		--dropdown-arrow-box-box-shadow: -1px -1px #cd3b2d inset,
+			1px 1px #f7b267 inset, 2px 2px #fff inset, -2px -2px #f25c54 inset;
 	}
 
 	&[data-theme='lavender'] {
@@ -293,6 +324,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		--window-content-border-top-color: #7b2cbf;
 		--buttons-background-color: #e0aaff;
 		--switcher-input-active-background-color: #3c096c;
+		--dropdown-arrow-box-background-color: #e0aaff;
+		--dropdown-focus-background-color: #3c096c;
 
 		// scrollbar
 		--scrollbar-color: #e0aaff;
@@ -325,6 +358,10 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			-1px -1px #fff inset, -2px -2px #3c096c inset;
 		--switcher-wallpapers-box-shadow: 2px 2px #3c096c inset,
 			-2px -2px #eee inset;
+		--dropdown-box-shadow: inset -1px -1px #fff, inset 1px 1px #7b2cbf,
+			inset -2px -2px #e0aaff, inset 2px 2px #3c096c;
+		--dropdown-arrow-box-box-shadow: -1px -1px #3c096c inset,
+			1px 1px #e0aaff inset, 2px 2px #fff inset, -2px -2px #7b2cbf inset;
 	}
 
 	&[data-theme='midnight'] {
@@ -348,6 +385,10 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		--switcher-input-active-background-color: #002657;
 		--switcher-wallpapers-background-color: #000a17;
 		--start-btn-invert: 1;
+		--dropdown-background-color: #000a17;
+		--dropdown-arrow-box-background-color: #00132d;
+		--dropdown-focus-background-color: #fff;
+		--dropdown-focus-foreground-color: #000a17;
 
 		// scrollbar
 		--scrollbar-color: #00132d;
@@ -380,5 +421,9 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			-1px -1px #fff inset, -2px -2px #002657 inset;
 		--switcher-wallpapers-box-shadow: 2px 2px #002657 inset,
 			-2px -2px #eee inset;
+		--dropdown-box-shadow: inset -1px -1px #fff, inset 1px 1px #002657,
+			inset -2px -2px #00377e, inset 2px 2px #00132d;
+		--dropdown-arrow-box-box-shadow: -1px -1px #00132d inset,
+			1px 1px #00377e inset, 2px 2px #fff inset, -2px -2px #002657 inset;
 	}
 }

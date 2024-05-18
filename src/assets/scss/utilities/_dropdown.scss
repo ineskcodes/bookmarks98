@@ -1,0 +1,49 @@
+.dropdown {
+	--arrow-box-size: 1rem;
+	position: relative;
+
+	select {
+		display: block;
+		box-shadow: var(--dropdown-box-shadow);
+		background-color: var(--dropdown-background-color, #fff);
+		color: var(--dropdown-foreground-color, var(--body-foreground-color));
+		padding: 1px 4px;
+		border: 0;
+		outline: none;
+		font-size: 0.95em;
+	}
+
+	select:focus {
+		background-color: var(--dropdown-focus-background-color);
+		color: var(--dropdown-focus-foreground-color);
+	}
+
+	select:focus option {
+		background-color: var(--dropdown-background-color, #fff);
+		color: var(--dropdown-foreground-color, var(--body-foreground-color));
+	}
+
+	&::before,
+	&::after {
+		content: '';
+		aspect-ratio: 1;
+		min-width: var(--arrow-box-size);
+		height: calc(100% - 4px);
+		display: block;
+		position: absolute;
+		top: 2px;
+		bottom: 2px;
+		right: 2px;
+		pointer-events: none;
+	}
+
+	&::before {
+		background-color: var(--dropdown-arrow-box-background-color);
+		box-shadow: var(--dropdown-arrow-box-box-shadow);
+	}
+
+	&::after {
+		background-color: currentColor;
+		clip-path: polygon(30% 40%, 70% 40%, 50% 60%);
+	}
+}
