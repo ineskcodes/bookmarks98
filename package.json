@@ -4,6 +4,7 @@
 	"description": "",
 	"source": [
 		"src/assets/js/main.js",
+		"src/assets/js/swup.js",
 		"src/assets/scss/main.scss"
 	],
 	"scripts": {
@@ -31,6 +32,7 @@
 	},
 	"dependencies": {
 		"gsap": "^3.12.5",
-		"npm-run-all": "^4.1.5"
+		"npm-run-all": "^4.1.5",
+		"swup": "^4.6.1"
 	}
 }
