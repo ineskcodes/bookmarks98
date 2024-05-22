@@ -1,5 +1,8 @@
+import { getMaxZIndex } from './utils';
+
 class Menu {
 	constructor() {
+		this.taskbar = document.querySelector('.root__taskbar');
 		this.toggle = document.querySelector('.menu__toggle');
 		this.details = this.toggle.closest('details');
 		this.toggle.addEventListener('click', () => this.toggleMenu());
@@ -23,7 +26,7 @@ class Menu {
 		this.toggle.setAttribute('aria-expanded', !this.ariaExpanded);
 
 		if (windows) {
-			windows.forEach((window) => (window.style.zIndex = 0));
+			this.taskbar.style.zIndex = getMaxZIndex(windows) + 1;
 		}
 	}
 }

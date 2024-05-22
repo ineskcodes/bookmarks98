@@ -14,10 +14,6 @@ export const options = {
 		onDrag: function () {
 			onItemDrag(this);
 		},
-		zIndex: {
-			onDragStart: 9999,
-			onDragEnd: 'auto',
-		},
 	},
 	icons: {
 		cursor: 'pointer',
@@ -26,6 +22,10 @@ export const options = {
 			document.querySelector('.footer'),
 			...document.querySelectorAll('[data-draggable="icon"]'),
 		],
+		zIndex: {
+			onDragStart: 9999,
+			onDragEnd: 'auto',
+		},
 	},
 	window: {
 		triggerSelector: '[data-trigger]',

@@ -22,3 +22,16 @@ export const getLastPositionFromLocalStorage = (draggable) => {
 		localStorage.getItem(`${draggable.target.dataset.item}-position`)
 	);
 };
+
+export const getMaxZIndex = ([elementA, elementB]) => {
+	let zIndexes = [
+		getComputedStyle(elementA).zIndex,
+		getComputedStyle(elementB).zIndex,
+	];
+
+	zIndexes = zIndexes.map((zIndex) =>
+		zIndex === 'auto' ? 0 : parseInt(zIndex)
+	);
+
+	return zIndexes.reduce((zIndexA, zIndexB) => Math.max(zIndexA, zIndexB));
+};
