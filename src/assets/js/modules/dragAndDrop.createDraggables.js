@@ -4,13 +4,17 @@ import { options } from './dragAndDrop.options';
 
 gsap.registerPlugin(Draggable);
 
-function createDraggables() {
+async function createDraggables() {
 	const icons = document.querySelectorAll('[data-draggable="icon"]');
 	const windows = document.querySelectorAll('[data-draggable="window"]');
+	const doNotOverlapWith = options.icons.doNotOverlapWith
+		.map((selector) => [...document.querySelectorAll(selector)])
+		.flat();
 
 	Draggable.create(icons, {
 		...options.global,
 		...options.icons,
+		doNotOverlapWith,
 	});
 
 	if (windows) {

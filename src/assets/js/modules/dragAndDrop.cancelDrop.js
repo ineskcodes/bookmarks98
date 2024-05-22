@@ -3,6 +3,7 @@ import { getLastPositionFromLocalStorage } from './utils';
 
 function cancelDrop(draggable) {
 	const { target } = draggable;
+	const { zIndex } = draggable.vars;
 	const lastPosition = getLastPositionFromLocalStorage(draggable);
 
 	gsap.to(target, {
@@ -11,7 +12,9 @@ function cancelDrop(draggable) {
 		y: lastPosition ? lastPosition.y : 0,
 	});
 
-	target.style.zIndex = draggable.vars.zIndex.onDragEnd;
+	if (zIndex) {
+		target.style.zIndex = draggable.vars.zIndex.onDragEnd;
+	}
 }
 
 export default cancelDrop;
