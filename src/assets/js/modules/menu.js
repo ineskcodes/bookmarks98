@@ -34,3 +34,5 @@ class Menu {
 if (document.querySelector('.menu')) {
 	new Menu();
 }
+
+export default Menu;

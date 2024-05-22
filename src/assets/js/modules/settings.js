@@ -449,3 +449,5 @@ class SettingsPopup {
 }
 
 new SettingsPopup();
+
+export default SettingsPopup;
