@@ -1,6 +1,6 @@
 .transition-fade {
 	html.is-changing & {
-		transition: opacity 0.1s;
+		transition: opacity 0.1ms;
 		opacity: 1;
 	}
 
