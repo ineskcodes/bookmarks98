@@ -1,4 +1,5 @@
-import { root, main, header, footer } from './elements';
+import { root, windows } from './elements';
+import { getMaxZIndex } from './utils';
 import { wallpapers } from './wallpapers';
 
 class SettingsPopup {
@@ -111,8 +112,10 @@ class SettingsPopup {
 
 	togglePopup(isOpen) {
 		const elementToFocusOn = isOpen ? this.popup : this.buttons.open;
+		const zIndex = isOpen ? getMaxZIndex(windows) + 1 : 'auto';
 
 		this.buttons.open.setAttribute('aria-expanded', `${isOpen}`);
+		this.popup.style.zIndex = zIndex;
 		this.popup.hidden = !isOpen;
 		elementToFocusOn.focus();
 		this.loadWallpaperInputs(isOpen);
