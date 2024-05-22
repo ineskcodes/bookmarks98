@@ -12,6 +12,9 @@ swup.hooks.on('page:view', async () => {
 		const { default: Menu } = await import('./modules/menu.js');
 		const { default: SettingsPopup } = await import('./modules/settings.js');
 		const { default: Bookmarks } = await import('./modules/bookmarks.js');
+		const { default: WindowManager } = await import(
+			'./modules/windowManager.js'
+		);
 		const { default: createDraggables } = await import(
 			'./modules/dragAndDrop.createDraggables.js'
 		);
@@ -26,6 +29,7 @@ swup.hooks.on('page:view', async () => {
 
 		new SettingsPopup();
 		new Menu();
+		new WindowManager();
 
 		console.log('Modules loaded successfully.');
 	} catch (error) {

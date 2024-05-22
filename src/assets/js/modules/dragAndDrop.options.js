@@ -30,5 +30,6 @@ export const options = {
 	},
 	window: {
 		triggerSelector: '[data-trigger]',
+		zIndexBoost: true,
 	},
 };
