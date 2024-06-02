@@ -111,7 +111,7 @@ class SettingsPopup {
 
 	togglePopup(isOpen) {
 		const elementToFocusOn = isOpen ? this.popup : this.buttons.open;
-
+    
 		this.buttons.open.setAttribute('aria-expanded', `${isOpen}`);
 		this.popup.hidden = !isOpen;
 		elementToFocusOn.focus();
