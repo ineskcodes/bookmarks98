@@ -2,9 +2,16 @@ import { getMaxZIndex } from './utils';
 
 class WindowManager {
 	constructor() {
-		this.windows = document.querySelectorAll('.window');
+		this.mainWindow = document.querySelector('.window.main');
+		this.settingsWindow = document.querySelector('.popup.window');
+		this.windows = [this.mainWindow, this.settingsWindow];
+		this.init();
+	}
+
+	init() {
+		this.mainWindow.style.zIndex = getMaxZIndex(this.windows) + 1;
 		this.windows.forEach((window) => {
-			window.addEventListener('click', this.handleClick.bind(this));
+			window.addEventListener('mousedown', this.handleClick.bind(this));
 		});
 	}
 
@@ -17,3 +24,5 @@ class WindowManager {
 if (document.querySelector('.window')) {
 	new WindowManager();
 }
+
+export default WindowManager;

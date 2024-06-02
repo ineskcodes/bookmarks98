@@ -21,3 +21,5 @@ class Bookmarks {
 if (document.querySelector('.bookmarks')) {
 	new Bookmarks();
 }
+
+export default Bookmarks;

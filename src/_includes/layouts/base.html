@@ -109,7 +109,7 @@
 		</script>
 	</head>
 	<body>
-		<div data-page="{{ pageHook }}" class="visually-hidden"></div>
+		<div id="page-hook" data-page="{{ pageHook }}" class="visually-hidden"></div>
 		<div class="[ root ] [ scrollbar ]">
 			<div class="root__desktop">
 				{% include "partials/site-head.html" %} {% include
@@ -119,5 +119,6 @@
 		</div>
 
 		<script defer type="module" src="{{ '/js/main.js' | url }}"></script>
+		<script defer type="module" src="{{ '/js/swup.js' | url }}"></script>
 	</body>
 </html>

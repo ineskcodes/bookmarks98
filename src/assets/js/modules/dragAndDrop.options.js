@@ -18,16 +18,18 @@ export const options = {
 	icons: {
 		cursor: 'pointer',
 		doNotOverlapWith: [
-			document.querySelectorAll('[data-draggable="window"]'),
-			document.querySelector('.footer'),
-			...document.querySelectorAll('[data-draggable="icon"]'),
+			'[data-draggable="window"]',
+			'footer',
+			'[data-draggable="icon"]',
 		],
 		zIndex: {
 			onDragStart: 9999,
 			onDragEnd: 'auto',
 		},
+		zIndexBoost: false,
 	},
 	window: {
 		triggerSelector: '[data-trigger]',
+		zIndexBoost: true,
 	},
 };
