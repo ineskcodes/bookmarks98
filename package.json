@@ -31,6 +31,7 @@
 		"sass": "^1.75.0"
 	},
 	"dependencies": {
+		"@swup/a11y-plugin": "^5.0.0",
 		"@swup/head-plugin": "^2.2.0",
 		"@swup/scripts-plugin": "^2.1.0",
 		"gsap": "^3.12.5",

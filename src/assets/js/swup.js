@@ -1,10 +1,15 @@
 import Swup from 'swup';
 import SwupHeadPlugin from '@swup/head-plugin';
 import SwupScriptsPlugin from '@swup/scripts-plugin';
+import SwupA11yPlugin from '@swup/a11y-plugin';
 
 const swup = new Swup({
 	containers: ['#content', '#page-hook'],
-	plugins: [new SwupHeadPlugin(), new SwupScriptsPlugin({ body: false })],
+	plugins: [
+		new SwupHeadPlugin(),
+		new SwupScriptsPlugin({ body: false }),
+		new SwupA11yPlugin(),
+	],
 });
 
 swup.hooks.on('page:view', async () => {
