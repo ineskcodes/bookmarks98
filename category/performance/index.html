@@ -109,13 +109,13 @@
 		</script>
 	</head>
 	<body>
-		<div data-page="bookmarks" class="visually-hidden"></div>
+		<div id="page-hook" data-page="bookmarks" class="visually-hidden"></div>
 		<div class="[ root ] [ scrollbar ]">
 			<div class="root__desktop">
 				
 
 
-<a class="skip-link" href="#content">Skip to main content</a>
+<a data-no-swup class="skip-link" href="#content">Skip to main content</a>
 <header class="[ header ] [ wrapper ]">
 	<div class="header__inner">
         <nav aria-labelledby="header-nav-label" class="nav" data-parent="header">
@@ -572,7 +572,7 @@
 
 
 
-<div tabindex="-1" id="content" class="[ main-container ] [ wrapper ]" data-page="bookmarks">
+<div tabindex="-1" id="content" class="[ main-container ] [ wrapper transition-fade ]" data-page="bookmarks">
 	<main data-draggable="window" data-item="window" class="[ main ] [ window ]" data-page="bookmarks" data-has-window="false">
 		<header data-trigger class="window__header">
 			<img width="16" height="16" alt="" src="/bookmarks98/performance-icon-small.png" class="window__icon">
@@ -1265,5 +1265,6 @@
 		</div>
 
 		<script defer type="module" src="/bookmarks98/js/main.js"></script>
+		<script defer type="module" src="/bookmarks98/js/swup.js"></script>
 	</body>
 </html>
