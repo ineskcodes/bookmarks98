@@ -15,7 +15,6 @@ const swup = new Swup({
 swup.hooks.on('page:view', async () => {
 	try {
 		const { default: Menu } = await import('./modules/menu.js');
-		const { default: SettingsPopup } = await import('./modules/settings.js');
 		const { default: Bookmarks } = await import('./modules/bookmarks.js');
 		const { default: WindowManager } = await import(
 			'./modules/windowManager.js'
@@ -32,7 +31,6 @@ swup.hooks.on('page:view', async () => {
 			createDraggables();
 		}
 
-		new SettingsPopup();
 		new Menu();
 		new WindowManager();
 
