@@ -77,7 +77,7 @@ class SettingsPopup {
 	}
 
 	generateUrl(wallpaper) {
-		return `/bookmarks98/${this.formatName(wallpaper)}.png`;
+		return `/${this.formatName(wallpaper)}.png`;
 	}
 
 	init() {
@@ -111,7 +111,7 @@ class SettingsPopup {
 
 	togglePopup(isOpen) {
 		const elementToFocusOn = isOpen ? this.popup : this.buttons.open;
-    
+
 		this.buttons.open.setAttribute('aria-expanded', `${isOpen}`);
 		this.popup.hidden = !isOpen;
 		elementToFocusOn.focus();
@@ -434,13 +434,13 @@ class SettingsPopup {
 
 	previewTheme(e) {
 		this.tempTheme = e.currentTarget.value;
-		const previewImageSrc = `/bookmarks98/${this.tempTheme}.png`;
+		const previewImageSrc = `/${this.tempTheme}.png`;
 		root.style.setProperty('--theme-preview', `url("${previewImageSrc}")`);
 	}
 
 	setTheme(shouldRevert) {
 		const selectedTheme = shouldRevert ? this.theme : this.tempTheme;
-		const previewImageSrc = `/bookmarks98/${selectedTheme}.png`;
+		const previewImageSrc = `/${selectedTheme}.png`;
 		root.style.setProperty('--theme-preview', `url("${previewImageSrc}")`);
 		this.theme = selectedTheme;
 		this.tempTheme = this.theme;
