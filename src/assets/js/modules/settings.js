@@ -391,6 +391,7 @@ class SettingsPopup {
 		this.alert.message.innerText = message;
 		this.alert.outer.hidden = false;
 		this.alert.container.focus();
+		this.alert.container.dispatchEvent(new Event('mousedown'));
 	}
 
 	hideAlert() {
