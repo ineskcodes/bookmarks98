@@ -1,0 +1,13 @@
+.noise::after {
+	content: '';
+	position: fixed;
+	inset: 0;
+	width: 100vw;
+	height: 100vh;
+	background-image: url('/src/assets/misc/noise.png');
+	background-size: 480px auto;
+	opacity: 0.15;
+	mix-blend-mode: screen;
+	z-index: 9999;
+	pointer-events: none;
+}
