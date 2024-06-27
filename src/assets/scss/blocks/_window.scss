@@ -10,6 +10,7 @@
 	background-color: var(--window-background-color);
 	overflow: auto;
 	z-index: 1;
+	box-shadow: var(--window-box-shadow);
 
 	@media (min-width: vars.$breakpoint-desktop) {
 		resize: both;

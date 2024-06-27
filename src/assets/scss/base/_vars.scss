@@ -73,6 +73,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
 	--dropdown-arrow-box-box-shadow: -1px -1px #000 inset, 1px 1px #dfdfdf inset,
 		2px 2px #fff inset, -2px -2px #808080 inset;
+	--window-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #ffc6c7,
+		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
 
 	&[data-theme='blush'] {
 		// colors
@@ -130,6 +132,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #ffb3c1, inset 2px 2px #c9184a;
 		--dropdown-arrow-box-box-shadow: -1px -1px #c9184a inset,
 			1px 1px #ffb3c1 inset, 2px 2px #fff inset, -2px -2px #ff4d6d inset;
+		--window-box-shadow: inset -1px -1px 0 #c9184a, inset 1px 1px 0 #bbc3c4,
+			inset -2px -2px 0 #ffb3c1, inset 2px 2px 0 #fff;
 	}
 
 	&[data-theme='olive'] {
@@ -188,6 +192,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #94bc5c, inset 2px 2px #11270b;
 		--dropdown-arrow-box-box-shadow: -1px -1px #11270b inset,
 			1px 1px #94bc5c inset, 2px 2px #fff inset, -2px -2px #3c5a14 inset;
+		--window-box-shadow: inset -1px -1px 0 #11270b, inset 1px 1px 0 #bbc3c4,
+			inset -2px -2px 0 #94bc5c, inset 2px 2px 0 #fff;
 	}
 
 	&[data-theme='ocean'] {
@@ -246,6 +252,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #00b4d8, inset 2px 2px #03045e;
 		--dropdown-arrow-box-box-shadow: -1px -1px #03045e inset,
 			1px 1px #00b4d8 inset, 2px 2px #fff inset, -2px -2px #023e8a inset;
+		--window-box-shadow: inset -1px -1px 0 #03045e, inset 1px 1px 0 #bbc3c4,
+			inset -2px -2px 0 #00b4d8, inset 2px 2px 0 #fff;
 	}
 
 	&[data-theme='peach'] {
@@ -304,6 +312,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #f7b267, inset 2px 2px #cd3b2d;
 		--dropdown-arrow-box-box-shadow: -1px -1px #cd3b2d inset,
 			1px 1px #f7b267 inset, 2px 2px #fff inset, -2px -2px #f25c54 inset;
+		--window-box-shadow: inset -1px -1px 0 #cd3b2d, inset 1px 1px 0 #bbc3c4,
+			inset -2px -2px 0 #f7b267, inset 2px 2px 0 #fff;
 	}
 
 	&[data-theme='lavender'] {
@@ -362,6 +372,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #e0aaff, inset 2px 2px #3c096c;
 		--dropdown-arrow-box-box-shadow: -1px -1px #3c096c inset,
 			1px 1px #e0aaff inset, 2px 2px #fff inset, -2px -2px #7b2cbf inset;
+		--window-box-shadow: inset -1px -1px 0 #3c096c, inset 1px 1px 0 #bbc3c4,
+			inset -2px -2px 0 #7b2cbf, inset 2px 2px 0 #fff;
 	}
 
 	&[data-theme='midnight'] {
@@ -425,5 +437,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #00377e, inset 2px 2px #00132d;
 		--dropdown-arrow-box-box-shadow: -1px -1px #00132d inset,
 			1px 1px #00377e inset, 2px 2px #fff inset, -2px -2px #002657 inset;
+		--window-box-shadow: inset -1px -1px 0 #002657, inset 1px 1px 0 #bbc3c4,
+			inset -2px -2px 0 #00377e, inset 2px 2px 0 #fff;
 	}
 }
