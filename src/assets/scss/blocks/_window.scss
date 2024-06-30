@@ -68,7 +68,7 @@
 	}
 
 	&[data-item='window'] {
-		@media (max-width: vars.$breakpoint-desktop) {
+		@media (max-width: #{vars.$breakpoint-desktop - vars.$px}) {
 			/* using !important to override values provided from gsap's draggable */
 			transform: translate(0, 0) !important;
 		}

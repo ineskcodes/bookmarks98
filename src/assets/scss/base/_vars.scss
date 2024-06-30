@@ -1,4 +1,7 @@
+@use 'sass:math';
+
 $breakpoint-desktop: 43.75em;
+$px: math.div(1em, 16);
 $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 	'svg', 'git', 'colors', 'design', 'performance', 'assets', 'tools', 'react',
 	'other', 'settings', 'about';
