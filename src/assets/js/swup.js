@@ -14,21 +14,26 @@ const swup = new Swup({
 
 swup.hooks.on('page:view', async () => {
 	try {
+		const vw = Math.max(
+			document.documentElement.clientWidth || 0,
+			window.innerWidth || 0
+		);
 		const { default: Menu } = await import('./modules/menu.js');
 		const { default: Bookmarks } = await import('./modules/bookmarks.js');
 		const { default: WindowManager } = await import(
 			'./modules/windowManager.js'
-		);
-		const { default: createDraggables } = await import(
-			'./modules/dragAndDrop.createDraggables.js'
 		);
 
 		if (document.querySelector('.bookmarks')) {
 			new Bookmarks();
 		}
 
-		if (createDraggables) {
-			createDraggables();
+		if (vw >= 700) {
+			import('./modules/dragAndDrop.createDraggables.js').then(
+				(createDraggables) => {
+					createDraggables.default();
+				}
+			);
 		}
 
 		new Menu();
