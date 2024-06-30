@@ -100,8 +100,8 @@
 	}
 
 	.wallpaper {
-		display: block;
-		gap: 0.1rem;
+		display: flex;
+		gap: 0.5ch;
 	}
 
 	.wallpaper input[type='radio'] {
@@ -128,6 +128,12 @@
 		vertical-align: text-bottom;
 	}
 
+	.wallpaper span {
+		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
 	&__controls {
 		display: flex;
 		justify-content: space-between;
@@ -140,6 +146,13 @@
 		position: relative;
 	}
 
+	&__browse--outline {
+		display: block;
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+	}
+
 	&__browse input[name='browse'] {
 		position: absolute;
 		top: 0;
@@ -147,6 +160,11 @@
 		width: 0;
 		min-width: 100%;
 		opacity: 0;
+		pointer-events: none;
+	}
+
+	input[name='browse']:focus + &__browse--outline {
+		outline: 2px solid currentColor;
 	}
 
 	&__buttons {
@@ -165,6 +183,11 @@
 		box-shadow: var(--buttons-box-shadow);
 		cursor: pointer;
 		flex: 0 1 11ch;
+
+		&:active {
+			outline: 1px dotted currentColor;
+			outline-offset: -4px;
+		}
 	}
 
 	&__button[id='settings-ok-btn'] {

@@ -28,6 +28,7 @@
 	}
 
 	&__link[aria-hidden] {
+		display: grid !important;
 		opacity: 1;
 	}
 
@@ -49,7 +50,7 @@
 	.header &__link--name,
 	.settings &__link--name {
 		padding: 0 0.25ch;
-		background-color: rgba(0, 0, 0, 0.45);
+		background-color: rgba(0, 0, 0, 0.2);
 		line-height: 1;
 	}
 

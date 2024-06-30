@@ -51,17 +51,17 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 	// shadows
 	--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #414141,
 		inset -2px -2px #414141;
-	--footer-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #ffc6c7,
+	--footer-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #c0c0c0,
 		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
 	--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
 		inset -1px -1px #414141, inset -2px -2px #414141;
 	--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
 		inset 1px 1px 0 #414141, inset -2px -2px 0 #a0abac, inset 2px 2px 0 #808088;
-	--menu-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #ffc6c7,
+	--menu-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #c0c0c0,
 		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
 	--bookmark-hover-box-shadow: inset -1px 0 #f5f5f5, inset 0 -1px #f5f5f5,
 		inset 1px 0 #808088, inset 0 1px #808088;
-	--bookmark-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #ffc6c7,
+	--bookmark-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #c0c0c0,
 		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
 	--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
 		-1px -1px #777 inset, -1px -1px #222 inset, 1px 1px #222;
@@ -76,7 +76,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
 	--dropdown-arrow-box-box-shadow: -1px -1px #000 inset, 1px 1px #dfdfdf inset,
 		2px 2px #fff inset, -2px -2px #808080 inset;
-	--window-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #ffc6c7,
+	--window-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #c0c0c0,
 		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
 
 	&[data-theme='blush'] {
@@ -108,7 +108,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		// shadows
 		--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #ffb3c1,
 			inset -2px -2px #ffb3c1;
-		--footer-box-shadow: inset -1px -1px 0 #c9184a, inset 1px 1px 0 #bbc3c4,
+		--footer-box-shadow: inset -1px -1px 0 #c9184a, inset 1px 1px 0 #ffb3c1,
 			inset -2px -2px 0 #ffb3c1, inset 2px 2px 0 #fff;
 		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
 			inset -1px -1px #ffb3c1, inset -2px -2px #ff4d6d;
@@ -135,7 +135,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #ffb3c1, inset 2px 2px #c9184a;
 		--dropdown-arrow-box-box-shadow: -1px -1px #c9184a inset,
 			1px 1px #ffb3c1 inset, 2px 2px #fff inset, -2px -2px #ff4d6d inset;
-		--window-box-shadow: inset -1px -1px 0 #c9184a, inset 1px 1px 0 #bbc3c4,
+		--window-box-shadow: inset -1px -1px 0 #c9184a, inset 1px 1px 0 #ffb3c1,
 			inset -2px -2px 0 #ffb3c1, inset 2px 2px 0 #fff;
 	}
 
@@ -168,7 +168,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		// shadows
 		--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #94bc5c,
 			inset -2px -2px #94bc5c;
-		--footer-box-shadow: inset -1px -1px 0 #11270b, inset 1px 1px 0 #bbc3c4,
+		--footer-box-shadow: inset -1px -1px 0 #11270b, inset 1px 1px 0 #94bc5c,
 			inset -2px -2px 0 #94bc5c, inset 2px 2px 0 #fff;
 		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
 			inset -1px -1px #94bc5c, inset -2px -2px #3c5a14;
@@ -195,7 +195,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #94bc5c, inset 2px 2px #11270b;
 		--dropdown-arrow-box-box-shadow: -1px -1px #11270b inset,
 			1px 1px #94bc5c inset, 2px 2px #fff inset, -2px -2px #3c5a14 inset;
-		--window-box-shadow: inset -1px -1px 0 #11270b, inset 1px 1px 0 #bbc3c4,
+		--window-box-shadow: inset -1px -1px 0 #11270b, inset 1px 1px 0 #94bc5c,
 			inset -2px -2px 0 #94bc5c, inset 2px 2px 0 #fff;
 	}
 
@@ -228,7 +228,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		// shadows
 		--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #00b4d8,
 			inset -2px -2px #00b4d8;
-		--footer-box-shadow: inset -1px -1px 0 #03045e, inset 1px 1px 0 #bbc3c4,
+		--footer-box-shadow: inset -1px -1px 0 #03045e, inset 1px 1px 0 #00b4d8,
 			inset -2px -2px 0 #00b4d8, inset 2px 2px 0 #fff;
 		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
 			inset -1px -1px #00b4d8, inset -2px -2px #023e8a;
@@ -255,7 +255,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #00b4d8, inset 2px 2px #03045e;
 		--dropdown-arrow-box-box-shadow: -1px -1px #03045e inset,
 			1px 1px #00b4d8 inset, 2px 2px #fff inset, -2px -2px #023e8a inset;
-		--window-box-shadow: inset -1px -1px 0 #03045e, inset 1px 1px 0 #bbc3c4,
+		--window-box-shadow: inset -1px -1px 0 #03045e, inset 1px 1px 0 #00b4d8,
 			inset -2px -2px 0 #00b4d8, inset 2px 2px 0 #fff;
 	}
 
@@ -288,7 +288,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		// shadows
 		--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #f7b267,
 			inset -2px -2px #f7b267;
-		--footer-box-shadow: inset -1px -1px 0 #cd3b2d, inset 1px 1px 0 #bbc3c4,
+		--footer-box-shadow: inset -1px -1px 0 #cd3b2d, inset 1px 1px 0 #f7b267,
 			inset -2px -2px 0 #f7b267, inset 2px 2px 0 #fff;
 		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
 			inset -1px -1px #f7b267, inset -2px -2px #f25c54;
@@ -315,7 +315,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #f7b267, inset 2px 2px #cd3b2d;
 		--dropdown-arrow-box-box-shadow: -1px -1px #cd3b2d inset,
 			1px 1px #f7b267 inset, 2px 2px #fff inset, -2px -2px #f25c54 inset;
-		--window-box-shadow: inset -1px -1px 0 #cd3b2d, inset 1px 1px 0 #bbc3c4,
+		--window-box-shadow: inset -1px -1px 0 #cd3b2d, inset 1px 1px 0 #f7b267,
 			inset -2px -2px 0 #f7b267, inset 2px 2px 0 #fff;
 	}
 
@@ -348,7 +348,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		// shadows
 		--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #7b2cbf,
 			inset -2px -2px #7b2cbf;
-		--footer-box-shadow: inset -1px -1px 0 #3c096c, inset 1px 1px 0 #bbc3c4,
+		--footer-box-shadow: inset -1px -1px 0 #3c096c, inset 1px 1px 0 #7b2cbf,
 			inset -2px -2px 0 #7b2cbf, inset 2px 2px 0 #fff;
 		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
 			inset -1px -1px #7b2cbf, inset -2px -2px #3c096c;
@@ -375,7 +375,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #e0aaff, inset 2px 2px #3c096c;
 		--dropdown-arrow-box-box-shadow: -1px -1px #3c096c inset,
 			1px 1px #e0aaff inset, 2px 2px #fff inset, -2px -2px #7b2cbf inset;
-		--window-box-shadow: inset -1px -1px 0 #3c096c, inset 1px 1px 0 #bbc3c4,
+		--window-box-shadow: inset -1px -1px 0 #3c096c, inset 1px 1px 0 #7b2cbf,
 			inset -2px -2px 0 #7b2cbf, inset 2px 2px 0 #fff;
 	}
 
@@ -413,7 +413,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		// shadows
 		--skip-link-box-shadow: 2px 2px #f4f4f4, inset -1px -1px #00377e,
 			inset -2px -2px #00377e;
-		--footer-box-shadow: inset -1px -1px 0 #002657, inset 1px 1px 0 #bbc3c4,
+		--footer-box-shadow: inset -1px -1px 0 #002657, inset 1px 1px 0 #00377e,
 			inset -2px -2px 0 #00377e, inset 2px 2px 0 #fff;
 		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
 			inset -1px -1px #00377e, inset -2px -2px #002657;
@@ -440,7 +440,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #00377e, inset 2px 2px #00132d;
 		--dropdown-arrow-box-box-shadow: -1px -1px #00132d inset,
 			1px 1px #00377e inset, 2px 2px #fff inset, -2px -2px #002657 inset;
-		--window-box-shadow: inset -1px -1px 0 #002657, inset 1px 1px 0 #bbc3c4,
+		--window-box-shadow: inset -1px -1px 0 #002657, inset 1px 1px 0 #00377e,
 			inset -2px -2px 0 #00377e, inset 2px 2px 0 #fff;
 	}
 }

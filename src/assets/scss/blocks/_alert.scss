@@ -17,6 +17,10 @@
 		align-items: center;
 	}
 
+	&-container[hidden] {
+		display: none;
+	}
+
 	&__content {
 		padding: 1rem;
 

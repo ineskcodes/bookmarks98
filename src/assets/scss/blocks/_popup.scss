@@ -15,4 +15,8 @@
 		--top: 2rem;
 		height: unset;
 	}
+
+	&[hidden] {
+		display: none;
+	}
 }
