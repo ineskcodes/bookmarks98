@@ -37,6 +37,7 @@ class SettingsPopup {
 		this.browseInput = this.query('#browse-input', this.popup);
 		this.dialogs = [this.popup, this.alert.container];
 		this.wallpaperLabels = this.switcher.children;
+		this.pathPrefix = location.pathname.match(/^\/.+?\//);
 	}
 
 	query(selector, parentEl = document, multiple = false) {
@@ -77,7 +78,7 @@ class SettingsPopup {
 	}
 
 	generateUrl(wallpaper) {
-		return `./${this.formatName(wallpaper)}.png`;
+		return `${this.pathPrefix}${this.formatName(wallpaper)}.png`;
 	}
 
 	init() {
@@ -435,13 +436,13 @@ class SettingsPopup {
 
 	previewTheme(e) {
 		this.tempTheme = e.currentTarget.value;
-		const previewImageSrc = `../${this.tempTheme}.png`;
+		const previewImageSrc = `${this.pathPrefix}${this.tempTheme}.png`;
 		root.style.setProperty('--theme-preview', `url("${previewImageSrc}")`);
 	}
 
 	setTheme(shouldRevert) {
 		const selectedTheme = shouldRevert ? this.theme : this.tempTheme;
-		const previewImageSrc = `../${selectedTheme}.png`;
+		const previewImageSrc = `${this.pathPrefix}${selectedTheme}.png`;
 		root.style.setProperty('--theme-preview', `url("${previewImageSrc}")`);
 		this.theme = selectedTheme;
 		this.tempTheme = this.theme;
