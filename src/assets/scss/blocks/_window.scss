@@ -68,9 +68,16 @@
 	}
 
 	&[data-item='window'] {
-		transform: translate(
-			var(--window-position-x, 0),
-			var(--window-position-y, 0)
-		);
+		@media (max-width: vars.$breakpoint-desktop) {
+			/* using !important to override values provided from gsap's draggable */
+			transform: translate(0, 0) !important;
+		}
+
+		@media (min-width: vars.$breakpoint-desktop) {
+			transform: translate(
+				var(--window-position-x, 0),
+				var(--window-position-y, 0)
+			);
+		}
 	}
 }
