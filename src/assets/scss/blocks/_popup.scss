@@ -2,7 +2,7 @@
 
 .popup {
 	--max-window-width: 25rem;
-	--max-window-height: 100vh;
+	--max-window-height: calc(var(--vh, 1vh) * 100);
 	grid-template-rows: auto 1fr;
 	position: absolute;
 	top: var(--top, 0);

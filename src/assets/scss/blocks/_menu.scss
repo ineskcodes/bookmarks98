@@ -22,7 +22,9 @@
 		padding: 0.125rem 0.125rem 0.125rem 1.5rem;
 		min-width: var(--menu-width);
 		max-height: calc(
-			min(var(--root-max-height), 100vh) - var(--taskbar-height)
+			min(var(--root-max-height), calc(var(--vh, 1vh) * 100)) - var(
+					--taskbar-height
+				)
 		);
 		font-size: 0.9rem;
 		background-color: var(--menu-background-color);
