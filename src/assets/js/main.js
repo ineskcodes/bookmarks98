@@ -2,6 +2,7 @@ import './modules/menu.js';
 import './modules/bookmarks.js';
 import './modules/settings.js';
 import './modules/windowManager.js';
+import './modules/resizeObserver.js';
 
 const vw = Math.max(
 	document.documentElement.clientWidth || 0,

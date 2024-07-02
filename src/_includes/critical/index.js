@@ -1,6 +1,8 @@
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
 document.documentElement.classList.remove('no-js');
+document.documentElement.style.setProperty(
+	'--vh',
+	`${window.innerHeight * 0.01}px`
+);
 
 (function () {
 	// Check if localStorage is supported and available
