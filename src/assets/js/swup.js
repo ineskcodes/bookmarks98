@@ -4,7 +4,7 @@ import SwupScriptsPlugin from '@swup/scripts-plugin';
 import SwupA11yPlugin from '@swup/a11y-plugin';
 
 const swup = new Swup({
-	containers: ['#content', '#page-hook'],
+	containers: ['#content', '#page-hook', 'footer'],
 	plugins: [
 		new SwupHeadPlugin(),
 		new SwupScriptsPlugin({ body: false }),
