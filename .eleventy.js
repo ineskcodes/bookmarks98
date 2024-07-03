@@ -6,6 +6,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPassthroughCopy({ 'src/assets/misc': '/' });
 	eleventyConfig.addPassthroughCopy({ 'src/assets/wallpapers': '/' });
 	eleventyConfig.addPassthroughCopy({ 'src/assets/themes': '/' });
+	eleventyConfig.addPassthroughCopy({ 'src/static': '/' });
 	eleventyConfig.addNunjucksAsyncFilter(
 		'jsmin',
 		async function (code, callback) {
