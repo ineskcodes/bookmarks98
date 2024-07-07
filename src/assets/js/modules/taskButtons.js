@@ -6,7 +6,15 @@ class TaskButtons {
 		this.init();
 	}
 
-	async init() {
+	init() {
+		this.bindEvents();
+		this.taskButtons.forEach((button) => {
+			const windowEl = this.windows.find((el) => el.dataset.task === button.id);
+			if (windowEl) button.hidden = windowEl.hidden;
+		});
+	}
+
+	bindEvents() {
 		this.taskButtons.forEach((btn) =>
 			btn.addEventListener('click', this.handleClick.bind(this))
 		);
