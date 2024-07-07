@@ -30,6 +30,10 @@
 		}
 	}
 
+	[data-animating] &__desktop {
+		overflow: hidden;
+	}
+
 	&__taskbar {
 		position: sticky;
 		bottom: 0;

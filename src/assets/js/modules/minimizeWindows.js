@@ -52,6 +52,10 @@ class MinimizeWindows {
 			scale,
 			transformOrigin: 'left top',
 			autoAlpha: '0',
+			onStart: () =>
+				document.documentElement.setAttribute('data-animating', ''),
+			onComplete: () =>
+				document.documentElement.removeAttribute('data-animating'),
 		});
 		tween.pause();
 
