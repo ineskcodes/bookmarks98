@@ -26,17 +26,18 @@ class TaskButtons {
 
 		if (!currentWindow) return;
 
-		const isActive = currentTarget.dataset.active === 'true' ? true : false;
+		const isPressed =
+			currentTarget.getAttribute('aria-pressed') === 'true' ? true : false;
 		const isMinimized =
 			currentWindow.dataset.minimized === 'true' ? true : false;
 
-		if (isActive === !isMinimized) {
+		if (isPressed === !isMinimized) {
 			currentWindow.dispatchEvent(
 				new CustomEvent('toggleminimize', {
 					detail: {
 						taskButton: currentTarget,
 						windowEl: currentWindow,
-						isActive,
+						isPressed,
 						isMinimized,
 					},
 				})
@@ -54,11 +55,11 @@ class TaskButtons {
 
 		if (taskButton) {
 			this.taskButtons.forEach((button) =>
-				button.setAttribute('data-active', 'false')
+				button.setAttribute('aria-pressed', 'false')
 			);
 
 			taskButton.hidden = false;
-			taskButton.setAttribute('data-active', 'true');
+			taskButton.setAttribute('aria-pressed', 'true');
 		}
 	}
 }

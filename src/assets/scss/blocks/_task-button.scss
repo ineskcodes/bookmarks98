@@ -13,7 +13,8 @@
 		display: none;
 	}
 
-	&[data-active='true'] {
+	&[aria-pressed='true'],
+	&[data-pressed='true'] {
 		background:
 			linear-gradient(var(--taskbar-background-color) 0 50%, #fff0 50% 100%) 2px
 				0/2px 2px,

@@ -63,14 +63,13 @@ class MinimizeWindows {
 	}
 
 	toggleStates(elements, state) {
-		elements.taskButton.setAttribute('data-active', !state.isActive);
-		elements.taskButton.setAttribute('aria-pressed', !state.isMinimized);
+		elements.taskButton.setAttribute('aria-pressed', !state.isPressed);
 		elements.windowEl.setAttribute('data-minimized', !state.isMinimized);
 	}
 
 	async toggleMinimize(e) {
 		const { detail } = e;
-		const { taskButton, windowEl, isActive, isMinimized } = detail;
+		const { taskButton, windowEl, isPressed, isMinimized } = detail;
 
 		const taskButtonBounds = await this.createObserver(taskButton);
 		const untransformedWindowBounds = this.getUntransformedBounds(windowEl);
@@ -80,11 +79,11 @@ class MinimizeWindows {
 		);
 		const minimizeTween = this.createTween(windowEl, minimizeTransformValues);
 
-		if (isActive && !isMinimized) {
+		if (isPressed && !isMinimized) {
 			this.minimize(windowEl, minimizeTween);
 		}
 
-		this.toggleStates({ taskButton, windowEl }, { isActive, isMinimized });
+		this.toggleStates({ taskButton, windowEl }, { isPressed, isMinimized });
 	}
 
 	minimize(windowEl, tween) {
