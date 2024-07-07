@@ -70,7 +70,21 @@ class MinimizeWindows {
 		elements.windowEl.setAttribute('data-minimized', !state.isMinimized);
 	}
 
+	checkIfAnimationIsActive() {
+		let isActive = false;
+
+		if (this.minimizeTween && this.unminimizeTween) {
+			isActive =
+				this.minimizeTween.isActive() || this.unminimizeTween.isActive();
+		}
+
+		return isActive;
+	}
+
 	async toggleMinimize(e) {
+		const isAnimationActive = this.checkIfAnimationIsActive();
+		if (isAnimationActive) return;
+
 		const { detail } = e;
 		const { taskButton, windowEl, isPressed, isMinimized } = detail;
 
@@ -85,18 +99,18 @@ class MinimizeWindows {
 			untransformedWindowBounds,
 			transformedWindowBounds
 		);
-		const minimizeTween = this.createTween(windowEl, minimizeTransformValues);
-		const unminimizeTween = this.createTween(
+		this.minimizeTween = this.createTween(windowEl, minimizeTransformValues);
+		this.unminimizeTween = this.createTween(
 			windowEl,
 			unminimizeTransformValues,
 			false
 		);
 
 		if (isPressed && !isMinimized) {
-			this.minimize(windowEl, minimizeTween);
+			this.minimize(windowEl, this.minimizeTween);
 			this.toggleStates({ taskButton, windowEl }, { isPressed, isMinimized });
 		} else {
-			this.unminimize(windowEl, unminimizeTween);
+			this.unminimize(windowEl, this.unminimizeTween);
 			this.toggleStates({ taskButton, windowEl }, { isPressed, isMinimized });
 			windowEl.dispatchEvent(new Event('mousedown'));
 		}
