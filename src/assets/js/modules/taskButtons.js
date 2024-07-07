@@ -1,14 +1,21 @@
 class TaskButtons {
 	constructor() {
 		this.windows = Array.from(document.querySelectorAll('.window'));
-		this.taskButtons = document.querySelectorAll('.task-button');
+		this.taskButtons = Array.from(document.querySelectorAll('.task-button'));
+		this.settingsTaskButton = document.querySelector('#settings-task-button');
 		this.init();
 	}
 
 	async init() {
-		this.taskButtons.forEach((btn) => {
-			btn.addEventListener('click', this.handleClick.bind(this));
-		});
+		this.taskButtons.forEach((btn) =>
+			btn.addEventListener('click', this.handleClick.bind(this))
+		);
+		this.windows.forEach((windowEl) =>
+			windowEl.addEventListener(
+				'activewindow',
+				this.toggleActiveState.bind(this)
+			)
+		);
 	}
 
 	handleClick(e) {
@@ -34,6 +41,24 @@ class TaskButtons {
 					},
 				})
 			);
+		} else {
+			currentWindow.dispatchEvent(new Event('mousedown'));
+		}
+	}
+
+	toggleActiveState(e) {
+		const windowEl = e.currentTarget;
+		const taskButton = this.taskButtons.find(
+			(button) => button.id === windowEl.dataset.task
+		);
+
+		if (taskButton) {
+			this.taskButtons.forEach((button) =>
+				button.setAttribute('data-active', 'false')
+			);
+
+			taskButton.hidden = false;
+			taskButton.setAttribute('data-active', 'true');
 		}
 	}
 }
