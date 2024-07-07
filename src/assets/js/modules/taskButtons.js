@@ -31,7 +31,7 @@ class TaskButtons {
 		const isMinimized =
 			currentWindow.dataset.minimized === 'true' ? true : false;
 
-		if (isPressed === !isMinimized) {
+		if (isPressed !== isMinimized) {
 			currentWindow.dispatchEvent(
 				new CustomEvent('toggleminimize', {
 					detail: {
@@ -42,7 +42,9 @@ class TaskButtons {
 					},
 				})
 			);
-		} else {
+		}
+
+		if (!isPressed && !isMinimized) {
 			currentWindow.dispatchEvent(new Event('mousedown'));
 		}
 	}

@@ -42,16 +42,19 @@ class MinimizeWindows {
 		};
 	}
 
-	createTween(el, transformValues) {
+	createTween(el, transformValues, minimize = true) {
 		const { x, y, scale } = transformValues;
 
 		const tween = gsap.to(el, {
 			duration: 0.3,
 			x,
 			y,
-			scale,
+			scale: minimize ? scale : 1,
 			transformOrigin: 'left top',
-			autoAlpha: '0',
+			autoAlpha: minimize ? '0' : '1',
+			onCompleteParams: {
+				clearProps: 'all',
+			},
 			onStart: () =>
 				document.documentElement.setAttribute('data-animating', ''),
 			onComplete: () =>
@@ -72,18 +75,31 @@ class MinimizeWindows {
 		const { taskButton, windowEl, isPressed, isMinimized } = detail;
 
 		const taskButtonBounds = await this.createObserver(taskButton);
+		const transformedWindowBounds = await this.createObserver(windowEl);
 		const untransformedWindowBounds = this.getUntransformedBounds(windowEl);
 		const minimizeTransformValues = this.getTransformValues(
 			untransformedWindowBounds,
 			taskButtonBounds
 		);
+		const unminimizeTransformValues = this.getTransformValues(
+			untransformedWindowBounds,
+			transformedWindowBounds
+		);
 		const minimizeTween = this.createTween(windowEl, minimizeTransformValues);
+		const unminimizeTween = this.createTween(
+			windowEl,
+			unminimizeTransformValues,
+			false
+		);
 
 		if (isPressed && !isMinimized) {
 			this.minimize(windowEl, minimizeTween);
+			this.toggleStates({ taskButton, windowEl }, { isPressed, isMinimized });
+		} else {
+			this.unminimize(windowEl, unminimizeTween);
+			this.toggleStates({ taskButton, windowEl }, { isPressed, isMinimized });
+			windowEl.dispatchEvent(new Event('mousedown'));
 		}
-
-		this.toggleStates({ taskButton, windowEl }, { isPressed, isMinimized });
 	}
 
 	minimize(windowEl, tween) {
@@ -102,6 +118,19 @@ class MinimizeWindows {
 
 		windowEl.style.visibility = 'hidden';
 		windowEl.style.pointerEvents = 'none';
+	}
+
+	unminimize(windowEl, tween) {
+		const prefersReducedMotion =
+			window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
+			window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+
+		if (!prefersReducedMotion) {
+			tween.play().then(() => tween.kill());
+		}
+
+		windowEl.style.visibility = 'visible';
+		windowEl.style.pointerEvents = 'initial';
 	}
 }
 
