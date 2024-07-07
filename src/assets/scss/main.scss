@@ -18,6 +18,7 @@
 @import 'blocks/switcher';
 @import 'blocks/popup';
 @import 'blocks/alert';
+@import 'blocks/task-button';
 
 // utilities
 @import 'utilities/visually-hidden';
@@ -29,3 +30,4 @@
 @import 'utilities/dropdown';
 @import 'utilities/transition-fade';
 @import 'utilities/noise';
+@import 'utilities/requires-js';

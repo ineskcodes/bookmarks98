@@ -4,7 +4,7 @@
 		align-items: center;
 		width: fit-content;
 		padding: 0.33rem 0.375rem;
-		box-shadow: var(--menu-toggle-inactive-box-shadow);
+		box-shadow: var(--taskbar-button-inactive-box-shadow);
 	}
 
 	&__toggle img {
@@ -12,7 +12,7 @@
 	}
 
 	&[open] &__toggle {
-		box-shadow: var(--menu-toggle-active-box-shadow);
+		box-shadow: var(--taskbar-button-active-box-shadow);
 	}
 
 	&__content {

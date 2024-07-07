@@ -53,9 +53,9 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		inset -2px -2px #414141;
 	--footer-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #c0c0c0,
 		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
-	--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
+	--taskbar-button-inactive-box-shadow: inset 2px 2px #f4f4f4,
 		inset -1px -1px #414141, inset -2px -2px #414141;
-	--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
+	--taskbar-button-active-box-shadow: inset -1px -1px 0 #fff,
 		inset 1px 1px 0 #414141, inset -2px -2px 0 #a0abac, inset 2px 2px 0 #808088;
 	--menu-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #c0c0c0,
 		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
@@ -110,9 +110,9 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #ffb3c1;
 		--footer-box-shadow: inset -1px -1px 0 #c9184a, inset 1px 1px 0 #ffb3c1,
 			inset -2px -2px 0 #ffb3c1, inset 2px 2px 0 #fff;
-		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
+		--taskbar-button-inactive-box-shadow: inset 2px 2px #f4f4f4,
 			inset -1px -1px #ffb3c1, inset -2px -2px #ff4d6d;
-		--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
+		--taskbar-button-active-box-shadow: inset -1px -1px 0 #fff,
 			inset 1px 1px 0 #ffb3c1, inset -2px -2px 0 #ffb3c1,
 			inset 2px 2px 0 #ff4d6d;
 		--menu-box-shadow: inset -1px -1px 0 #ff4d6d, inset 1px 1px 0 #ffc6c7,
@@ -170,9 +170,9 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #94bc5c;
 		--footer-box-shadow: inset -1px -1px 0 #11270b, inset 1px 1px 0 #94bc5c,
 			inset -2px -2px 0 #94bc5c, inset 2px 2px 0 #fff;
-		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
+		--taskbar-button-inactive-box-shadow: inset 2px 2px #f4f4f4,
 			inset -1px -1px #94bc5c, inset -2px -2px #3c5a14;
-		--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
+		--taskbar-button-active-box-shadow: inset -1px -1px 0 #fff,
 			inset 1px 1px 0 #94bc5c, inset -2px -2px 0 #94bc5c,
 			inset 2px 2px 0 #3c5a14;
 		--menu-box-shadow: inset -1px -1px 0 #3c5a14, inset 1px 1px 0 #94bc5c,
@@ -230,9 +230,9 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #00b4d8;
 		--footer-box-shadow: inset -1px -1px 0 #03045e, inset 1px 1px 0 #00b4d8,
 			inset -2px -2px 0 #00b4d8, inset 2px 2px 0 #fff;
-		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
+		--taskbar-button-inactive-box-shadow: inset 2px 2px #f4f4f4,
 			inset -1px -1px #00b4d8, inset -2px -2px #023e8a;
-		--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
+		--taskbar-button-active-box-shadow: inset -1px -1px 0 #fff,
 			inset 1px 1px 0 #00b4d8, inset -2px -2px 0 #00b4d8,
 			inset 2px 2px 0 #023e8a;
 		--menu-box-shadow: inset -1px -1px 0 #023e8a, inset 1px 1px 0 #caf0f8,
@@ -290,9 +290,9 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #f7b267;
 		--footer-box-shadow: inset -1px -1px 0 #cd3b2d, inset 1px 1px 0 #f7b267,
 			inset -2px -2px 0 #f7b267, inset 2px 2px 0 #fff;
-		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
+		--taskbar-button-inactive-box-shadow: inset 2px 2px #f4f4f4,
 			inset -1px -1px #f7b267, inset -2px -2px #f25c54;
-		--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
+		--taskbar-button-active-box-shadow: inset -1px -1px 0 #fff,
 			inset 1px 1px 0 #f7b267, inset -2px -2px 0 #f7b267,
 			inset 2px 2px 0 #f25c54;
 		--menu-box-shadow: inset -1px -1px 0 #f25c54, inset 1px 1px 0 #f7b267,
@@ -350,9 +350,9 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #7b2cbf;
 		--footer-box-shadow: inset -1px -1px 0 #3c096c, inset 1px 1px 0 #7b2cbf,
 			inset -2px -2px 0 #7b2cbf, inset 2px 2px 0 #fff;
-		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
+		--taskbar-button-inactive-box-shadow: inset 2px 2px #f4f4f4,
 			inset -1px -1px #7b2cbf, inset -2px -2px #3c096c;
-		--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
+		--taskbar-button-active-box-shadow: inset -1px -1px 0 #fff,
 			inset 1px 1px 0 #7b2cbf, inset -2px -2px 0 #7b2cbf,
 			inset 2px 2px 0 #3c096c;
 		--menu-box-shadow: inset -1px -1px 0 #3c096c, inset 1px 1px 0 #e0aaff,
@@ -415,9 +415,9 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px #00377e;
 		--footer-box-shadow: inset -1px -1px 0 #002657, inset 1px 1px 0 #00377e,
 			inset -2px -2px 0 #00377e, inset 2px 2px 0 #fff;
-		--menu-toggle-inactive-box-shadow: inset 2px 2px #f4f4f4,
+		--taskbar-button-inactive-box-shadow: inset 2px 2px #f4f4f4,
 			inset -1px -1px #00377e, inset -2px -2px #002657;
-		--menu-toggle-active-box-shadow: inset -1px -1px 0 #fff,
+		--taskbar-button-active-box-shadow: inset -1px -1px 0 #fff,
 			inset 1px 1px 0 #00377e, inset -2px -2px 0 #00377e,
 			inset 2px 2px 0 #002657;
 		--menu-box-shadow: inset -1px -1px 0 #002657, inset 1px 1px 0 #e0aaff,

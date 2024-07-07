@@ -1,0 +1,28 @@
+.task-button {
+	display: flex;
+	align-items: center;
+	gap: 0.5ch;
+	padding: 1px 5px;
+	min-width: 20ch;
+
+	font-size: 0.8rem;
+	line-height: 0.8;
+	box-shadow: var(--taskbar-button-inactive-box-shadow);
+
+	&[hidden] {
+		display: none;
+	}
+
+	&[data-active='true'] {
+		background:
+			linear-gradient(var(--taskbar-background-color) 0 50%, #fff0 50% 100%) 2px
+				0/2px 2px,
+			linear-gradient(
+					to right,
+					var(--taskbar-background-color) 0 50%,
+					#fff 50% 100%
+				)
+				0 0/2px 2px;
+		box-shadow: var(--taskbar-button-active-box-shadow);
+	}
+}
