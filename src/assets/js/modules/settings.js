@@ -1,4 +1,5 @@
 import { root } from './elements';
+import { getStateBoolean } from './utils';
 import { wallpapers } from './wallpapers';
 
 class SettingsPopup {
@@ -112,14 +113,25 @@ class SettingsPopup {
 
 	togglePopup(isOpen) {
 		const elementToFocusOn = isOpen ? this.popup : this.buttons.open;
+		const isMinimized = getStateBoolean(this.popup, 'data-minimized');
 
 		this.buttons.open.setAttribute('aria-expanded', `${isOpen}`);
 		this.popup.hidden = !isOpen;
 		elementToFocusOn.focus();
 		this.loadWallpaperInputs(isOpen);
 
+		document.documentElement.dispatchEvent(
+			new CustomEvent('settingstoggled', { detail: { isOpen } })
+		);
+
 		if (isOpen) {
 			this.popup.dispatchEvent(new Event('mousedown'));
+		}
+
+		if (isOpen && isMinimized) {
+			this.popup.dispatchEvent(
+				new CustomEvent('toggleminimize', { detail: { windowEl: this.popup } })
+			);
 		}
 	}
 

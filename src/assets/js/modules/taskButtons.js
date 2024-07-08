@@ -1,3 +1,9 @@
+import {
+	getCorrespondingTaskButton,
+	getCorrespondingWindow,
+	getStateBoolean,
+} from './utils';
+
 class TaskButtons {
 	constructor() {
 		this.windows = Array.from(document.querySelectorAll('.window'));
@@ -9,7 +15,7 @@ class TaskButtons {
 	init() {
 		this.bindEvents();
 		this.taskButtons.forEach((button) => {
-			const windowEl = this.windows.find((el) => el.dataset.task === button.id);
+			const windowEl = getCorrespondingWindow(button);
 			if (windowEl) button.hidden = windowEl.hidden;
 		});
 	}
@@ -17,6 +23,10 @@ class TaskButtons {
 	bindEvents() {
 		this.taskButtons.forEach((btn) =>
 			btn.addEventListener('click', this.handleClick.bind(this))
+		);
+		document.documentElement.addEventListener(
+			'settingstoggled',
+			this.toggleSettingsButtonVisibility.bind(this)
 		);
 		this.windows.forEach((windowEl) =>
 			windowEl.addEventListener(
@@ -28,26 +38,17 @@ class TaskButtons {
 
 	handleClick(e) {
 		const { currentTarget } = e;
-		const currentWindow = this.windows.find(
-			(window) => window.dataset.task === currentTarget.id
-		);
+		const currentWindow = getCorrespondingWindow(currentTarget);
 
 		if (!currentWindow) return;
 
-		const isPressed =
-			currentTarget.getAttribute('aria-pressed') === 'true' ? true : false;
-		const isMinimized =
-			currentWindow.dataset.minimized === 'true' ? true : false;
+		const isPressed = getStateBoolean(currentTarget, 'aria-pressed');
+		const isMinimized = getStateBoolean(currentWindow, 'data-minimized');
 
 		if (isPressed !== isMinimized) {
 			currentWindow.dispatchEvent(
 				new CustomEvent('toggleminimize', {
-					detail: {
-						taskButton: currentTarget,
-						windowEl: currentWindow,
-						isPressed,
-						isMinimized,
-					},
+					detail: { windowEl: currentWindow, isPressed },
 				})
 			);
 		}
@@ -59,9 +60,7 @@ class TaskButtons {
 
 	toggleActiveState(e) {
 		const windowEl = e.currentTarget;
-		const taskButton = this.taskButtons.find(
-			(button) => button.id === windowEl.dataset.task
-		);
+		const taskButton = getCorrespondingTaskButton(windowEl);
 
 		if (taskButton) {
 			this.taskButtons.forEach((button) =>
@@ -71,6 +70,12 @@ class TaskButtons {
 			taskButton.hidden = false;
 			taskButton.setAttribute('aria-pressed', 'true');
 		}
+	}
+
+	toggleSettingsButtonVisibility(e) {
+		const { isOpen } = e.detail;
+
+		this.settingsTaskButton.hidden = !isOpen;
 	}
 }
 

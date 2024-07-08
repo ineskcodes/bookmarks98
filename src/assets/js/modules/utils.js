@@ -35,3 +35,15 @@ export const getMaxZIndex = ([elementA, elementB]) => {
 
 	return zIndexes.reduce((zIndexA, zIndexB) => Math.max(zIndexA, zIndexB));
 };
+
+export const getStateBoolean = (el, stateAttr) => {
+	return el.getAttribute(stateAttr) === 'true' ? true : false;
+};
+
+export const getCorrespondingTaskButton = (windowEl) => {
+	return document.querySelector(`#${windowEl.dataset.task}`);
+};
+
+export const getCorrespondingWindow = (taskButton) => {
+	return document.querySelector(`.window[data-task="${taskButton.id}"]`);
+};

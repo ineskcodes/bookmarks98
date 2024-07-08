@@ -1,4 +1,5 @@
 import gsap from 'gsap';
+import { getStateBoolean, getCorrespondingTaskButton } from './utils';
 
 class MinimizeWindows {
 	constructor() {
@@ -63,7 +64,9 @@ class MinimizeWindows {
 		if (isAnimationActive) return;
 
 		const { detail } = e;
-		const { taskButton, windowEl, isPressed, isMinimized } = detail;
+		const { windowEl, isPressed, unminimize } = detail;
+		const isMinimized = getStateBoolean(windowEl, 'data-minimized');
+		const taskButton = getCorrespondingTaskButton(windowEl);
 
 		const taskButtonBounds = await this.createObserver(taskButton);
 		const transformedWindowBounds = await this.createObserver(windowEl);
