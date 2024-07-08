@@ -64,7 +64,7 @@ class MinimizeWindows {
 		if (isAnimationActive) return;
 
 		const { detail } = e;
-		const { windowEl, isPressed, unminimize } = detail;
+		const { windowEl, isPressed } = detail;
 		const isMinimized = getStateBoolean(windowEl, 'data-minimized');
 		const taskButton = getCorrespondingTaskButton(windowEl);
 
@@ -127,7 +127,7 @@ class MinimizeWindows {
 				windowEl,
 				this.createTweenOptions({
 					values: minimizeValues,
-					clearProps: 'transform, scale',
+					clearProps: 'all',
 				})
 			);
 
