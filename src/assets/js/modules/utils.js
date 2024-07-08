@@ -10,6 +10,8 @@ export const checkIfOverlap = (draggable, elements) => {
 	if (getDraggableType(draggable) !== 'icon') {
 		return null;
 	}
+
+	elements = elements.filter((el) => el.dataset.minimized !== 'true');
 	return elements.some((el) => draggable.hitTest(el, '25%'));
 };
 
