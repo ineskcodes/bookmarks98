@@ -42,29 +42,6 @@ class MinimizeWindows {
 		};
 	}
 
-	createTween(el, transformValues, minimize = true) {
-		const { x, y, scale } = transformValues;
-
-		const tween = gsap.to(el, {
-			duration: 0.3,
-			x,
-			y,
-			scale: minimize ? scale : 1,
-			transformOrigin: 'left top',
-			autoAlpha: minimize ? '0' : '1',
-			onCompleteParams: {
-				clearProps: 'all',
-			},
-			onStart: () =>
-				document.documentElement.setAttribute('data-animating', ''),
-			onComplete: () =>
-				document.documentElement.removeAttribute('data-animating'),
-		});
-		tween.pause();
-
-		return tween;
-	}
-
 	toggleStates(elements, state) {
 		elements.taskButton.setAttribute('aria-pressed', !state.isPressed);
 		elements.windowEl.setAttribute('data-minimized', !state.isMinimized);
@@ -91,60 +68,98 @@ class MinimizeWindows {
 		const taskButtonBounds = await this.createObserver(taskButton);
 		const transformedWindowBounds = await this.createObserver(windowEl);
 		const untransformedWindowBounds = this.getUntransformedBounds(windowEl);
-		const minimizeTransformValues = this.getTransformValues(
-			untransformedWindowBounds,
-			taskButtonBounds
-		);
-		const unminimizeTransformValues = this.getTransformValues(
-			untransformedWindowBounds,
-			transformedWindowBounds
-		);
-		this.minimizeTween = this.createTween(windowEl, minimizeTransformValues);
-		this.unminimizeTween = this.createTween(
-			windowEl,
-			unminimizeTransformValues,
-			false
-		);
+
+		const transformValues = {
+			minimizeValues: this.getTransformValues(
+				untransformedWindowBounds,
+				taskButtonBounds
+			),
+			unminimizeValues: this.getTransformValues(
+				untransformedWindowBounds,
+				transformedWindowBounds
+			),
+		};
 
 		if (isPressed && !isMinimized) {
-			this.minimize(windowEl, this.minimizeTween);
+			this.minimize(windowEl, transformValues);
 			this.toggleStates({ taskButton, windowEl }, { isPressed, isMinimized });
 		} else {
-			this.unminimize(windowEl, this.unminimizeTween);
+			this.unminimize(windowEl, transformValues);
 			this.toggleStates({ taskButton, windowEl }, { isPressed, isMinimized });
 			windowEl.dispatchEvent(new Event('mousedown'));
 		}
 	}
 
-	minimize(windowEl, tween) {
+	createTweenOptions({
+		values,
+		duration = 0.3,
+		autoAlpha = 0,
+		clearProps = null,
+	}) {
+		return {
+			duration,
+			x: values.x,
+			y: values.y,
+			scaleX: values.scale ? values.scale : 1,
+			scaleY: values.scale ? values.scale : 1,
+			transformOrigin: 'left top',
+			autoAlpha,
+			clearProps: clearProps ? clearProps : 'clip-path',
+			onStart: () =>
+				document.documentElement.setAttribute('data-animating', ''),
+			onComplete: () =>
+				document.documentElement.removeAttribute('data-animating'),
+		};
+	}
+
+	minimize(windowEl, transformValues) {
+		const { minimizeValues } = transformValues;
 		const initialStyle = windowEl.getAttribute('style');
 		const prefersReducedMotion =
 			window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
 			window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 
 		if (!prefersReducedMotion) {
-			tween.play().then(() => {
-				tween.kill();
+			this.minimizeTween = gsap.to(
+				windowEl,
+				this.createTweenOptions({
+					values: minimizeValues,
+					clearProps: 'transform, scale',
+				})
+			);
+
+			this.minimizeTween.play().then(() => {
 				windowEl.setAttribute('style', initialStyle);
 				windowEl.style.visibility = 'hidden';
 			});
 		}
-
-		windowEl.style.visibility = 'hidden';
-		windowEl.style.pointerEvents = 'none';
 	}
 
-	unminimize(windowEl, tween) {
+	unminimize(windowEl, transformValues) {
+		const { minimizeValues, unminimizeValues } = transformValues;
 		const prefersReducedMotion =
 			window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
 			window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 
 		if (!prefersReducedMotion) {
-			tween.play().then(() => tween.kill());
+			this.unminimizeTween = gsap
+				.timeline()
+				.to(
+					windowEl,
+					this.createTweenOptions({
+						values: minimizeValues,
+						duration: 0,
+					})
+				)
+				.to(
+					windowEl,
+					this.createTweenOptions({
+						values: unminimizeValues,
+						duration: 0.3,
+						autoAlpha: 1,
+					})
+				);
 		}
-
-		windowEl.style.visibility = 'visible';
-		windowEl.style.pointerEvents = 'initial';
 	}
 }
 
