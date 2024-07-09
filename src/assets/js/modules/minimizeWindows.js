@@ -1,6 +1,9 @@
 import gsap from 'gsap';
-import { getStateBoolean, getCorrespondingTaskButton } from './utils';
-import { isPromise } from 'swup';
+import {
+	getStateBoolean,
+	getCorrespondingTaskButton,
+	removeOutlineFromTaskButton,
+} from './utils';
 
 class MinimizeWindows {
 	constructor() {
@@ -180,10 +183,12 @@ class MinimizeWindows {
 
 	handleMinimizeButtonClick(e) {
 		const minimizeButton = e.currentTarget;
+		const isUsingMouse = e.pageX ? true : false;
 		const windowEl = minimizeButton.closest('.window');
 		const taskButton = getCorrespondingTaskButton(windowEl);
 		const isPressed = !getStateBoolean(taskButton);
 
+		removeOutlineFromTaskButton(taskButton, isUsingMouse);
 		windowEl.dispatchEvent(
 			new CustomEvent('toggleminimize', { detail: { windowEl, isPressed } })
 		);

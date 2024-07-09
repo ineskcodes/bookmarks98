@@ -49,3 +49,14 @@ export const getCorrespondingTaskButton = (windowEl) => {
 export const getCorrespondingWindow = (taskButton) => {
 	return document.querySelector(`.window[data-task="${taskButton.id}"]`);
 };
+
+export const removeOutlineFromTaskButton = (button, isUsingMouse) => {
+	if (isUsingMouse) {
+		button.classList.add('from-mouse');
+		button.addEventListener(
+			'blur',
+			() => button.classList.remove('from-mouse'),
+			{ once: true }
+		);
+	}
+};

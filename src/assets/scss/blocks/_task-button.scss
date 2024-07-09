@@ -26,4 +26,8 @@
 				0 0/2px 2px;
 		box-shadow: var(--taskbar-button-active-box-shadow);
 	}
+
+	&.from-mouse {
+		outline: none !important;
+	}
 }
