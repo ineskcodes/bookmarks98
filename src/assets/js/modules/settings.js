@@ -436,6 +436,7 @@ class SettingsPopup {
 
 		const img = document.createElement('img');
 		img.src = this.switcher.querySelector('img').src;
+		img.alt = '';
 
 		const span = document.createElement('span');
 		span.innerText = wallpaper.name;

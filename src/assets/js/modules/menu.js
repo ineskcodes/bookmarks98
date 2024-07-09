@@ -15,7 +15,6 @@ class Menu {
 		this.toggle.setAttribute('role', 'button');
 		this.toggle.setAttribute('aria-expanded', this.isOpen);
 		this.toggle.setAttribute('aria-controls', 'menu-content');
-		this.details.setAttribute('role', 'presentation');
 	}
 
 	toggleMenu(e) {

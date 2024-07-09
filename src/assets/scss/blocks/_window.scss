@@ -34,6 +34,10 @@
 		background-image: var(--window-header-background-image);
 		box-shadow: var(--window-header-box-shadow);
 		color: var(--window-header-foreground-color);
+
+		a {
+			margin-left: 0.25rem;
+		}
 	}
 
 	&__header *:focus-visible {
