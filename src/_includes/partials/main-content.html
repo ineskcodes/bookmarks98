@@ -17,6 +17,10 @@
 			<img width="{{ windowIconSize }}" height="{{ windowIconSize }}" alt="" src="{{ windowIconSrc }}" class="window__icon">
 			<h1 class="window__heading">{{ windowHeading }}</h1>
 			{% if pageHook != "home" %}
+				<button type="button" class="minimize-btn" id="main-minimize-btn">
+					<img width="16" height="16" src="{{ '/minimize-icon.png' | url }}" alt="">
+					<span class="visually-hidden">Minimize {{ windowHeading }}</span>
+				</button>
 				<a href="{{ '/' | url }}">
 					<img width="{{ windowIconSize }}" height="{{ windowIconSize }}" src="{{ '/close-icon.png' | url }}" alt="Go back to home page.">
 				</a>

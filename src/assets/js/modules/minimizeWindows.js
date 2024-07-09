@@ -1,9 +1,13 @@
 import gsap from 'gsap';
 import { getStateBoolean, getCorrespondingTaskButton } from './utils';
+import { isPromise } from 'swup';
 
 class MinimizeWindows {
 	constructor() {
 		this.windows = Array.from(document.querySelectorAll('.window'));
+		this.minimizeButtons = Array.from(
+			document.querySelectorAll('.minimize-btn')
+		);
 		this.init();
 	}
 
@@ -12,6 +16,13 @@ class MinimizeWindows {
 			windowEl.addEventListener(
 				'toggleminimize',
 				this.toggleMinimize.bind(this)
+			)
+		);
+
+		this.minimizeButtons.forEach((button) =>
+			button.addEventListener(
+				'click',
+				this.handleMinimizeButtonClick.bind(this)
 			)
 		);
 	}
@@ -91,6 +102,8 @@ class MinimizeWindows {
 			this.toggleStates({ taskButton, windowEl }, { isPressed, isMinimized });
 			windowEl.dispatchEvent(new Event('mousedown'));
 		}
+
+		taskButton.focus();
 	}
 
 	createTweenOptions({
@@ -163,6 +176,17 @@ class MinimizeWindows {
 					})
 				);
 		}
+	}
+
+	handleMinimizeButtonClick(e) {
+		const minimizeButton = e.currentTarget;
+		const windowEl = minimizeButton.closest('.window');
+		const taskButton = getCorrespondingTaskButton(windowEl);
+		const isPressed = !getStateBoolean(taskButton);
+
+		windowEl.dispatchEvent(
+			new CustomEvent('toggleminimize', { detail: { windowEl, isPressed } })
+		);
 	}
 }
 
