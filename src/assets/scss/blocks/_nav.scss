@@ -29,7 +29,7 @@
 
 	&__link[aria-hidden] {
 		display: grid !important;
-		opacity: 1;
+		opacity: 0;
 	}
 
 	&__link[data-draggable] {
@@ -43,7 +43,11 @@
 		opacity: 1;
 	}
 
-	&__link.on-drag {
+	.on-drag &__link[aria-hidden] {
+		opacity: 1;
+	}
+
+	.on-drag &__link {
 		opacity: 0.6;
 	}
 

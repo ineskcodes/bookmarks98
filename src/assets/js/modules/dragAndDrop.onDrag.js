@@ -13,7 +13,7 @@ function onItemDrag(draggable) {
 			target.parentElement.style.zIndex = zIndex.onDragStart;
 		}
 
-		target.classList.add('on-drag');
+		target.parentElement.classList.add('on-drag');
 
 		if (isOverlapping) {
 			target.setAttribute('data-overlap', '');

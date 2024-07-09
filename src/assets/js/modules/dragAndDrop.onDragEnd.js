@@ -27,7 +27,7 @@ function onItemDragEnd(draggable) {
 		target.parentElement.style.zIndex = zIndex.onDragEnd;
 	}
 
-	target.classList.remove('on-drag');
+	target.parentElement.classList.remove('on-drag');
 	target.removeAttribute('data-overlap');
 }
 
