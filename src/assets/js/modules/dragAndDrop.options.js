@@ -3,10 +3,10 @@ import onItemDragEnd from './dragAndDrop.onDragEnd';
 
 export const options = {
 	global: {
-		bounds: 'body',
+		bounds: '.root__desktop',
 		throwProps: true,
 		type: 'x,y',
-		edgeResistance: '300%',
+		edgeResistance: 0.85,
 		dragClickables: true,
 		onDragEnd: function () {
 			onItemDragEnd(this);

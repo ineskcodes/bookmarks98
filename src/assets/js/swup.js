@@ -13,6 +13,9 @@ const swup = new Swup({
 });
 
 swup.hooks.on('page:view', async () => {
+	const main = document.querySelector('.main');
+	main.scrollIntoView({ block: 'start' });
+
 	try {
 		const vw = Math.max(
 			document.documentElement.clientWidth || 0,
