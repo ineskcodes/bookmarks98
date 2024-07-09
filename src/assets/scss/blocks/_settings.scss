@@ -4,12 +4,6 @@
 	display: flex;
 	align-items: flex-start;
 
-	:not([data-page='home']) + .root & {
-		@media (max-width: #{vars.$breakpoint-desktop - vars.$px}) {
-			display: none;
-		}
-	}
-
 	.no-js & {
 		display: none;
 	}

@@ -20,6 +20,11 @@
 		min-height: min(calc(var(--vh, 1vh) * 100), var(--min-window-height));
 	}
 
+	@media (max-width: #{vars.$breakpoint-desktop - vars.$px}) {
+		position: absolute;
+		inset: 0;
+	}
+
 	&__header {
 		display: flex;
 		align-items: center;

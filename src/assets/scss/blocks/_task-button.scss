@@ -3,11 +3,15 @@
 	align-items: center;
 	gap: 0.5ch;
 	padding: 1px 5px;
-	min-width: 20ch;
-
+	flex-basis: 18ch;
 	font-size: 0.8rem;
-	line-height: 0.8;
 	box-shadow: var(--taskbar-button-inactive-box-shadow);
+
+	&-label {
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
 
 	&[hidden] {
 		display: none;

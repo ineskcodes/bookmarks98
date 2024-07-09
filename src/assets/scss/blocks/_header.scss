@@ -1,9 +1,0 @@
-@use '../base/vars';
-
-:not([data-page='home']) + .root .header {
-	display: none;
-
-	@media (min-width: vars.$breakpoint-desktop) {
-		display: inline-block;
-	}
-}
