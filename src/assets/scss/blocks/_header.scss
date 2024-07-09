@@ -1,13 +1,6 @@
 @use '../base/vars';
 
-.settings {
-	display: flex;
-	align-items: flex-start;
-
-	.no-js & {
-		display: none;
-	}
-
+.header {
 	@media (max-width: #{vars.$breakpoint-desktop + vars.$px}) {
 		[data-has-unminimized-window] + .root & {
 			visibility: hidden;
