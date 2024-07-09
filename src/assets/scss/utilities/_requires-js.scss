@@ -1,0 +1,9 @@
+[data-requires-js] {
+	.no-js & {
+		display: none;
+	}
+
+	:root:not(.no-js) & + [data-no-js-alternative] {
+		display: none;
+	}
+}

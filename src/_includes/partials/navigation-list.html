@@ -1,53 +1,36 @@
-{% set navItems = categories + ',About' %} {% set navItems = navItems.split(',')
-%}
+{% set navItems = categories + ',About' %}
+{% set navItems = navItems.split(',') %}
 
 <ul role="list" class="nav__list" data-parent="{{ navParent }}">
-	{% for item in navItems %} {% set itemLinkHref = ('/category/' + ( item |
-	slugify ) + '/') | url %} {% set iconFileName = ('/' + (item | slugify) + '-'
-	+ 'icon') | url %} {% if iconFileSize %} {% set iconFileName = iconFileName +
-	'-' + iconFileSize %} {% set iconSize = "20" %} {% else %} {% set iconSize =
-	"32" %} {% endif %} {% set iconFileSrc = iconFileName + '.png' %} {% if
-	navParent == 'header' %} {% set isDraggable = true %} {% endif %}
-
-	<li class="nav__item" data-item="{{ item | slugify }}">
-		{% if isDraggable %}
-		<div hidden aria-hidden="true" class="nav__link">
-			<span class="nav__link--icon icon">
-				<img
-					width="{{ iconSize }}"
-					height="{{ iconSize }}"
-					class="icon__img"
-					src="{{ iconFileSrc }}"
-					alt=""
-				/>
-			</span>
-			<span class="nav__link--name">{{ item }}</span>
-		</div>
+	{% for item in navItems %}
+		{% set itemLinkHref = ('/category/' + ( item | slugify ) + '/') | url %}
+		{% set iconFileName = ('/' + (item | slugify) + '-' + 'icon') | url %}
+		{% if iconFileSize %}
+			{% set iconFileName = iconFileName + '-' + iconFileSize %}
+			{% set iconSize = "20" %}
+		{% else %}
+			{% set iconSize = "32" %}
 		{% endif %}
-		<a
-			href="{{ itemLinkHref }}"
-			class="nav__link"
-			{%
-			if
-			isDraggable
-			%}
-			data-draggable="icon"
-			data-item="{{ item | slugify }}"
-			{%
-			endif
-			%}
-		>
-			<span class="nav__link--icon icon">
-				<img
-					width="{{ iconSize }}"
-					height="{{ iconSize }}"
-					class="icon__img"
-					src="{{ iconFileSrc }}"
-					alt=""
-				/>
-			</span>
-			<span class="nav__link--name">{{ item }}</span>
-		</a>
-	</li>
+		{% set iconFileSrc = iconFileName + '.png' %}
+		{% if navParent == 'header' %}
+			{% set isDraggable = true %}
+		{% endif %}
+
+		<li class="nav__item" data-item="{{ item | slugify }}">
+			{% if isDraggable %}
+				<div hidden aria-hidden="true" class="nav__link">
+					<span class="nav__link--icon icon">
+						<img width="{{ iconSize }}" height="{{ iconSize }}" class="icon__img" src="{{ iconFileSrc }}" alt=""/>
+					</span>
+					<span class="nav__link--name">{{ item }}</span>
+				</div>
+			{% endif %}
+			<a href="{{ itemLinkHref }}" class="nav__link" {% if isDraggable %} data-draggable="icon" data-item="{{ item | slugify }}" {% endif %}>
+				<span class="nav__link--icon icon">
+					<img width="{{ iconSize }}" height="{{ iconSize }}" class="icon__img" src="{{ iconFileSrc }}" alt=""/>
+				</span>
+				<span class="nav__link--name">{{ item }}</span>
+			</a>
+		</li>
 	{% endfor %}
 </ul>

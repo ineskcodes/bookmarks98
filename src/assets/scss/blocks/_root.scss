@@ -16,9 +16,10 @@
 	}
 
 	&__desktop {
+		position: relative;
 		display: flex;
 		gap: var(--gap, 0rem);
-		overflow: auto;
+		overflow: hidden;
 		background-image: var(--wallpaper, none);
 		background-size: var(--size, 20px 20px);
 		background-repeat: var(--repeat, repeat);
@@ -28,6 +29,10 @@
 			--gap: 1rem;
 			position: relative;
 		}
+	}
+
+	[data-animating] &__desktop {
+		overflow: hidden;
 	}
 
 	&__taskbar {

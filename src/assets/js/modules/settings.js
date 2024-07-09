@@ -1,4 +1,5 @@
 import { root } from './elements';
+import { getStateBoolean, removeOutlineFromElement } from './utils';
 import { wallpapers } from './wallpapers';
 
 class SettingsPopup {
@@ -88,7 +89,9 @@ class SettingsPopup {
 	}
 
 	bindEvents() {
-		this.buttons.open.addEventListener('click', () => this.togglePopup(true));
+		this.buttons.open.addEventListener('click', (e) =>
+			this.togglePopup(true, e.pageX)
+		);
 		[this.buttons.close, this.buttons.cancel].forEach((button) =>
 			button.addEventListener('click', this.cancelSettings.bind(this))
 		);
@@ -110,16 +113,29 @@ class SettingsPopup {
 		);
 	}
 
-	togglePopup(isOpen) {
+	togglePopup(isOpen, isUsingMouse = null) {
 		const elementToFocusOn = isOpen ? this.popup : this.buttons.open;
+		const isMinimized = getStateBoolean(this.popup, 'data-minimized');
 
 		this.buttons.open.setAttribute('aria-expanded', `${isOpen}`);
+		console.log({ isUsingMouse });
 		this.popup.hidden = !isOpen;
+		removeOutlineFromElement(this.popup, isUsingMouse);
 		elementToFocusOn.focus();
 		this.loadWallpaperInputs(isOpen);
 
+		document.documentElement.dispatchEvent(
+			new CustomEvent('settingstoggled', { detail: { isOpen } })
+		);
+
 		if (isOpen) {
 			this.popup.dispatchEvent(new Event('mousedown'));
+		}
+
+		if (isOpen && isMinimized) {
+			this.popup.dispatchEvent(
+				new CustomEvent('toggleminimize', { detail: { windowEl: this.popup } })
+			);
 		}
 	}
 

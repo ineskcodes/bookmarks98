@@ -1,0 +1,33 @@
+.task-button {
+	display: flex;
+	align-items: center;
+	gap: 0.5ch;
+	padding: 1px 5px;
+	flex-basis: 18ch;
+	font-size: 0.8rem;
+	box-shadow: var(--taskbar-button-inactive-box-shadow);
+
+	&-label {
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	&[hidden] {
+		display: none;
+	}
+
+	&[aria-pressed='true'],
+	&[data-pressed='true'] {
+		background:
+			linear-gradient(var(--taskbar-background-color) 0 50%, #fff0 50% 100%) 2px
+				0/2px 2px,
+			linear-gradient(
+					to right,
+					var(--taskbar-background-color) 0 50%,
+					#fff 50% 100%
+				)
+				0 0/2px 2px;
+		box-shadow: var(--taskbar-button-active-box-shadow);
+	}
+}

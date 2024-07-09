@@ -23,6 +23,8 @@ class WindowManager {
 
 		if (currentTarget === this.alertWindow) {
 			currentTarget.parentElement.style.zIndex = getMaxZIndex(this.windows) + 1;
+		} else {
+			currentTarget.dispatchEvent(new CustomEvent('activewindow'));
 		}
 	}
 }

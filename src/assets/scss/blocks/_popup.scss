@@ -9,11 +9,9 @@
 	left: 0;
 	right: 0;
 	margin: auto;
-	min-height: 100%;
 
 	@media (min-width: vars.$breakpoint-desktop) {
 		--top: 2rem;
-		min-height: unset;
 	}
 
 	&[hidden] {

@@ -1,9 +1,13 @@
 @use '../base/vars';
 
-:not([data-page='home']) + .root .header {
-	display: none;
+.header {
+	@media (max-width: #{vars.$breakpoint-desktop + vars.$px}) {
+		[data-has-unminimized-window] + .root & {
+			visibility: hidden;
+		}
+	}
 
-	@media (min-width: vars.$breakpoint-desktop) {
-		display: inline-block;
+	[data-page='home'] + .root & {
+		visibility: visible;
 	}
 }

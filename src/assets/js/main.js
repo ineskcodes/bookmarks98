@@ -3,6 +3,8 @@ import './modules/bookmarks.js';
 import './modules/settings.js';
 import './modules/windowManager.js';
 import './modules/resizeObserver.js';
+import './modules/taskButtons.js';
+import './modules/minimizeWindows.js';
 
 const vw = Math.max(
 	document.documentElement.clientWidth || 0,

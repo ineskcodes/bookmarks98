@@ -58,3 +58,7 @@ button {
 ul:not([role='list']) {
 	padding-left: 1rem;
 }
+
+.remove-outline:focus {
+	outline: none !important;
+}

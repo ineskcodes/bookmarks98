@@ -12,12 +12,13 @@
 @import 'blocks/menu';
 @import 'blocks/window';
 @import 'blocks/bookmark';
-@import 'blocks/header';
 @import 'blocks/icon';
 @import 'blocks/settings';
 @import 'blocks/switcher';
 @import 'blocks/popup';
 @import 'blocks/alert';
+@import 'blocks/task-button';
+@import 'blocks/header';
 
 // utilities
 @import 'utilities/visually-hidden';
@@ -29,3 +30,4 @@
 @import 'utilities/dropdown';
 @import 'utilities/transition-fade';
 @import 'utilities/noise';
+@import 'utilities/requires-js';
