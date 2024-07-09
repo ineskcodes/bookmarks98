@@ -2,7 +2,7 @@ import {
 	getCorrespondingTaskButton,
 	getCorrespondingWindow,
 	getStateBoolean,
-	removeOutlineFromTaskButton,
+	removeOutlineFromElement,
 } from './utils';
 
 class TaskButtons {
@@ -47,7 +47,7 @@ class TaskButtons {
 		const isPressed = getStateBoolean(currentTarget, 'aria-pressed');
 		const isMinimized = getStateBoolean(currentWindow, 'data-minimized');
 
-		removeOutlineFromTaskButton(currentTarget, isUsingMouse);
+		removeOutlineFromElement(currentTarget, isUsingMouse);
 
 		if (isPressed !== isMinimized) {
 			currentWindow.dispatchEvent(

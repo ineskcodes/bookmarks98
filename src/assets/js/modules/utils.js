@@ -50,12 +50,12 @@ export const getCorrespondingWindow = (taskButton) => {
 	return document.querySelector(`.window[data-task="${taskButton.id}"]`);
 };
 
-export const removeOutlineFromTaskButton = (button, isUsingMouse) => {
+export const removeOutlineFromElement = (element, isUsingMouse) => {
 	if (isUsingMouse) {
-		button.classList.add('from-mouse');
-		button.addEventListener(
+		element.classList.add('remove-outline');
+		element.addEventListener(
 			'blur',
-			() => button.classList.remove('from-mouse'),
+			() => element.classList.remove('remove-outline'),
 			{ once: true }
 		);
 	}

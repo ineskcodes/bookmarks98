@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import {
 	getStateBoolean,
 	getCorrespondingTaskButton,
-	removeOutlineFromTaskButton,
+	removeOutlineFromElement,
 } from './utils';
 
 class MinimizeWindows {
@@ -188,7 +188,7 @@ class MinimizeWindows {
 		const taskButton = getCorrespondingTaskButton(windowEl);
 		const isPressed = !getStateBoolean(taskButton);
 
-		removeOutlineFromTaskButton(taskButton, isUsingMouse);
+		removeOutlineFromElement(taskButton, isUsingMouse);
 		windowEl.dispatchEvent(
 			new CustomEvent('toggleminimize', { detail: { windowEl, isPressed } })
 		);
