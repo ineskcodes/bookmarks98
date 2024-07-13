@@ -7,6 +7,10 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPassthroughCopy({ 'src/assets/wallpapers': '/' });
 	eleventyConfig.addPassthroughCopy({ 'src/assets/themes': '/' });
 	eleventyConfig.addPassthroughCopy({ 'src/static': '/' });
+	eleventyConfig.addFilter('sortByTitle', (values) => {
+		let vals = [...values];
+		return vals.sort((a, b) => (a.data.title > b.data.title ? 1 : -1));
+	});
 	eleventyConfig.addNunjucksAsyncFilter(
 		'jsmin',
 		async function (code, callback) {

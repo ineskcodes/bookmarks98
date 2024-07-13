@@ -1,5 +1,5 @@
 <ul role="list" class="[ bookmarks ] [ wrapper ]">
-	{% for item in bookmarksCollection %}
+	{% for item in bookmarksCollection | sortByTitle %}
 		{% set bookmarkTitle = item.data.title %}
 		{% set bookmarkAuthor = item.data.author %}
 		{% set bookmarkDesc = item.data.description %}

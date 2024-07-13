@@ -1,4 +1,4 @@
-{% set navItems = categories + ',About' %}
+{% set navItems = (categories | sort) + ',About' %}
 {% set navItems = navItems.split(',') %}
 
 <ul role="list" class="nav__list" data-parent="{{ navParent }}">
