@@ -1,7 +1,0 @@
----
-title: "Grid by Example"
-description: "Everything you need to learn CSS Grid Layout."
-author: "Rachel Andrew"
-url: "https://gridbyexample.com"
-tags: CSS
----

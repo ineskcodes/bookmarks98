@@ -1,7 +1,0 @@
----
-title: "Tips for Creating and Exporting Better SVGs for the Web "
-description: "A set of “dos and don’ts”—that can help make the generated code cleaner."
-author: "Sara Soueidan"
-url: "https://www.sarasoueidan.com/blog/svg-tips-for-designers/"
-tags: SVG
----

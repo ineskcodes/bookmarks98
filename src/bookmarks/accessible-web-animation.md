@@ -1,7 +1,0 @@
----
-title: "Accessible Web Animation"
-description: "The WCAG on animation explained."
-author: "Val Head"
-url: "https://css-tricks.com/accessible-web-animation-the-wcag-on-animation-explained/"
-tags: Accessibility
----

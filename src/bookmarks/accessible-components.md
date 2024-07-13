@@ -1,7 +1,0 @@
----
-title: "Accessible Components"
-description: "Listing of accessible components & patterns "
-author: "Scott O'Hara"
-url: "https://github.com/scottaohara/accessible_components"
-tags: Accessibility
----

@@ -1,7 +1,0 @@
----
-title: "Eleventy Walk Through"
-description: "This guide is meant to provide some step by step instructions for using Eleventy, and provide additional reference information."
-author: "Reg Hunt"
-url: "https://rphunt.github.io/eleventy-walkthrough/"
-tags: Eleventy
----

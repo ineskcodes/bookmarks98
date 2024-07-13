@@ -1,7 +1,0 @@
----
-title: "Learn CSS"
-description: 'An evergreen CSS course and reference to level up your web styling expertise.'
-author: "web.dev"
-url: "https://web.dev/learn/css"
-tags: CSS
----
