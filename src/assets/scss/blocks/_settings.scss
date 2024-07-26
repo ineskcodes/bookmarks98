@@ -9,12 +9,13 @@
 	}
 
 	@media (max-width: #{vars.$breakpoint-desktop + vars.$px}) {
-		[data-has-unminimized-window] + .root & {
-			visibility: hidden;
+		[data-window-open] + .root & .nav__item,
+		[data-popup-open] + .root & .nav__item {
+			animation: 500ms toggleVisibility ease forwards;
 		}
 	}
 
-	[data-page='home'] + .root & {
-		visibility: visible;
+	[data-page='home'][data-window-open] + .root & .nav__item {
+		animation: 0ms toggleVisibility ease backwards;
 	}
 }

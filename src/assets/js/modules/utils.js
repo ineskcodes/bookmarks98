@@ -60,3 +60,14 @@ export const removeOutlineFromElement = (element, isUsingMouse) => {
 		);
 	}
 };
+
+export const updatePageHookWindow = (windowEl, isMinimized) => {
+	const pageHook = document.querySelector('#page-hook');
+
+	pageHook.removeAttribute('data-window-open');
+	pageHook.removeAttribute('data-popup-open');
+
+	if (!isMinimized) {
+		pageHook.setAttribute(`data-${windowEl.dataset.item}-open`, '');
+	}
+};

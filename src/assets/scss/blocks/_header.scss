@@ -2,12 +2,13 @@
 
 .header {
 	@media (max-width: #{vars.$breakpoint-desktop + vars.$px}) {
-		[data-has-unminimized-window] + .root & {
-			visibility: hidden;
+		[data-window-open] + .root &,
+		[data-popup-open] + .root & {
+			animation: 500ms toggleVisibility ease forwards;
 		}
 	}
 
-	[data-page='home'] + .root & {
-		visibility: visible;
+	[data-page='home']:not([data-popup-open]) + .root & {
+		animation: 0ms toggleVisibility ease backwards;
 	}
 }

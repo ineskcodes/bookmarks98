@@ -17,4 +17,12 @@
 	&[hidden] {
 		display: none;
 	}
+
+	@media (max-width: #{vars.$breakpoint-desktop + vars.$px}) {
+		animation: 500ms toggleVisibility ease forwards;
+
+		[data-popup-open] + .root & {
+			animation: 0ms toggleVisibility ease backwards;
+		}
+	}
 }

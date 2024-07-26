@@ -1,5 +1,9 @@
 import { root } from './elements';
-import { getStateBoolean, removeOutlineFromElement } from './utils';
+import {
+	getStateBoolean,
+	removeOutlineFromElement,
+	updatePageHookWindow,
+} from './utils';
 import { wallpapers } from './wallpapers';
 
 class SettingsPopup {
@@ -136,6 +140,10 @@ class SettingsPopup {
 			this.popup.dispatchEvent(
 				new CustomEvent('toggleminimize', { detail: { windowEl: this.popup } })
 			);
+		}
+
+		if (!isOpen) {
+			updatePageHookWindow(this.popup, true);
 		}
 	}
 

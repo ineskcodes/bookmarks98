@@ -3,6 +3,7 @@ import {
 	getStateBoolean,
 	getCorrespondingTaskButton,
 	removeOutlineFromElement,
+	updatePageHookWindow,
 } from './utils';
 
 class MinimizeWindows {
@@ -58,15 +59,11 @@ class MinimizeWindows {
 	}
 
 	toggleStates(elements, state) {
-		const pageHook = document.querySelector('#page-hook');
+		const isMinimized = !state.isMinimized;
 		elements.taskButton.setAttribute('aria-pressed', !state.isPressed);
 		elements.windowEl.setAttribute('data-minimized', !state.isMinimized);
 
-		if (!state.isMinimized) {
-			pageHook.removeAttribute('data-has-unminimized-window');
-		} else {
-			pageHook.setAttribute('data-has-unminimized-window', '');
-		}
+		updatePageHookWindow(elements.windowEl, isMinimized);
 	}
 
 	checkIfAnimationIsActive() {

@@ -3,6 +3,7 @@ import {
 	getCorrespondingWindow,
 	getStateBoolean,
 	removeOutlineFromElement,
+	updatePageHookWindow,
 } from './utils';
 
 class TaskButtons {
@@ -65,6 +66,7 @@ class TaskButtons {
 	toggleActiveState(e) {
 		const windowEl = e.currentTarget;
 		const taskButton = getCorrespondingTaskButton(windowEl);
+		const isMinimized = getStateBoolean(windowEl, 'data-minimized');
 
 		if (taskButton) {
 			this.taskButtons.forEach((button) =>
@@ -73,6 +75,7 @@ class TaskButtons {
 
 			taskButton.hidden = false;
 			taskButton.setAttribute('aria-pressed', 'true');
+			updatePageHookWindow(windowEl, isMinimized);
 		}
 	}
 
