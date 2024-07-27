@@ -38,6 +38,11 @@
 		> :last-child {
 			margin-left: 0.25rem;
 		}
+
+		a,
+		button {
+			display: block;
+		}
 	}
 
 	&__header *:focus-visible {

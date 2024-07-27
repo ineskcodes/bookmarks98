@@ -18,7 +18,7 @@ class TaskButtons {
 		this.bindEvents();
 		this.taskButtons.forEach((button) => {
 			const windowEl = getCorrespondingWindow(button);
-			if (windowEl) button.hidden = windowEl.hidden;
+			if (windowEl) this.settingsTaskButton.hidden = windowEl.hidden;
 		});
 	}
 
