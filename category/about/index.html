@@ -507,7 +507,7 @@
 			<img width="16" height="16" alt="" src="/bookmarks98/about-icon-small.png" class="window__icon">
 			<h1 class="window__heading">about</h1>
 			
-				<button type="button" class="minimize-btn" id="main-minimize-btn">
+				<button hidden type="button" class="minimize-btn" id="main-minimize-btn">
 					<img width="16" height="16" src="/bookmarks98/minimize-icon.png" alt="">
 					<span class="visually-hidden">Minimize about</span>
 				</button>
@@ -516,7 +516,7 @@
 				</a>
 			
 		</header>
-		<div class="window__navbar" aria-hidden="true">
+		<div hidden class="window__navbar" aria-hidden="true">
 			<span>File</span>
 			<span>Edit</span>
 			<span>Search</span>
@@ -596,11 +596,11 @@
 	<header class="[ popup__header ] [ window__header ]" data-trigger>
 		<img width="16" height="16" src="/bookmarks98/settings-icon.png" alt="">
 		<h2 class="[ popup__heading ] [ window__heading ]" id="settings-popup-label">Settings</h2>
-		<button type="button" class="minimize-btn" id="settings-minimize-btn">
+		<button hidden type="button" class="minimize-btn" id="settings-minimize-btn">
 			<img width="16" height="16" src="/bookmarks98/minimize-icon.png" alt="">
 			<span class="visually-hidden">Minimize settings</span>
 		</button>
-		<button type="button" id="settings-close-btn">
+		<button hidden type="button" id="settings-close-btn">
 			<img width="16" height="16" src="/bookmarks98/close-icon.png" alt="">
 			<span class="visually-hidden">Close settings</span>
 		</button>
@@ -1145,7 +1145,7 @@
 
 </nav>
         
-<button data-requires-js class="[ task-button ] [ minimize-toggle ]" id="main-task-button" aria-pressed="true">
+<button data-requires-js class="[ task-button ] [ minimize-toggle ]" id="main-task-button" aria-pressed="true" hidden>
     <img src="/bookmarks98/about-icon-small.png" alt="" width="16" height="16">
     <div class="task-button-label">
         <span aria-hidden="true">About</span>
@@ -1153,7 +1153,7 @@
         <span class="visually-hidden">About window unminimized.</span>
     </div>
 </button>
-<div data-no-js-alternative class="[ task-button ] [ minimize-toggle ]" data-pressed="true">
+<div hidden data-no-js-alternative class="[ task-button ] [ minimize-toggle ]" data-pressed="true">
         <img src="/bookmarks98/about-icon-small.png" alt="" width="16" height="16">
     <div class="task-button-label">
         <span>About</span>
