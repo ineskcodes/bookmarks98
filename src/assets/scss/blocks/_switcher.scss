@@ -67,6 +67,7 @@
 
 	&__fieldset {
 		display: grid;
+		grid-template-rows: auto 1fr;
 		position: relative;
 		flex: 1;
 		height: 8rem;
@@ -76,6 +77,11 @@
 
 	&__fieldset legend {
 		margin-bottom: 0.25rem;
+	}
+
+	&__wallpapers-container {
+		position: relative;
+		overflow: auto;
 	}
 
 	&__wallpapers {
