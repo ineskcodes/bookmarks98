@@ -35,7 +35,7 @@
 		box-shadow: var(--window-header-box-shadow);
 		color: var(--window-header-foreground-color);
 
-		a {
+		> :last-child {
 			margin-left: 0.25rem;
 		}
 	}
