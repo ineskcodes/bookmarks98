@@ -1,5 +1,6 @@
 const fs = require('fs');
 const fm = require('front-matter');
+const filenamify = require('./src/filters/filenamify.js');
 const puppeteer = require('puppeteer');
 const FormData = require('form-data');
 const fetch = require('node-fetch');
@@ -31,16 +32,6 @@ const getBookmarksData = () => {
 		console.error('Error reading front matter:', error);
 		return [];
 	}
-};
-
-const filenamify = (str) => {
-	str = str.replace(/^\s+|\s+$/g, '');
-	str = str.toLowerCase();
-	str = str
-		.replace(/[^a-z0-9 -]/g, '')
-		.replace(/\s+/g, '-')
-		.replace(/-+/g, '-');
-	return str;
 };
 
 const checkIfFileExists = async (filename) => {
@@ -139,7 +130,6 @@ const build = async () => {
 
 	for (const { title, url } of data) {
 		const filename = filenamify(title);
-
 		await captureScreenshot(filename, url).then(async (screenshot) => {
 			if (screenshot) {
 				await uploadToImageKit(filename, screenshot);
