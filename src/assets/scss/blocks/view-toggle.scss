@@ -11,7 +11,7 @@
 
 		&[aria-pressed='true'] {
 			box-shadow: var(--buttons-active-box-shadow);
-			background-color: rgb(221, 220, 220);
+			backdrop-filter: brightness(1.1);
 		}
 	}
 
