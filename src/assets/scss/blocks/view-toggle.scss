@@ -1,0 +1,22 @@
+.view-toggle {
+	display: flex;
+
+	&__btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 3rem;
+		height: 1.75rem;
+		box-shadow: var(--buttons-box-shadow);
+
+		&[aria-pressed='true'] {
+			box-shadow: var(--buttons-active-box-shadow);
+			background-color: rgb(221, 220, 220);
+		}
+	}
+
+	svg {
+		display: block;
+		height: 100%;
+	}
+}

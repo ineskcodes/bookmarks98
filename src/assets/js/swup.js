@@ -23,6 +23,7 @@ swup.hooks.on('page:view', async () => {
 		);
 		const { default: Menu } = await import('./modules/menu.js');
 		const { default: Bookmarks } = await import('./modules/bookmarks.js');
+		const { default: ViewToggle } = await import('./modules/viewToggle.js');
 		const { default: TaskButtons } = await import('./modules/taskButtons.js');
 		const { default: MinimizeWindows } = await import(
 			'./modules/minimizeWindows.js'
@@ -47,6 +48,7 @@ swup.hooks.on('page:view', async () => {
 		new WindowManager();
 		new TaskButtons();
 		new MinimizeWindows();
+		new ViewToggle();
 
 		console.log('Modules loaded successfully.');
 	} catch (error) {

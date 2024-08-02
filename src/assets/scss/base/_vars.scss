@@ -65,6 +65,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
 	--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
 		-1px -1px #777 inset, -1px -1px #222 inset, 1px 1px #222;
+	--buttons-active-box-shadow: 1px 1px #fff, inset 1px 1px #808080,
+		1px 1px #dfdfdf, inset 1px 1px #0a0a0a;
 	--ok-button-box-shadow: 1px 1px #000 inset, -2px -2px #000 inset,
 		-3px -3px #555 inset, 3px 3px #fff inset;
 	--switcher-box-shadow: 1px 1px #fff inset, 2px 2px #ddd inset,

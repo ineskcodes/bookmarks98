@@ -32,8 +32,8 @@
 			<span>Search</span>
 			<span>Help</span>
 		</div>
-		<div class="window__content">
-			{{ window.content(pageHook, collections[category], content) }}
+		<div class="window__content" data-view="image">
+			{{ window.content(pageHook, collections[category], windowHeading, content) }}
 		</div>
 	</main>
 </div>
