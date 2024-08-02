@@ -15,8 +15,10 @@
 		"eleventy:debug": "DEBUG=* eleventy",
 		"parcel:build": "parcel build",
 		"parcel:serve": "parcel watch",
+		"start": "npm-run-all clean --parallel eleventy:watch parcel:serve",
+		"prebuild": "node buildScreenshots.js",
 		"build": "npm-run-all clean eleventy:build parcel:build",
-		"start": "npm-run-all clean --parallel eleventy:watch parcel:serve"
+		"postbuild": "rm -rf temp/"
 	},
 	"keywords": [],
 	"author": "",
@@ -35,10 +37,16 @@
 		"@swup/a11y-plugin": "^5.0.0",
 		"@swup/head-plugin": "^2.2.0",
 		"@swup/scripts-plugin": "^2.1.0",
+		"dotenv": "^16.4.5",
+		"form-data": "^4.0.0",
+		"front-matter": "^4.0.2",
 		"gsap": "^3.12.5",
+		"node-fetch": "^2.7.0",
 		"npm-run-all": "^4.1.5",
+		"puppeteer": "^22.15.0",
 		"swup": "^4.6.1",
-		"terser": "^5.31.1"
+		"terser": "^5.31.1",
+		"unirest": "^0.6.0"
 	},
 	"browserslist": "defaults, > 0.5%, last 2 versions, not dead"
 }

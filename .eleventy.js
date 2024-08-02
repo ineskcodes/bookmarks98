@@ -1,4 +1,5 @@
 const { minify } = require('terser');
+const filenamify = require('./src/filters/filenamify.js');
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addWatchTarget('src/assets/scss');
@@ -24,6 +25,7 @@ module.exports = (eleventyConfig) => {
 			}
 		}
 	);
+	eleventyConfig.addFilter('filenamify', filenamify);
 
 	return {
 		markdownTemplateEngine: 'njk',

@@ -5,6 +5,8 @@ import './modules/windowManager.js';
 import './modules/resizeObserver.js';
 import './modules/taskButtons.js';
 import './modules/minimizeWindows.js';
+import './modules/viewToggle.js';
+import './modules/lazyLoad.js';
 
 const vw = Math.max(
 	document.documentElement.clientWidth || 0,
