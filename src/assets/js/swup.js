@@ -21,6 +21,8 @@ swup.hooks.on('page:view', async () => {
 			document.documentElement.clientWidth || 0,
 			window.innerWidth || 0
 		);
+
+		const { lazyLoadImages } = await import('./modules/lazyLoad.js');
 		const { default: Menu } = await import('./modules/menu.js');
 		const { default: Bookmarks } = await import('./modules/bookmarks.js');
 		const { default: ViewToggle } = await import('./modules/viewToggle.js');
@@ -49,6 +51,7 @@ swup.hooks.on('page:view', async () => {
 		new TaskButtons();
 		new MinimizeWindows();
 		new ViewToggle();
+		lazyLoadImages();
 
 		console.log('Modules loaded successfully.');
 	} catch (error) {
