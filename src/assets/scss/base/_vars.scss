@@ -26,6 +26,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 	--dropdown-arrow-box-background-color: #c0c0c0;
 	--dropdown-focus-background-color: #050481;
 	--dropdown-focus-foreground-color: #fff;
+	--view-toggle-pressed-background-color: #ddd;
 
 	// scrollbar
 	--scrollbar-color: #c0c0c0;
@@ -101,6 +102,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		--switcher-input-active-background-color: #c9184a;
 		--dropdown-arrow-box-background-color: #ffccd5;
 		--dropdown-focus-background-color: #c9184a;
+		--view-toggle-pressed-background-color: #ffdee4;
 
 		// scrollbar
 		--scrollbar-color: #ffccd5;
@@ -125,6 +127,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px 0 #ffb3c1, inset 2px 2px 0 #fff;
 		--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
 			-1px -1px #ffb3c1 inset, -1px -1px #ff4d6d inset, 1px 1px #ff4d6d;
+		--buttons-active-box-shadow: 1px 1px #fff, inset 1px 1px #ff4d6d,
+			1px 1px #ffb3c1, inset 1px 1px #c9184a;
 		--ok-button-box-shadow: 1px 1px #ff4d6d inset, -2px -2px #ff4d6d inset,
 			-3px -3px #ffb3c1 inset, 3px 3px #fff inset;
 		--switcher-box-shadow: 1px 1px #fff inset, 2px 2px #ffb3c1 inset,
@@ -161,6 +165,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		--switcher-input-active-background-color: #11270b;
 		--dropdown-arrow-box-background-color: #bbca8d;
 		--dropdown-focus-background-color: #11270b;
+		--view-toggle-pressed-background-color: #ccd8a7;
 
 		// scrollbar
 		--scrollbar-color: #bbca8d;
@@ -185,6 +190,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px 0 #94bc5c, inset 2px 2px 0 #fff;
 		--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
 			-1px -1px #94bc5c inset, -1px -1px #3c5a14 inset, 1px 1px #3c5a14;
+		--buttons-active-box-shadow: 1px 1px #fff, inset 1px 1px #3c5a14,
+			1px 1px #94bc5c, inset 1px 1px #11270b;
 		--ok-button-box-shadow: 1px 1px #3c5a14 inset, -2px -2px #3c5a14 inset,
 			-3px -3px #94bc5c inset, 3px 3px #fff inset;
 		--switcher-box-shadow: 1px 1px #fff inset, 2px 2px #94bc5c inset,
@@ -221,6 +228,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		--switcher-input-active-background-color: #03045e;
 		--dropdown-arrow-box-background-color: #90e0ef;
 		--dropdown-focus-background-color: #03045e;
+		--view-toggle-pressed-background-color: #b2e9f3;
 
 		// scrollbar
 		--scrollbar-color: #90e0ef;
@@ -245,6 +253,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px 0 #00b4d8, inset 2px 2px 0 #fff;
 		--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
 			-1px -1px #00b4d8 inset, -1px -1px #023e8a inset, 1px 1px #023e8a;
+		--buttons-active-box-shadow: 1px 1px #fff, inset 1px 1px #023e8a,
+			1px 1px #00b4d8, inset 1px 1px #03045e;
 		--ok-button-box-shadow: 1px 1px #023e8a inset, -2px -2px #023e8a inset,
 			-3px -3px #00b4d8 inset, 3px 3px #fff inset;
 		--switcher-box-shadow: 1px 1px #fff inset, 2px 2px #00b4d8 inset,
@@ -281,6 +291,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		--switcher-input-active-background-color: #cd3b2d;
 		--dropdown-arrow-box-background-color: #ffcc84;
 		--dropdown-focus-background-color: #cd3b2d;
+		--view-toggle-pressed-background-color: #ffd7a0;
 
 		// scrollbar
 		--scrollbar-color: #ffcc84;
@@ -305,6 +316,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px 0 #f7b267, inset 2px 2px 0 #fff;
 		--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
 			-1px -1px #f7b267 inset, -1px -1px #f25c54 inset, 1px 1px #f25c54;
+		--buttons-active-box-shadow: 1px 1px #fff, inset 1px 1px #f25c54,
+			1px 1px #f7b267, inset 1px 1px #cd3b2d;
 		--ok-button-box-shadow: 1px 1px #f25c54 inset, -2px -2px #f25c54 inset,
 			-3px -3px #f7b267 inset, 3px 3px #fff inset;
 		--switcher-box-shadow: 1px 1px #fff inset, 2px 2px #f7b267 inset,
@@ -341,6 +354,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		--switcher-input-active-background-color: #3c096c;
 		--dropdown-arrow-box-background-color: #e0aaff;
 		--dropdown-focus-background-color: #3c096c;
+		--view-toggle-pressed-background-color: #e8c3fd;
 
 		// scrollbar
 		--scrollbar-color: #e0aaff;
@@ -365,6 +379,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px 0 #7b2cbf, inset 2px 2px 0 #fff;
 		--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
 			-1px -1px #7b2cbf inset, -1px -1px #3c096c inset, 1px 1px #3c096c;
+		--buttons-active-box-shadow: 1px 1px #fff, inset 1px 1px #7b2cbf,
+			1px 1px #e0aaff, inset 1px 1px #3c096c;
 		--ok-button-box-shadow: 1px 1px #3c096c inset, -2px -2px #3c096c inset,
 			-3px -3px #7b2cbf inset, 3px 3px #fff inset;
 		--switcher-box-shadow: 1px 1px #fff inset, 2px 2px #7b2cbf inset,
@@ -406,6 +422,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		--dropdown-arrow-box-background-color: #00132d;
 		--dropdown-focus-background-color: #fff;
 		--dropdown-focus-foreground-color: #000a17;
+		--view-toggle-pressed-background-color: #02367a;
 
 		// scrollbar
 		--scrollbar-color: #00132d;
@@ -430,6 +447,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset -2px -2px 0 #00377e, inset 2px 2px 0 #fff;
 		--buttons-box-shadow: 1px 1px #fff inset, 1px 1px #ddd inset,
 			-1px -1px #00377e inset, -1px -1px #002657 inset, 1px 1px #002657;
+		--buttons-active-box-shadow: 1px 1px #fff, inset 1px 1px #00377e,
+			1px 1px #00377e, inset 1px 1px #00132d;
 		--ok-button-box-shadow: 1px 1px #002657 inset, -2px -2px #002657 inset,
 			-3px -3px #00377e inset, 3px 3px #fff inset;
 		--switcher-box-shadow: 1px 1px #fff inset, 2px 2px #00377e inset,
