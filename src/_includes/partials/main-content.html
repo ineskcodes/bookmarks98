@@ -15,7 +15,7 @@
 	<main data-draggable="window" data-item="window" class="[ main ] [ window ]" data-page="{{ pageHook }}" data-has-window="{{ not not isWindowVisible }}" data-task="main-task-button" data-minimized="false">
 		<header data-trigger class="window__header">
 			<img width="{{ windowIconSize }}" height="{{ windowIconSize }}" alt="" src="{{ windowIconSrc }}" class="window__icon">
-			<h1 class="window__heading">{{ windowHeading }}</h1>
+			<span aria-hidden="true" class="window__heading">{{ windowHeading }}</span>
 			{% if pageHook != "home" %}
 				<button hidden type="button" class="minimize-btn" id="main-minimize-btn">
 					<img width="16" height="16" src="{{ '/minimize-icon.png' | url }}" alt="">
