@@ -27,7 +27,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Print environment variables
+        run: |
+          echo "IMAGEKIT_FILES_ENDPOINT: $IMAGEKIT_FILES_ENDPOINT"
+          echo "IMAGEKIT_UPLOAD_ENDPOINT: $IMAGEKIT_UPLOAD_ENDPOINT"
+          echo "IMAGEKIT_API_SECRET: $IMAGEKIT_API_SECRET"
+        env:
+          IMAGEKIT_FILES_ENDPOINT: ${{ secrets.IMAGEKIT_FILES_ENDPOINT }}
+          IMAGEKIT_UPLOAD_ENDPOINT: ${{ secrets.IMAGEKIT_UPLOAD_ENDPOINT }}
+          IMAGEKIT_API_SECRET: ${{ secrets.IMAGEKIT_API_SECRET }}
+
       - name: Build
+        env:
+          IMAGEKIT_FILES_ENDPOINT: ${{ secrets.IMAGEKIT_FILES_ENDPOINT }}
+          IMAGEKIT_UPLOAD_ENDPOINT: ${{ secrets.IMAGEKIT_UPLOAD_ENDPOINT }}
+          IMAGEKIT_API_SECRET: ${{ secrets.IMAGEKIT_API_SECRET }}
         run: npm run build
 
       - name: Deploy to GitHub Pages
