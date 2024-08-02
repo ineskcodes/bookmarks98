@@ -4,6 +4,31 @@ document.documentElement.style.setProperty(
 	`${window.innerHeight * 0.01}px`
 );
 
+document.addEventListener('DOMContentLoaded', function () {
+	const lazyImages = Array.from(document.querySelectorAll('img.lazy'));
+
+	if ('IntersectionObserver' in window) {
+		let lazyImageObserver = new IntersectionObserver(function (
+			entries,
+			observer
+		) {
+			entries.forEach(function (entry) {
+				if (entry.isIntersecting) {
+					let lazyImage = entry.target;
+					lazyImage.src = lazyImage.dataset.src;
+					lazyImage.srcset = lazyImage.dataset.srcset;
+					lazyImage.classList.remove('lazy');
+					lazyImageObserver.unobserve(lazyImage);
+				}
+			});
+		});
+
+		lazyImages.forEach(function (lazyImage) {
+			lazyImageObserver.observe(lazyImage);
+		});
+	}
+});
+
 (function () {
 	// Check if localStorage is supported and available
 	// source: https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API

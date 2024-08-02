@@ -12,8 +12,14 @@
 			<div class="bookmark__img">
 				<img width="500" height="310" alt=""
 					data-requires-js
+					{% if loop.index > 4 %}
+					class="lazy"
+					data-src="{{ '/fallback.webp' | url }}"
+					data-srcset="{{ imgSrcset }}"
+					{% else %}
 					src="{{ '/fallback.webp' | url }}"
 					srcset="{{ imgSrcset }}"
+					{% endif %}
 					sizes="{{ imgSizes }}"
 					/>
 			</div>
