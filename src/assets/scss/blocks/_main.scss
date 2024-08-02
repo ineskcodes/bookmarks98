@@ -32,6 +32,7 @@
 		display: flex;
 		justify-content: center;
 		flex: 1;
+		margin-right: var(--settings-icon-width);
 	}
 
 	:not([data-page='home']) + .root &-container {

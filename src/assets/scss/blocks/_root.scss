@@ -19,7 +19,6 @@
 		position: relative;
 		display: flex;
 		gap: var(--gap, 0rem);
-		overflow: hidden;
 		background-image: var(--wallpaper, none);
 		background-size: var(--size, 20px 20px);
 		background-repeat: var(--repeat, repeat);
@@ -28,6 +27,7 @@
 		@media (min-width: vars.$breakpoint-desktop) {
 			--gap: 1rem;
 			position: relative;
+			overflow: hidden;
 		}
 	}
 

@@ -18,4 +18,10 @@
 	[data-page='home'][data-window-open] + .root & .nav__item {
 		animation: 0ms toggleVisibility ease backwards;
 	}
+
+	[data-item='settings'] {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+	}
 }
