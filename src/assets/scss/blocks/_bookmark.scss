@@ -69,7 +69,6 @@
 
 	&[data-clickable]:hover {
 		box-shadow: var(--bookmark-hover-box-shadow);
-		backdrop-filter: brightness(0.97);
 	}
 
 	[data-view='details'] &__img,
