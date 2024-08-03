@@ -143,6 +143,7 @@ const build = async () => {
 	});
 
 	console.log('🎉 Screenshots collection complete! 🎉');
+	process.exit(0); // Ensure the process exits
 };
 
 build();
