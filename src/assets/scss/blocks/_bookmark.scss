@@ -40,6 +40,10 @@
 
 	&__img {
 		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		aspect-ratio: 308 / 195;
 		box-shadow: var(--bookmark-hover-box-shadow);
 
 		&::after {
@@ -52,10 +56,13 @@
 		}
 
 		img {
-			width: calc(100% - 4px);
-			height: auto;
+			width: auto;
+			height: var(--fallback-img-height, calc(100% - 4px));
 			margin: 2px;
-			aspect-ratio: 308 / 191;
+
+			&.fallback {
+				--fallback-img-height: 30%;
+			}
 		}
 	}
 

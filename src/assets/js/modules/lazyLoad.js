@@ -9,7 +9,6 @@ export const lazyLoadImages = () => {
 			entries.forEach(function (entry) {
 				if (entry.isIntersecting) {
 					let lazyImage = entry.target;
-					lazyImage.src = lazyImage.dataset.src;
 					lazyImage.srcset = lazyImage.dataset.srcset;
 					lazyImage.classList.remove('lazy');
 					lazyImageObserver.unobserve(lazyImage);

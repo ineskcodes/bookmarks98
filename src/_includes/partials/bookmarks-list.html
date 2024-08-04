@@ -1,27 +1,15 @@
+{% from "macros/screenshot.html" import screenshot %}
+
 <ul role="list" class="[ bookmarks ] [ wrapper ]">
 	{% for item in bookmarksCollection | sortByTitle %}
 		{% set bookmarkTitle = item.data.title %}
 		{% set bookmarkAuthor = item.data.author %}
 		{% set bookmarkDesc = item.data.description %}
 		{% set bookmarkUrl = item.data.url %}
-		{% set imgSrc = "https://ik.imagekit.io/rsgqxitab/bookmarks98/" + (bookmarkTitle | filenamify) %}
-		{% set imgSrcset = imgSrc + "?tr=w-312 312w, " + imgSrc + "?tr=w-624 624w, " + imgSrc + "?tr=w-936 936w"%}
-		{% set imgSizes = "(max-width: 467px) 90vw, (max-width: 699px) 50vw, (max-width: 851px) 37vw, 312px" %}
 
 		<li class="[ bookmarks__item ] [ bookmark ]">
 			<div class="bookmark__img">
-				<img width="500" height="310" alt=""
-					data-requires-js
-					{% if loop.index > 4 %}
-					class="lazy"
-					data-src="{{ '/fallback.webp' | url }}"
-					data-srcset="{{ imgSrcset }}"
-					{% else %}
-					src="{{ '/fallback.webp' | url }}"
-					srcset="{{ imgSrcset }}"
-					{% endif %}
-					sizes="{{ imgSizes }}"
-					/>
+				{{ screenshot(bookmarkTitle, loop.index) }}
 			</div>
 			<h2 class="bookmark__title">
 				<a href="{{ bookmarkUrl | url }}">{{ bookmarkTitle }}</a>
