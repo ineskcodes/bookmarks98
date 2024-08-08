@@ -7,13 +7,15 @@ eleventyComputed:
   mainHeading: 'About this site'
 ---
 
-## Why I built this site
+![]({{ '/catwalking.gif' | url }}){.cat-walking}
+
+# Why I built this site
 
 Having accumulated a lot of (mostly) front-end development bookmarks, I built this site to organize them and easily share them with others.
 
 There are courses, articles, tutorials and tools for everyone. Whether you're just starting out or have experience in coding, I hope you find them useful! ✨
 
-<hr class="divider" />
+![](){.white-star-divider .lazy data-src="{{ '/whitestardivider.gif' | url }}" }
 
 ## Credits and acknowledgments
 
@@ -26,3 +28,23 @@ There are courses, articles, tutorials and tools for everyone. Whether you're ju
 - The icons are from [Windows98 Icon Viewer](https://win98icons.alexmeub.com/) by [Alex Meub](https://alexmeub.com/).
 
 - The wallpapers are from [Original Classic Windows Wallpapers](https://www.dvd3000.ca/wp/).
+
+![](){.white-star-divider .lazy data-src="{{ '/whitestardivider.gif' | url }}" }
+
+- !["Add this site to my netscape."]({{ '/add-this-site-to-my-netscape.gif' | url }})
+- !["HTML, Learn it today."]({{ '/html-learn-it-today.gif' | url }})
+- !["Cascading Style Sheets."]({{ '/cascading-style-sheets.gif' | url }})
+- [!["Free Palestine."]({{ '/free-palestine.gif' | url }})](https://gazafunds.com/)
+- [!["Keep Eyes On Sudan."]({{ '/keep-eyes-on-sudan.png' | url }})](https://eyesonsudan.net/donate)
+- [!["Free Congo."]({{ '/free-congo.png' | url }})](https://www.focuscongo.com/en/spende/)
+- !["Completely hand-coded."]({{ '/handcoded.png' | url }})
+  {.geo-buttons role="list"}
+
+Built with 💓 by [inescodes](#)
+{.built-by}
+
+<marquee class="marquee">Thank you for visiting!<marquee>
+
+Thank you for visiting!{.marquee-alt}
+
+![](){.nice-day .lazy data-src="{{ '/haveaniceday.gif' | url }}" }
