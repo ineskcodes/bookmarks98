@@ -1,4 +1,4 @@
-{% import "macros/window-content.html" as window %}
+{% from "macros/window-content.html" import windowContent %}
 
 {% if pageHook == 'bookmarks'  %}
 	{% set windowHeading = category %}
@@ -13,7 +13,7 @@
 		{% include "partials/window-toolbar.html" %}
 
 		<div class="window__content" data-view="image">
-			{{ window.content(pageHook, collections[category], windowHeading, content) }}
+			{{ windowContent(pageHook, collections[category], windowHeading, content) }}
 		</div>
 	</main>
 </div>
