@@ -11,4 +11,3 @@ const resizeObserver = new ResizeObserver((entries) => {
 });
 
 resizeObserver.observe(document.documentElement);
-console.log('OBSERVED');
