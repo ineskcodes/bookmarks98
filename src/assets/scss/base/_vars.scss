@@ -88,6 +88,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 		inset 2px 2px 0 #808088, inset -2px -2px 0 #fff;
 	--address-bar-arrow-box-shadow: inset -1px -1px 0 #0c0c0c,
 		inset 1px 1px 0 #c0c0c0, inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
+	--webpage-box-shadow: inset -1px -1px 0 #0c0c0c, inset 1px 1px 0 #c0c0c0,
+		inset -2px -2px 0 #808088, inset 2px 2px 0 #fff;
 
 	&[data-theme='blush'] {
 		// colors
@@ -156,6 +158,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset 2px 2px 0 #ffb3c1, inset -2px -2px 0 #fff;
 		--address-bar--arrow-box-shadow: inset -1px -1px 0 #c9184a,
 			inset 1px 1px 0 #ffb3c1, inset -2px -2px 0 #ffb3c1, inset 2px 2px 0 #fff;
+		--webpage-box-shadow: inset -1px -1px 0 #c9184a, inset 1px 1px 0 #ffb3c1,
+			inset -2px -2px 0 #ffb3c1, inset 2px 2px 0 #fff;
 	}
 
 	&[data-theme='olive'] {
@@ -225,6 +229,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset 2px 2px 0 #94bc5c, inset -2px -2px 0 #fff;
 		--address-bar-arrow-box-shadow: inset -1px -1px 0 #11270b,
 			inset 1px 1px 0 #94bc5c, inset -2px -2px 0 #94bc5c, inset 2px 2px 0 #fff;
+		--webpage-box-shadow: inset -1px -1px 0 #11270b, inset 1px 1px 0 #94bc5c,
+			inset -2px -2px 0 #94bc5c, inset 2px 2px 0 #fff;
 	}
 
 	&[data-theme='ocean'] {
@@ -294,6 +300,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset 2px 2px 0 #00b4d8, inset -2px -2px 0 #fff;
 		--address-bar-arrow-box-shadow: inset -1px -1px 0 #03045e,
 			inset 1px 1px 0 #00b4d8, inset -2px -2px 0 #00b4d8, inset 2px 2px 0 #fff;
+		--webpage-box-shadow: inset -1px -1px 0 #03045e, inset 1px 1px 0 #00b4d8,
+			inset -2px -2px 0 #00b4d8, inset 2px 2px 0 #fff;
 	}
 
 	&[data-theme='peach'] {
@@ -363,6 +371,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset 2px 2px 0 #f7b267, inset -2px -2px 0 #fff;
 		--address-bar-arrow-box-shadow: inset -1px -1px 0 #cd3b2d,
 			inset 1px 1px 0 #f7b267, inset -2px -2px 0 #f7b267, inset 2px 2px 0 #fff;
+		--webpage-box-shadow: inset -1px -1px 0 #cd3b2d, inset 1px 1px 0 #f7b267,
+			inset -2px -2px 0 #f7b267, inset 2px 2px 0 #fff;
 	}
 
 	&[data-theme='lavender'] {
@@ -432,6 +442,8 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset 2px 2px 0 #7b2cbf, inset -2px -2px 0 #fff;
 		--address-bar-arrow-box-shadow: inset -1px -1px 0 #3c096c,
 			inset 1px 1px 0 #7b2cbf, inset -2px -2px 0 #7b2cbf, inset 2px 2px 0 #fff;
+		--webpage-box-shadow: inset -1px -1px 0 #3c096c, inset 1px 1px 0 #7b2cbf,
+			inset -2px -2px 0 #7b2cbf, inset 2px 2px 0 #fff;
 	}
 
 	&[data-theme='midnight'] {
@@ -506,5 +518,7 @@ $icons: 'html', 'css', 'javascript', 'accessibility', 'animation', 'eleventy',
 			inset 2px 2px 0 #00377e, inset -2px -2px 0 #fff;
 		--address-bar-arrow-box-shadow: inset -1px -1px 0 #002657,
 			inset 1px 1px 0 #00377e, inset -2px -2px 0 #00377e, inset 2px 2px 0 #fff;
+		--webpage-box-shadow: inset -1px -1px 0 #002657, inset 1px 1px 0 #00377e,
+			inset -2px -2px 0 #00377e, inset 2px 2px 0 #fff;
 	}
 }

@@ -17,8 +17,10 @@
 	{% endif %}
 
 	{% if page === 'about' %}
-		<div class="flow wrapper">
-			{{ pageContent | safe }}
+		<div class="[ webpage ]">
+			<div class="[ webpage__inner ] [ flow ] [ wrapper ]">
+				{{ pageContent | safe }}
+			</div>
 		</div>
 	{% endif %}
 {% endmacro %}
