@@ -1,0 +1,17 @@
+.has-handle {
+	position: relative;
+	padding-left: 1rem;
+	margin: 0;
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 4px;
+		height: 80%;
+		left: 0.5rem;
+		top: 10%;
+		border: 1px solid #fff;
+		border-bottom-color: var(--handle-border-br-color);
+		border-right-color: var(--handle-border-br-color);
+	}
+}

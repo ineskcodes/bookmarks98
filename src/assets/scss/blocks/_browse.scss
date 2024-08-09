@@ -1,0 +1,43 @@
+.browse {
+	display: flex;
+	flex-wrap: wrap;
+
+	&__item {
+		display: grid;
+		aspect-ratio: 1;
+		width: 3.5rem;
+		align-content: center;
+		align-items: center;
+		justify-items: center;
+		overflow: hidden;
+		padding: 0.25rem;
+		font-size: 0.8rem;
+		gap: 0.25rem;
+
+		img {
+			filter: grayscale(1) contrast(0.7) brightness(1.5);
+		}
+
+		&[data-disabled] {
+			color: var(--browse-item-disabled-color);
+		}
+
+		&[data-disabled] img {
+			position: relative;
+			transform: translateY(-2rem);
+			filter: drop-shadow(0 2rem currentColor) drop-shadow(1px 1px #fff);
+		}
+
+		&:not([data-disabled]):hover img {
+			filter: none;
+		}
+
+		&:hover {
+			box-shadow: var(--taskbar-button-active-box-shadow);
+		}
+
+		&[data-disabled] span {
+			text-shadow: 1px 1px #fff;
+		}
+	}
+}

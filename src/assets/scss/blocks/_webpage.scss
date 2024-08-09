@@ -1,0 +1,119 @@
+.webpage {
+	--flow-space: 1em;
+	--padding-x: 1rem;
+	--padding-y: 1.5rem;
+
+	position: relative;
+	padding-bottom: 1rem;
+	box-shadow: var(--webpage-box-shadow);
+	background-color: var(--webpage-background-color, #000);
+	color: var(--webpage-foreground-color, #fff);
+	font-family: 'Comic Sans MS';
+	font-size: 1rem;
+	text-align: center;
+
+	@media (not (prefers-reduced-motion)) {
+		background-image: url('/src/assets/misc/spacebackground.gif');
+	}
+
+	&__inner {
+		margin: 4rem 1rem;
+
+		@media (not (prefers-reduced-motion)) {
+			background-image: url('/src/assets/misc/stars.gif');
+		}
+	}
+
+	h1,
+	h2 {
+		margin: 2rem 0;
+	}
+
+	h1 {
+		font-size: 1.4rem;
+		text-align: center;
+		color: aqua;
+	}
+
+	h2 {
+		color: greenyellow;
+	}
+
+	a {
+		color: deeppink;
+	}
+
+	img {
+		height: auto;
+
+		@media (prefers-reduced-motion) {
+			display: none;
+		}
+
+		&.cat-walking {
+			position: absolute;
+			right: 4rem;
+			top: 1rem;
+		}
+
+		&.nice-day {
+			float: left;
+			padding-bottom: 2rem;
+		}
+
+		&.white-star-divider {
+			width: 0;
+			min-width: 100%;
+			min-height: 1.4rem;
+			object-fit: cover;
+			margin: 2rem 0;
+		}
+	}
+
+	.built-by {
+		margin-top: 2rem;
+	}
+
+	ul:not(.geo-buttons) {
+		@extend .flow;
+
+		text-align: left;
+
+		li::marker {
+			content: '✨  ';
+		}
+	}
+
+	.geo-buttons {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+
+		img {
+			display: block;
+		}
+	}
+
+	.geo-buttons li {
+		flex: 0 0 88px;
+	}
+
+	.marquee {
+		font-size: 2rem;
+		margin-top: 1em;
+		animation: marquee-anim 5s steps(4) infinite;
+
+		&-alt {
+			display: none;
+		}
+
+		@media (prefers-reduced-motion) {
+			display: none;
+
+			&-alt {
+				display: block;
+			}
+		}
+	}
+}

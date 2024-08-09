@@ -19,7 +19,10 @@
 @import 'blocks/alert';
 @import 'blocks/task-button';
 @import 'blocks/header';
-@import 'blocks/view-toggle.scss';
+@import 'blocks/view-toggle';
+@import 'blocks/browse';
+@import 'blocks/address-bar';
+@import 'blocks/webpage';
 
 // utilities
 @import 'utilities/visually-hidden';
@@ -33,3 +36,4 @@
 @import 'utilities/noise';
 @import 'utilities/requires-js';
 @import 'utilities/toggle-visibility';
+@import 'utilities/has.handle';

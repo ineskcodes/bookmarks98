@@ -1,6 +1,8 @@
 const { minify } = require('terser');
 const htmlmin = require('html-minifier-terser');
 const filenamify = require('./src/filters/filenamify.js');
+const markdownIt = require('markdown-it');
+const markdownItAttrs = require('markdown-it-attrs');
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addWatchTarget('src/assets/scss');
@@ -9,10 +11,14 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPassthroughCopy({ 'src/assets/wallpapers': '/' });
 	eleventyConfig.addPassthroughCopy({ 'src/assets/themes': '/' });
 	eleventyConfig.addPassthroughCopy({ 'src/static': '/' });
+
+	eleventyConfig.addFilter('filenamify', filenamify);
+
 	eleventyConfig.addFilter('sortByTitle', (values) => {
 		let vals = [...values];
 		return vals.sort((a, b) => (a.data.title > b.data.title ? 1 : -1));
 	});
+
 	eleventyConfig.addNunjucksAsyncFilter(
 		'jsmin',
 		async function (code, callback) {
@@ -26,6 +32,7 @@ module.exports = (eleventyConfig) => {
 			}
 		}
 	);
+
 	eleventyConfig.addTransform('htmlmin', function (content) {
 		if ((this.page.outputPath || '').endsWith('.html')) {
 			let minified = htmlmin.minify(content, {
@@ -40,7 +47,17 @@ module.exports = (eleventyConfig) => {
 		// If not an HTML output, return content as-is
 		return content;
 	});
-	eleventyConfig.addFilter('filenamify', filenamify);
+
+	const markdownItOptions = {
+		html: true,
+		breaks: true,
+		linkify: true,
+	};
+	const markdownLib = markdownIt(markdownItOptions).use(markdownItAttrs, {
+		allowedAttributes: [],
+	});
+
+	eleventyConfig.setLibrary('md', markdownLib);
 
 	return {
 		markdownTemplateEngine: 'njk',

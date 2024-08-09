@@ -1,0 +1,47 @@
+.address-bar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	padding-right: 4px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-size: 0.8rem;
+
+	&__box {
+		display: flex;
+		align-items: center;
+		flex: 1;
+		background-color: #fff;
+		padding: 1px 0 1px 2px;
+		gap: 2px;
+		box-shadow: var(--address-bar-box-shadow);
+	}
+
+	&__url {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		color: #000;
+		flex: 1;
+	}
+
+	&__arrow {
+		height: 100%;
+		aspect-ratio: 1;
+		box-shadow: var(--address-bar-arrow-box-shadow);
+
+		background:
+			linear-gradient(
+					-45deg,
+					var(--scrollbar-color) 0 50%,
+					transparent 50% 100%
+				)
+				0 75% / 100% 50% no-repeat,
+			linear-gradient(
+					45deg,
+					transparent 0 50%,
+					var(--scrollbar-border-color-dark) 50% 100%
+				)
+				0 75% / 100% 50% no-repeat,
+			var(--scrollbar-color);
+	}
+}
