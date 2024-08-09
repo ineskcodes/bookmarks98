@@ -19,15 +19,17 @@ There are courses, articles, tutorials and tools for everyone. Whether you're ju
 
 ## Credits and acknowledgments
 
-- This site was built with [Eleventy](https://www.11ty.dev/), [Sass](https://sass-lang.com/), [GSAP](https://greensock.com) and sprinkles of vanilla JavaScript.
+- This site was built with [Eleventy](https://www.11ty.dev/), [Sass](https://sass-lang.com/), [GSAP](https://greensock.com), [swup](https://swup.js.org/) and sprinkles of vanilla JavaScript.
 
 - [Andy Bell](https://piccalil.li/)'s [Learn Eleventy From Scratch](https://learneleventyfromscratch.com/) and [Stephanie Eckles](https://thinkdobecreate.com/)'s [11ty Rocks!](https://11ty.rocks/) were a huge help with getting this site up and running.
-
-- The font used here is called [W95FA](https://fontsarena.com/w95fa-by-alina-sava/) and was designed by [Alina Sava](https://sava.io/).
 
 - The icons are from [Windows98 Icon Viewer](https://win98icons.alexmeub.com/) by [Alex Meub](https://alexmeub.com/).
 
 - The wallpapers are from [Original Classic Windows Wallpapers](https://www.dvd3000.ca/wp/).
+
+- The GIFs are from [GifCities](https://gifcities.org/), a project by the [Internet Archive](https://archive.org/).
+
+- The 88x31 buttons are from [Internet Button Archive](https://buttoncollection.neocities.org/), [Capstasher Button Collection](), and [Pixel Moondust](https://pixelmoondust.neocities.org/materials).
 
 ![](){.white-star-divider .lazy data-src="{{ '/whitestardivider.gif' | url }}" width="612" height="22" }
 
@@ -40,7 +42,7 @@ There are courses, articles, tutorials and tools for everyone. Whether you're ju
 - !["Completely hand-coded."]({{ '/handcoded.png' | url }}){ width="88" height="31" }
   {.geo-buttons role="list"}
 
-<marquee class="marquee">Thank you for visiting!<marquee>
+<marquee class="marquee">Thank you for visiting!</marquee>
 
 Thank you for visiting!{.marquee-alt}
 
