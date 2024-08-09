@@ -4,7 +4,7 @@ pageHook: 'about'
 permalink: '/category/about/index.html'
 eleventyComputed:
   title: 'About this site - {{ site.name }}'
-  mainHeading: 'About this site'
+  mainHeading: 'About'
 ---
 
 ![]({{ '/catwalking.gif' | url }}){.cat-walking}

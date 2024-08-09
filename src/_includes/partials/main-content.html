@@ -5,7 +5,7 @@
 	{% set windowHeading = category %}
 {% elseif pageHook == 'about' %}
 	{% set windowIconSrc = ('/' + page.fileSlug | slugify + '-icon-small.png') | url %}
-	{% set windowHeading = page.fileSlug %}
+	{% set windowHeading = mainHeading %}
 {% else %}
 	{% set windowHeading = mainHeading %}
 {% endif %}
