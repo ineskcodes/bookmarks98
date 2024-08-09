@@ -38,10 +38,12 @@
 	:not([data-page='home']) + .root &-container {
 		--padding-x: 0;
 		--padding-y: 0;
+		margin-right: 0;
 
 		@media (min-width: vars.$breakpoint-desktop) {
 			--padding-x: 2rem;
 			--padding-y: 2rem;
+			margin-right: var(--settings-icon-width);
 		}
 	}
 
