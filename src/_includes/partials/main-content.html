@@ -3,46 +3,8 @@
 <div tabindex="-1" id="content" class="[ main-container ] [ wrapper transition-fade ]" data-page="{{ pageHook }}">
 	<main data-draggable="window" data-item="window" class="[ main ] [ window ]" data-page="{{ pageHook }}" data-has-window="{{ not not isWindowVisible }}" data-task="main-task-button" data-minimized="false">
 		{% include "partials/window-header.html" %}
-
-		<div hidden class="[ window__navbar ] {% if pageHook === 'about' %} [ has-handle ] {% endif %}" aria-hidden="true">
-			<span>File</span>
-			<span>Edit</span>
-			<span>Search</span>
-			<span>Help</span>
-		</div>
-
-		{% if pageHook === "about" %}
-			<div class="[ window__browse ] [ browse ] [ has-handle ]" aria-hidden="true">
-				<div class="browse__item" data-disabled>
-					<img width="20" height="20" src="{{ '/back-icon.png' | url }}" alt="">
-					<span>Back</span>
-				</div>
-				<div class="browse__item" data-disabled>
-					<img width="20" height="20" src="{{ '/forward-icon.png' | url }}" alt="">
-					<span>Forward</span>
-				</div>
-				<div class="browse__item">
-					<img width="20" height="20" src="{{ '/stop-icon.png' | url }}" alt="">
-					<span>Stop</span>
-				</div>
-				<div class="browse__item">
-					<img width="20" height="20" src="{{ '/refresh-icon.png' | url }}" alt="">
-					<span>Refresh</span>
-				</div>
-				<div class="browse__item">
-					<img width="20" height="20" src="{{ '/home-icon.png' | url }}" alt="">
-					<span>Home</span>
-				</div>
-			</div>
-			<div class="[ window__address ] [ address-bar ] [ has-handle ]" aria-hidden="true">
-				<span class="address-bar__label">Address</span>
-				<div class="address-bar__box">
-					<img width="16" height="16" class="address-bar__icon" src="{{ '/webpage-icon-small.png' | url }}" alt="">
-					<span class="address-bar__url">http://www.geocities.com/~bookmarks98</span>
-					<div class="address-bar__arrow"></div>
-				</div>
-			</div>
-		{% endif %}
+		
+		{% include "partials/window-toolbar.html" %}
 
 		<div class="window__content" data-view="image">
 			{{ window.content(pageHook, collections[category], windowHeading, content) }}
