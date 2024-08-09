@@ -15,7 +15,7 @@ Having accumulated a lot of (mostly) front-end development bookmarks, I built th
 
 There are courses, articles, tutorials and tools for everyone. Whether you're just starting out or have experience in coding, I hope you find them useful! ✨
 
-![](){.white-star-divider .lazy data-src="{{ '/whitestardivider.gif' | url }}" }
+![](){.white-star-divider .lazy data-src="{{ '/whitestardivider.gif' | url }}" width="612" height="22" }
 
 ## Credits and acknowledgments
 
@@ -29,22 +29,22 @@ There are courses, articles, tutorials and tools for everyone. Whether you're ju
 
 - The wallpapers are from [Original Classic Windows Wallpapers](https://www.dvd3000.ca/wp/).
 
-![](){.white-star-divider .lazy data-src="{{ '/whitestardivider.gif' | url }}" }
+![](){.white-star-divider .lazy data-src="{{ '/whitestardivider.gif' | url }}" width="612" height="22" }
 
-- !["Add this site to my netscape."]({{ '/add-this-site-to-my-netscape.gif' | url }})
-- !["HTML, Learn it today."]({{ '/html-learn-it-today.gif' | url }})
-- !["Cascading Style Sheets."]({{ '/cascading-style-sheets.gif' | url }})
-- [!["Free Palestine."]({{ '/free-palestine.gif' | url }})](https://gazafunds.com/)
-- [!["Keep Eyes On Sudan."]({{ '/keep-eyes-on-sudan.png' | url }})](https://eyesonsudan.net/donate)
-- [!["Free Congo."]({{ '/free-congo.png' | url }})](https://www.focuscongo.com/en/spende/)
-- !["Completely hand-coded."]({{ '/handcoded.png' | url }})
+- !["Add this site to my netscape."]({{ '/add-this-site-to-my-netscape.gif' | url }}){ width="88" height="31" }
+- !["HTML, Learn it today."]({{ '/html-learn-it-today.gif' | url }}){ width="88" height="31" }
+- !["Cascading Style Sheets."]({{ '/cascading-style-sheets.gif' | url }}){ width="88" height="31" }
+- [!["Free Palestine."]({{ '/free-palestine.gif' | url }}){ width="88" height="31" }](https://gazafunds.com/)
+- [!["Keep Eyes On Sudan."]({{ '/keep-eyes-on-sudan.png' | url }}){ width="88" height="31" }](https://eyesonsudan.net/donate)
+- [!["Free Congo."]({{ '/free-congo.png' | url }}){ width="88" height="31" }](https://www.focuscongo.com/en/spende/)
+- !["Completely hand-coded."]({{ '/handcoded.png' | url }}){ width="88" height="31" }
   {.geo-buttons role="list"}
-
-Built with 💓 by [inescodes](#)
-{.built-by}
 
 <marquee class="marquee">Thank you for visiting!<marquee>
 
 Thank you for visiting!{.marquee-alt}
 
-![](){.nice-day .lazy data-src="{{ '/haveaniceday.gif' | url }}" }
+Built with 💓 by [inescodes](#)
+{.built-by}
+
+![](){.nice-day .lazy data-src="{{ '/haveaniceday.gif' | url }}" width="105" height="108" }
