@@ -4,10 +4,13 @@
 		<img width="182" height="168" src="{{ '/preview-frame.png' | url }}" alt="">
 		<div id="wallpaper-preview"></div>
 	</div>
+
 	<form class="switcher__form">
 		<div class="switcher__form--inner">
 			<h3 class="switcher__heading">Wallpaper</h3>
+
 			<div class="switcher__settings">
+
 				<fieldset class="switcher__fieldset">
 					<legend class="visually-hidden">Select a picture or a theme:</legend>
 					<div class="fl-underline" aria-hidden="true">Select a picture or a theme:</div>
@@ -25,7 +28,9 @@
 						</div>
 					</div>
 				</fieldset>
+
 				<div class="switcher__controls">
+					
 					<div class="switcher__browse">
 						<label class="switcher__button" for="browse-input">Browse</label>
 						<input type="file" name="browse" id="browse-input" accept="image/png, image/jpeg">
@@ -36,9 +41,11 @@
 						<label class="fl-underline" for="display-select">Display:</label>
 						<div class="dropdown">
 							<select name="display" id="display-select">
-								<option value="center">Center</option>
-								<option value="tile" selected>Tile</option>
-								<option value="stretch">Stretch</option>
+								{% for mode in displayModes %}
+									<option value="{{ mode | lower }}" {% if mode === 'Tile' %}selected{% endif %}>
+										{{ mode }}
+									</option>
+								{% endfor %}
 							</select>
 						</div>
 					</div>
@@ -47,18 +54,16 @@
 						<label class="fl-underline" for="theme-select">Theme:</label>
 						<div class="dropdown">
 							<select name="theme" id="theme-select">
-								<option value="default">Default</option>
-								<option value="olive">Olive</option>
-								<option value="blush">Blush</option>
-								<option value="ocean">Ocean</option>
-								<option value="peach">Peach</option>
-								<option value="lavender">Lavender</option>
-								<option value="midnight">Midnight</option>
+								{% for theme in themes %}
+									<option value="{{ theme | lower }}">{{ theme }}</option>
+								{% endfor %}
 							</select>
 						</div>
 					</div>
+
 				</div>
 			</div>
+			
 			<div class="switcher__buttons">
 				<button class="switcher__button" id="settings-ok-btn" type="submit">OK</button>
 				<button class="switcher__button" id="settings-cancel-btn" type="button">Cancel</button>
@@ -66,4 +71,5 @@
 			</div>
 		</div>
 	</form>
+	
 </div>
