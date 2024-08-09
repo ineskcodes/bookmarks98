@@ -1,8 +1,14 @@
 {% import "macros/window-content.html" as window %}
 
+{% if pageHook == 'bookmarks'  %}
+	{% set windowHeading = category %}
+{% else %}
+	{% set windowHeading = mainHeading %}
+{% endif %}
+
 <div tabindex="-1" id="content" class="[ main-container ] [ wrapper transition-fade ]" data-page="{{ pageHook }}">
 	<main data-draggable="window" data-item="window" class="[ main ] [ window ]" data-page="{{ pageHook }}" data-has-window="{{ not not isWindowVisible }}" data-task="main-task-button" data-minimized="false">
-		{% include "partials/window-header.html" %}
+		{% include "partials/main-header.html" %}
 		
 		{% include "partials/window-toolbar.html" %}
 

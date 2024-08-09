@@ -1,15 +1,10 @@
+{% from "macros/window-header.html" import windowHeader %}
+
+{% set windowIconSrc = ('/settings-icon.png' | url ) %}
+{% set windowHeading = 'Settings' %}
+
 <section role="dialog" tabindex="-1" class="[ window ] [ popup ]" aria-labelledby="settings-popup-label" data-draggable="window" data-item="popup" data-task="settings-task-button" data-minimized="false" hidden>
-	<header class="[ popup__header ] [ window__header ]" data-trigger>
-		<img width="16" height="16" src="{{ '/settings-icon.png' | url }}" alt="">
-		<h2 class="[ popup__heading ] [ window__heading ]" id="settings-popup-label">Settings</h2>
-		<button hidden type="button" class="minimize-btn" id="settings-minimize-btn">
-			<img width="16" height="16" src="{{ '/minimize-icon.png' | url }}" alt="">
-			<span class="visually-hidden">Minimize settings</span>
-		</button>
-		<button hidden type="button" id="settings-close-btn">
-			<img width="16" height="16" src="{{ '/close-icon.png' | url }}" alt="">
-			<span class="visually-hidden">Close settings</span>
-		</button>
-	</header>
+	{{ windowHeader("settings", windowHeading, pageHook, windowIconSrc) }}
+	
 	{% include "partials/settings-switcher.html" %}
 </section>
