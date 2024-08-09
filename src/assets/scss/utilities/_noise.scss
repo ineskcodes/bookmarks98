@@ -1,4 +1,4 @@
-.noise::after {
+:root:not(.no-js) .noise::after {
 	content: '';
 	position: fixed;
 	inset: 0;
