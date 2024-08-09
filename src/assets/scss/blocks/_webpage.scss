@@ -44,6 +44,8 @@
 	}
 
 	img {
+		height: auto;
+
 		@media (prefers-reduced-motion) {
 			display: none;
 		}
