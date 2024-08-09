@@ -3,6 +3,10 @@
 		display: none;
 	}
 
+	& + [data-no-js-alternative] {
+		display: flex;
+	}
+
 	:root:not(.no-js) & + [data-no-js-alternative] {
 		display: none;
 	}
