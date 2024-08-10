@@ -1,8 +1,8 @@
 <div class="[ popup__content window__content  switcher ] [ wrapper ]">
-	<div class="switcher__preview">
+	<div class="[ switcher__preview ] [ preview ]">
 		<h3 class="visually-hidden">Wallpaper preview</h3>
 		<img width="182" height="168" src="{{ '/preview-frame.png' | url }}" alt="">
-		<div id="wallpaper-preview"></div>
+		<div class="preview__inner" id="wallpaper-preview"></div>
 	</div>
 
 	<form class="switcher__form">
@@ -15,9 +15,9 @@
 					<legend class="visually-hidden">Select a picture or a theme:</legend>
 					<div class="fl-underline" aria-hidden="true">Select a picture or a theme:</div>
 
-					<div class="switcher__wallpapers-container">
-						<div class="switcher__wallpapers" data-placeholder></div>
-						<div class="switcher__wallpapers">
+					<div class="wallpapers-container">
+						<div class="[ switcher__wallpapers ] [ wallpapers ]" data-placeholder></div>
+						<div class="[ switcher__wallpapers ] [ wallpapers ]">
 							{% for wallpaper in wallpapers %}
 								<label for="{{ wallpaper | slugify }}" class="wallpaper">
 									<input {% if wallpaper === "(None)" %} checked {% endif %} type="radio" name="wallpaper" id="{{ wallpaper | slugify }}" value="{{ wallpaper | slugify }}">
@@ -71,5 +71,5 @@
 			</div>
 		</div>
 	</form>
-	
+
 </div>
