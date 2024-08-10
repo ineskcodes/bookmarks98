@@ -61,6 +61,7 @@
 
 	&__heading {
 		flex: 1;
+		font-weight: 700;
 	}
 
 	@media (max-width: #{vars.$breakpoint-desktop - vars.$px}) {
