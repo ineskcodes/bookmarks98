@@ -4,8 +4,8 @@
 	inset: 0;
 	width: 100vw;
 	height: calc(var(--vh, 1vh) * 100);
-	background-image: url('/src/assets/misc/noise.gif'),
-		url('/src/assets/misc/noise.png');
+	background-image: url('/src/static/misc/noise.gif'),
+		url('/src/static/misc/noise.png');
 	background-size: 400px auto;
 	opacity: 0.075;
 	mix-blend-mode: screen;
@@ -13,6 +13,6 @@
 	pointer-events: none;
 
 	@media (prefers-reduced-motion) {
-		background-image: url('/src/assets/misc/noise.png');
+		background-image: url('/src/static/misc/noise.png');
 	}
 }
