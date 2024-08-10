@@ -31,6 +31,8 @@ There are courses, articles, tutorials and tools for everyone. Whether you're ju
 
 - The 88x31 buttons are from [Internet Button Archive](https://buttoncollection.neocities.org/), [Capstasher Button Collection](), and [Pixel Moondust](https://pixelmoondust.neocities.org/materials).
 
+- This project's source code can be found on [GitHub](https://github.com/ineskcodes/bookmarks98).
+
 ![](){.white-star-divider .lazy data-src="{{ '/whitestardivider.gif' | url }}" width="612" height="22" }
 
 - !["Add this site to my netscape."]({{ '/add-this-site-to-my-netscape.gif' | url }}){ width="88" height="31" }
@@ -46,7 +48,7 @@ There are courses, articles, tutorials and tools for everyone. Whether you're ju
 
 Thank you for visiting!{.marquee-alt}
 
-Built with 💓 by [inescodes](#)
+Built with 💓 by [inescodes](https://x.com/inescodes)
 {.built-by}
 
 ![](){.nice-day .lazy data-src="{{ '/haveaniceday.gif' | url }}" width="105" height="108" }
