@@ -2,7 +2,7 @@
 
     {% set windowIconSize = '16' %}
 
-    {% if type === 'main' %}
+    {% if (type === 'main') and (page !== 'home') %}
         {% set isDraggable = true %}
         {% set minimizeButtonId = 'main-minimize-btn' %}
     {% elif type === 'settings' %}
