@@ -6,10 +6,12 @@
     {% set buttonInnerText = mainTaskButtonText %}
     {% set buttonIcon = mainTaskButtonIcon %}
     {{ taskButton('main', buttonInnerText, buttonIcon) }} 
-    
+
 {% endif %}
 
 {# settings task button #}
 {% set buttonInnerText = settingsTaskButtonText %}
 {% set buttonIcon = settingsTaskButtonIcon %}
 {{ taskButton('settings', buttonInnerText, buttonIcon) }} 
+
+<span data-requires-js class="visually-hidden" aria-live="polite" id="minimize-feedback"></span>
