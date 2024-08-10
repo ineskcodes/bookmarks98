@@ -1,7 +1,6 @@
 {% set navLabel = "Footer navigation" %}
 {% set navParent = "footer" %}
 
-{% set taskButtonIconSize = '16' %}
 {% set mainTaskButtonText = (category if category else page.fileSlug) %}
 {% set mainTaskButtonText = (mainTaskButtonText[0] | capitalize) + mainTaskButtonText.slice(1, mainTaskButtonText.length) %}
 {% set mainTaskButtonIcon = ('/' + (category if category else page.fileSlug) | slugify + '-icon-small.png') | url %}

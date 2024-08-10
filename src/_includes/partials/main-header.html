@@ -1,0 +1,9 @@
+{% from "macros/window-header.html" import windowHeader %}
+
+{% if pageHook == 'bookmarks'  %}
+	{% set windowIconSrc = ('/' + category | slugify + '-icon-small.png') | url %}
+{% elseif pageHook == 'about' %}
+	{% set windowIconSrc = ('/' + page.fileSlug | slugify + '-icon-small.png') | url %}
+{% endif %}
+
+{{ windowHeader("main", windowHeading, pageHook, windowIconSrc) }}

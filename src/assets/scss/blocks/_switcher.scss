@@ -7,39 +7,6 @@
 	box-shadow: var(--switcher-box-shadow);
 	border: none;
 
-	&__preview {
-		display: flex;
-		justify-content: center;
-		align-items: flex-start;
-		padding: 1rem;
-		position: relative;
-	}
-
-	[id='wallpaper-preview'] {
-		width: 153px;
-		height: 112px;
-		position: absolute;
-		top: 2rem;
-		background-size: 16px 16px;
-		transform: translateX(-1px);
-		background-color: var(--root-background-color, #000);
-		background-image: var(--wallpaper, none);
-		background-size: var(--preview-size, 22.5% auto);
-		background-repeat: var(--repeat, repeat);
-		background-position: var(--position, auto);
-
-		&::after {
-			content: '';
-			position: absolute;
-			inset: 0;
-			background-image: var(
-				--theme-preview,
-				url('/src/assets/themes/default.png')
-			);
-			background-size: 100% 100%;
-		}
-	}
-
 	&__form--inner {
 		position: relative;
 		padding: 0.5rem;
@@ -77,67 +44,6 @@
 
 	&__fieldset legend {
 		margin-bottom: 0.25rem;
-	}
-
-	&__wallpapers-container {
-		position: relative;
-		overflow: auto;
-	}
-
-	&__wallpapers {
-		width: 100%;
-		height: 100%;
-		background-color: var(--switcher-wallpapers-background-color, #fff);
-		overflow: auto;
-		padding: 5px;
-		border: 1px solid rgba(0, 0, 0, 0);
-		box-shadow: var(--switcher-wallpapers-box-shadow);
-	}
-
-	&__wallpapers[data-placeholder] {
-		opacity: 0;
-	}
-
-	&__wallpapers:not([data-placeholder]) {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-	}
-
-	.wallpaper {
-		display: flex;
-		gap: 0.5ch;
-	}
-
-	.wallpaper input[type='radio'] {
-		position: absolute;
-		opacity: 0.00001;
-		width: 1rem;
-		height: 1rem;
-	}
-
-	.wallpaper input[type='radio'].applied ~ span {
-		border: 1px dotted currentColor;
-	}
-
-	.wallpaper input[type='radio']:focus ~ span {
-		margin: 0;
-		background-color: var(--switcher-input-active-background-color);
-		color: #fff;
-	}
-
-	.wallpaper img {
-		display: inline;
-		width: 1rem;
-		height: 1rem;
-		vertical-align: text-bottom;
-	}
-
-	.wallpaper span {
-		display: block;
-		overflow: hidden;
-		text-overflow: ellipsis;
 	}
 
 	&__controls {

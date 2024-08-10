@@ -1,0 +1,22 @@
+.content {
+	display: grid;
+	overflow: auto;
+	margin: 0 2px 5px 2px;
+
+	.empty-state {
+		padding: 1rem;
+	}
+
+	&__header.wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0.75rem 0.25rem;
+		padding-bottom: 0;
+	}
+
+	&__subheading {
+		font-size: 0.8rem;
+		font-weight: 400;
+	}
+}

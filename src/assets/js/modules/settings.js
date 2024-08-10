@@ -122,7 +122,6 @@ class SettingsPopup {
 		const isMinimized = getStateBoolean(this.popup, 'data-minimized');
 
 		this.buttons.open.setAttribute('aria-expanded', `${isOpen}`);
-		console.log({ isUsingMouse });
 		this.popup.hidden = !isOpen;
 		removeOutlineFromElement(this.popup, isUsingMouse);
 		elementToFocusOn.focus();

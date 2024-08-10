@@ -13,14 +13,14 @@
 	text-align: center;
 
 	@media (not (prefers-reduced-motion)) {
-		background-image: url('/src/assets/misc/spacebackground.gif');
+		background-image: url('/src/static/misc/spacebackground.gif');
 	}
 
 	&__inner {
 		margin: 4rem 1rem;
 
 		@media (not (prefers-reduced-motion)) {
-			background-image: url('/src/assets/misc/stars.gif');
+			background-image: url('/src/static/misc/stars.gif');
 		}
 	}
 

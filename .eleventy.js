@@ -6,11 +6,7 @@ const markdownItAttrs = require('markdown-it-attrs');
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addWatchTarget('src/assets/scss');
-	eleventyConfig.addPassthroughCopy({ 'src/assets/icons': '/' });
-	eleventyConfig.addPassthroughCopy({ 'src/assets/misc': '/' });
-	eleventyConfig.addPassthroughCopy({ 'src/assets/wallpapers': '/' });
-	eleventyConfig.addPassthroughCopy({ 'src/assets/themes': '/' });
-	eleventyConfig.addPassthroughCopy({ 'src/static': '/' });
+	eleventyConfig.addPassthroughCopy({ 'src/static/**': '/' });
 
 	eleventyConfig.addFilter('filenamify', filenamify);
 

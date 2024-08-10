@@ -12,6 +12,7 @@ class MinimizeWindows {
 		this.minimizeButtons = Array.from(
 			document.querySelectorAll('.minimize-btn')
 		);
+		this.feedbackRegion = document.querySelector('#minimize-feedback');
 		this.init();
 	}
 
@@ -110,7 +111,13 @@ class MinimizeWindows {
 			windowEl.dispatchEvent(new Event('mousedown'));
 		}
 
+		this.announceFeedback(windowEl, !isMinimized);
 		taskButton.focus();
+	}
+
+	announceFeedback(el, isMinimized) {
+		const windowName = el.querySelector('.window__heading').textContent;
+		this.feedbackRegion.textContent = `${windowName} window ${isMinimized ? '' : 'un'}minimized.`;
 	}
 
 	createTweenOptions({

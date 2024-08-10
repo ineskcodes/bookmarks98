@@ -1,0 +1,32 @@
+.preview {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 1rem;
+	position: relative;
+
+	&__inner {
+		width: 153px;
+		height: 112px;
+		position: absolute;
+		top: 2rem;
+		background-size: 16px 16px;
+		transform: translateX(-1px);
+		background-color: var(--root-background-color, #000);
+		background-image: var(--wallpaper, none);
+		background-size: var(--preview-size, 22.5% auto);
+		background-repeat: var(--repeat, repeat);
+		background-position: var(--position, auto);
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-image: var(
+				--theme-preview,
+				url('/src/static/themes/default.png')
+			);
+			background-size: 100% 100%;
+		}
+	}
+}

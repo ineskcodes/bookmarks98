@@ -52,61 +52,16 @@
 		button {
 			display: block;
 		}
-	}
 
-	&__header *:focus-visible {
-		filter: invert(1);
-		outline-width: 3px;
+		*:focus-visible {
+			filter: invert(1);
+			outline-width: 3px;
+		}
 	}
 
 	&__heading {
 		flex: 1;
-	}
-
-	&__navbar {
-		display: flex;
-		align-items: center;
-		line-height: 1.3;
-		font-size: 0.75rem;
-		margin: 2px 0.25rem;
-		border-bottom: 1px solid var(--window-content-border-top-color);
-	}
-
-	&__navbar span {
-		display: inline-block;
-		padding: 2px 1ch;
-		margin: 0 1px;
-	}
-
-	&__navbar span::first-letter {
-		text-decoration: underline;
-	}
-
-	&__navbar span:hover {
-		box-shadow: var(--taskbar-button-active-box-shadow);
-	}
-
-	&__content {
-		display: grid;
-		overflow: auto;
-		margin: 0 2px 5px 2px;
-	}
-
-	&__content .empty-state {
-		padding: 1rem;
-	}
-
-	&__content-header.wrapper {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 0.75rem 0.25rem;
-		padding-bottom: 0;
-	}
-
-	&__subheading {
-		font-size: 0.8rem;
-		font-weight: 400;
+		font-weight: 700;
 	}
 
 	@media (max-width: #{vars.$breakpoint-desktop - vars.$px}) {

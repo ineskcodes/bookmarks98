@@ -1,73 +1,19 @@
-{% import "macros/window-content.html" as window %}
+{% from "macros/window-content.html" import windowContent %}
 
 {% if pageHook == 'bookmarks'  %}
-	{% set windowIconSrc = ('/' + category | slugify + '-icon-small.png') | url %}
 	{% set windowHeading = category %}
-{% elseif pageHook == 'about' %}
-	{% set windowIconSrc = ('/' + page.fileSlug | slugify + '-icon-small.png') | url %}
-	{% set windowHeading = mainHeading %}
 {% else %}
 	{% set windowHeading = mainHeading %}
 {% endif %}
-{% set windowIconSize = '16' %}
 
 <div tabindex="-1" id="content" class="[ main-container ] [ wrapper transition-fade ]" data-page="{{ pageHook }}">
 	<main data-draggable="window" data-item="window" class="[ main ] [ window ]" data-page="{{ pageHook }}" data-has-window="{{ not not isWindowVisible }}" data-task="main-task-button" data-minimized="false">
-		<header data-trigger class="window__header">
-			<img width="{{ windowIconSize }}" height="{{ windowIconSize }}" alt="" src="{{ windowIconSrc }}" class="window__icon">
-			<span aria-hidden="true" class="window__heading">{{ windowHeading }}</span>
-			{% if pageHook != "home" %}
-				<button hidden type="button" class="minimize-btn" id="main-minimize-btn">
-					<img width="16" height="16" src="{{ '/minimize-icon.png' | url }}" alt="">
-					<span class="visually-hidden">Minimize {{ windowHeading }}</span>
-				</button>
-				<a href="{{ '/' | url }}">
-					<img width="{{ windowIconSize }}" height="{{ windowIconSize }}" src="{{ '/close-icon.png' | url }}" alt="Go back to home page.">
-				</a>
-			{% endif %}
-		</header>
-		<div hidden class="[ window__navbar ] {% if pageHook === 'about' %} [ has-handle ] {% endif %}" aria-hidden="true">
-			<span>File</span>
-			<span>Edit</span>
-			<span>Search</span>
-			<span>Help</span>
-		</div>
+		{% include "partials/main-header.html" %}
+		
+		{% include "partials/window-toolbar.html" %}
 
-		{% if pageHook === "about" %}
-			<div class="[ window__browse ] [ browse ] [ has-handle ]" aria-hidden="true">
-				<div class="browse__item" data-disabled>
-					<img width="20" height="20" src="{{ '/back-icon.png' | url }}" alt="">
-					<span>Back</span>
-				</div>
-				<div class="browse__item" data-disabled>
-					<img width="20" height="20" src="{{ '/forward-icon.png' | url }}" alt="">
-					<span>Forward</span>
-				</div>
-				<div class="browse__item">
-					<img width="20" height="20" src="{{ '/stop-icon.png' | url }}" alt="">
-					<span>Stop</span>
-				</div>
-				<div class="browse__item">
-					<img width="20" height="20" src="{{ '/refresh-icon.png' | url }}" alt="">
-					<span>Refresh</span>
-				</div>
-				<div class="browse__item">
-					<img width="20" height="20" src="{{ '/home-icon.png' | url }}" alt="">
-					<span>Home</span>
-				</div>
-			</div>
-			<div class="[ window__address ] [ address-bar ] [ has-handle ]" aria-hidden="true">
-				<span class="address-bar__label">Address</span>
-				<div class="address-bar__box">
-					<img width="16" height="16" class="address-bar__icon" src="{{ '/webpage-icon-small.png' | url }}" alt="">
-					<span class="address-bar__url">http://www.geocities.com/~bookmarks98</span>
-					<div class="address-bar__arrow"></div>
-				</div>
-			</div>
-		{% endif %}
-
-		<div class="window__content" data-view="image">
-			{{ window.content(pageHook, collections[category], windowHeading, content) }}
+		<div class="[ window__content ] [ content ]" data-view="image">
+			{{ windowContent(pageHook, collections[category], windowHeading, content) }}
 		</div>
 	</main>
 </div>
