@@ -19,7 +19,7 @@
 
     <header {% if isDraggable %}data-trigger{% endif %} class="[ window__header ] {% if addClassPrefix %}[ {{ addClassPrefix }}__header ]{% endif %}">
         
-        {% if type !== 'alert' %}
+        {% if (page !== 'home') and (type !== 'alert') %}
         <img width="{{ windowIconSize }}" height="{{ windowIconSize }}" alt="" src="{{ iconSrc }}" class="window__icon">
         {% endif %}
         

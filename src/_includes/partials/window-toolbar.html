@@ -1,9 +1,11 @@
-<div hidden class="[ window__toolbar ] [ toolbar ] {% if pageHook === 'about' %} [ has-handle ] {% endif %}" aria-hidden="true">
-    <span>File</span>
-    <span>Edit</span>
-    <span>Search</span>
-    <span>Help</span>
-</div>
+{% if pageHook !== "home" %}
+    <div hidden class="[ window__toolbar ] [ toolbar ] {% if pageHook === 'about' %} [ has-handle ] {% endif %}" aria-hidden="true">
+        <span>File</span>
+        <span>Edit</span>
+        <span>Search</span>
+        <span>Help</span>
+    </div>
+{% endif %}
 
 {% if pageHook === "about" %}
     <div class="[ window__browse ] [ browse ] [ has-handle ]" aria-hidden="true">
