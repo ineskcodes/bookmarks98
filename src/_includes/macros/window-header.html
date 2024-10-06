@@ -35,31 +35,33 @@
         <h2 class="[ window__heading ] {% if addClassPrefix %}[ {{ addClassPrefix }}__heading ]{% endif %}" id="{{ type }}-popup-label">{{ heading }}</h2>
         {% endif %}
 
-        {% if minimizeButtonId %}
-        <button hidden type="button" class="minimize-btn" id="{{ minimizeButtonId }}">
-            <img width="16" height="16" src="{{ '/minimize-icon.png' | url }}" alt="">
-            <span class="visually-hidden">Minimize {{ heading }}</span>
-        </button>
-        {% endif %}
+        <div class="window__buttons">
+            {% if minimizeButtonId %}
+            <button hidden type="button" class="minimize-btn" id="{{ minimizeButtonId }}">
+                <img width="16" height="16" src="{{ '/minimize-icon.png' | url }}" alt="">
+                <span class="visually-hidden">Minimize {{ heading }}</span>
+            </button>
+            {% endif %}
 
-        {% if maximizeButtonId %}
-        <button aria-pressed="false" hidden type="button" class="maximize-btn" id="{{ maximizeButtonId }}">
-            <img width="16" height="16" src="{{ '/maximize-icon.png' | url }}" alt="">
-            <span class="visually-hidden">Maximize {{ heading }}</span>
-        </button>
-        {% endif %}
+            {% if maximizeButtonId %}
+            <button aria-pressed="false" hidden type="button" class="maximize-btn" id="{{ maximizeButtonId }}">
+                <img width="16" height="16" src="{{ '/maximize-icon.png' | url }}" alt="">
+                <span class="visually-hidden">Maximize {{ heading }}</span>
+            </button>
+            {% endif %}
 
-        {% if closeButtonId %}
-        <button hidden type="button" id="{{ closeButtonId }}">
-			<img width="16" height="16" src="{{ '/close-icon.png' | url }}" alt="">
-			<span class="visually-hidden">Close {{ heading }}</span>
-		</button>
-        {% endif %}
+            {% if closeButtonId %}
+            <button hidden type="button" id="{{ closeButtonId }}">
+                <img width="16" height="16" src="{{ '/close-icon.png' | url }}" alt="">
+                <span class="visually-hidden">Close {{ heading }}</span>
+            </button>
+            {% endif %}
 
-        {% if (page != "home") and (type == 'main') %} 
-        <a href="{{ '/' | url }}">
-            <img width="{{ windowIconSize }}" height="{{ windowIconSize }}" src="{{ '/close-icon.png' | url }}" alt="Go back to home page.">
-        </a>
-        {% endif %}
+            {% if (page != "home") and (type == 'main') %} 
+            <a href="{{ '/' | url }}">
+                <img width="{{ windowIconSize }}" height="{{ windowIconSize }}" src="{{ '/close-icon.png' | url }}" alt="Go back to home page.">
+            </a>
+            {% endif %}
+        </div>
     </header>
 {% endmacro %}

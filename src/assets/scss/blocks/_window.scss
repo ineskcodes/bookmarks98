@@ -44,10 +44,6 @@
 		box-shadow: var(--window-header-box-shadow);
 		color: var(--window-header-foreground-color);
 
-		> :last-child {
-			margin-left: 0.25rem;
-		}
-
 		a,
 		button {
 			display: block;
@@ -62,6 +58,11 @@
 	&__heading {
 		flex: 1;
 		font-weight: 700;
+	}
+
+	&__buttons {
+		display: flex;
+		gap: 0.5rem;
 	}
 
 	@media (max-width: #{vars.$breakpoint-desktop - vars.$px}) {
