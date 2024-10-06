@@ -1,14 +1,18 @@
-.fullscreen {
-	position: absolute;
-	inset: 0;
-	transform: none !important;
-	max-width: none;
-	max-height: none;
-}
+@use '../base/vars';
 
-.hide-icons ~ .root {
-	.header,
-	.nav__icon {
-		visibility: hidden;
+@media (min-width: vars.$breakpoint-desktop) {
+	.fullscreen {
+		position: absolute;
+		inset: 0;
+		transform: none !important;
+		max-width: none;
+		max-height: none;
+	}
+
+	.hide-icons ~ .root {
+		.header,
+		.nav__icon {
+			visibility: hidden;
+		}
 	}
 }
