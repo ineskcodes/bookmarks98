@@ -1,5 +1,6 @@
 import onItemDrag from './dragAndDrop.onDrag';
 import onItemDragEnd from './dragAndDrop.onDragEnd';
+import onItemClick from './dragAndDrop.onClick';
 
 export const options = {
 	global: {
@@ -10,6 +11,9 @@ export const options = {
 		dragClickables: true,
 		onDragEnd: function () {
 			onItemDragEnd(this);
+		},
+		onClick: function () {
+			onItemClick(this);
 		},
 		onDrag: function () {
 			onItemDrag(this);
