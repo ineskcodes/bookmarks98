@@ -19,4 +19,8 @@ if (vw >= 700) {
 			createDraggables.default();
 		}
 	);
+
+	import('./modules/maximizeWindows.js').then((MaximizeWindows) => {
+		new MaximizeWindows.default();
+	});
 }

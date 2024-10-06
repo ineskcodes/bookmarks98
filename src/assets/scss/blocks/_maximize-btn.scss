@@ -1,0 +1,7 @@
+@use '../base/vars';
+
+button.maximize-btn {
+	@media (max-width: #{vars.$breakpoint-desktop + vars.$px}) {
+		display: none;
+	}
+}

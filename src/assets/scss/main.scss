@@ -27,6 +27,7 @@
 @import 'blocks/browse';
 @import 'blocks/address-bar';
 @import 'blocks/webpage';
+@import 'blocks/maximize-btn';
 
 // utilities
 @import 'utilities/visually-hidden';
@@ -40,4 +41,5 @@
 @import 'utilities/noise';
 @import 'utilities/requires-js';
 @import 'utilities/toggle-visibility';
-@import 'utilities/has.handle';
+@import 'utilities/has-handle';
+@import 'utilities/fullscreen';

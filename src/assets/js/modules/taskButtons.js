@@ -76,6 +76,9 @@ class TaskButtons {
 			taskButton.hidden = false;
 			taskButton.setAttribute('aria-pressed', 'true');
 			updatePageHookWindow(windowEl, isMinimized);
+
+			this.windows.forEach((el) => el.classList.remove('active'));
+			windowEl.classList.toggle('active');
 		}
 	}
 
