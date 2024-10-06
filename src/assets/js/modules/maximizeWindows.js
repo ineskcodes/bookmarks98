@@ -77,6 +77,4 @@ class MaximizeWindows {
 	}
 }
 
-new MaximizeWindows();
-
 export default MaximizeWindows;

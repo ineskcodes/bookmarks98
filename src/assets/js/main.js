@@ -5,7 +5,6 @@ import './modules/windowManager.js';
 import './modules/resizeObserver.js';
 import './modules/taskButtons.js';
 import './modules/minimizeWindows.js';
-import './modules/maximizeWindows.js';
 import './modules/viewToggle.js';
 import './modules/lazyLoad.js';
 
@@ -20,4 +19,8 @@ if (vw >= 700) {
 			createDraggables.default();
 		}
 	);
+
+	import('./modules/maximizeWindows.js').then((MaximizeWindows) => {
+		new MaximizeWindows.default();
+	});
 }

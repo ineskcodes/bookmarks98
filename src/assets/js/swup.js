@@ -32,9 +32,6 @@ swup.hooks.on('page:view', async () => {
 		const { default: MinimizeWindows } = await import(
 			'./modules/minimizeWindows.js'
 		);
-		const { default: MaximizeWindows } = await import(
-			'./modules/maximizeWindows.js'
-		);
 		const { default: WindowManager } = await import(
 			'./modules/windowManager.js'
 		);
@@ -49,6 +46,10 @@ swup.hooks.on('page:view', async () => {
 					createDraggables.default();
 				}
 			);
+
+			import('./modules/maximizeWindows.js').then((MaximizeWindows) => {
+				new MaximizeWindows.default();
+			});
 		}
 
 		new Menu();
@@ -56,7 +57,7 @@ swup.hooks.on('page:view', async () => {
 		new WindowManager();
 		new TaskButtons();
 		new MinimizeWindows();
-		new MaximizeWindows();
+
 		new ViewToggle();
 		lazyLoadImages();
 
