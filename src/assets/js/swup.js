@@ -4,7 +4,7 @@ import SwupScriptsPlugin from '@swup/scripts-plugin';
 import SwupA11yPlugin from '@swup/a11y-plugin';
 
 const swup = new Swup({
-	containers: ['#content', '#page-hook', 'footer'],
+	containers: ['#content', '#page-hook', 'footer', '#main-hook'],
 	linkToSelf: 'navigate',
 	plugins: [
 		new SwupHeadPlugin(),
@@ -25,11 +25,15 @@ swup.hooks.on('page:view', async () => {
 
 		const { lazyLoadImages } = await import('./modules/lazyLoad.js');
 		const { default: Menu } = await import('./modules/menu.js');
+		const { default: Settings } = await import('./modules/settings.js');
 		const { default: Bookmarks } = await import('./modules/bookmarks.js');
 		const { default: ViewToggle } = await import('./modules/viewToggle.js');
 		const { default: TaskButtons } = await import('./modules/taskButtons.js');
 		const { default: MinimizeWindows } = await import(
 			'./modules/minimizeWindows.js'
+		);
+		const { default: MaximizeWindows } = await import(
+			'./modules/maximizeWindows.js'
 		);
 		const { default: WindowManager } = await import(
 			'./modules/windowManager.js'
@@ -48,9 +52,11 @@ swup.hooks.on('page:view', async () => {
 		}
 
 		new Menu();
+		new Settings();
 		new WindowManager();
 		new TaskButtons();
 		new MinimizeWindows();
+		new MaximizeWindows();
 		new ViewToggle();
 		lazyLoadImages();
 

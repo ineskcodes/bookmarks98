@@ -12,8 +12,8 @@ class WindowManager {
 	init() {
 		this.mainWindow.style.zIndex = getMaxZIndex(this.windows) + 1;
 		this.windows.forEach((window) => {
-			window &&
-				window.addEventListener('mousedown', this.handleClick.bind(this));
+			window.addEventListener('mousedown', this.handleClick.bind(this));
+			window.addEventListener('focusin', this.handleClick.bind(this));
 		});
 	}
 
