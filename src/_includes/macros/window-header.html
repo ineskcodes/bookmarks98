@@ -5,10 +5,12 @@
     {% if (type === 'main') and (page !== 'home') %}
         {% set isDraggable = true %}
         {% set minimizeButtonId = 'main-minimize-btn' %}
+        {% set maximizeButtonId = 'main-maximize-btn' %}
     {% elif type === 'settings' %}
         {% set isDraggable = true %}
         {% set addClassPrefix = 'popup' %}
         {% set minimizeButtonId = 'settings-minimize-btn' %}
+        {% set maximizeButtonId = 'settings-maximize-btn' %}
         {% set closeButtonId = 'settings-close-btn' %}
     {% elif type === 'alert' %}
         {% set isDraggable = false %}
@@ -37,6 +39,13 @@
         <button hidden type="button" class="minimize-btn" id="{{ minimizeButtonId }}">
             <img width="16" height="16" src="{{ '/minimize-icon.png' | url }}" alt="">
             <span class="visually-hidden">Minimize {{ heading }}</span>
+        </button>
+        {% endif %}
+
+        {% if maximizeButtonId %}
+        <button aria-pressed="false" hidden type="button" class="maximize-btn" id="{{ maximizeButtonId }}">
+            <img width="16" height="16" src="{{ '/maximize-icon.png' | url }}" alt="">
+            <span class="visually-hidden">Maximize {{ heading }}</span>
         </button>
         {% endif %}
 
