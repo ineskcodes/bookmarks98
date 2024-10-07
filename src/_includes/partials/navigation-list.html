@@ -3,7 +3,7 @@
 
 <ul role="list" class="nav__list" data-parent="{{ navParent }}">
 	{% for item in navItems %}
-		{% set itemLinkHref = ('/category/' + ( item | slugify ) + '/') | url %}
+		{% set itemLinkHref = ('/' + ( item | slugify ) + '/') | url %}
 		{% set iconFileName = ('/' + (item | slugify) + '-' + 'icon') | url %}
 		{% if iconFileSize %}
 			{% set iconFileName = iconFileName + '-' + iconFileSize %}

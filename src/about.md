@@ -1,7 +1,7 @@
 ---
 layout: 'layouts/base.html'
 pageHook: 'about'
-permalink: '/category/about/index.html'
+permalink: '/about/index.html'
 eleventyComputed:
   title: 'About this site - {{ site.name }}'
   mainHeading: 'About'

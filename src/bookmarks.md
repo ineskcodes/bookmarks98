@@ -4,7 +4,7 @@ pagination:
   data: categories
   alias: category
   size: 1
-permalink: '/category/{{ category | slugify }}/index.html'
+permalink: '/{{ category | slugify }}/index.html'
 addAllPagesToCollections: true
 pageHook: 'bookmarks'
 eleventyComputed:
