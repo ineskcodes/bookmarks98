@@ -25,7 +25,6 @@ swup.hooks.on('page:view', async () => {
 
 		const { lazyLoadImages } = await import('./modules/lazyLoad.js');
 		const { default: Menu } = await import('./modules/menu.js');
-		const { default: Settings } = await import('./modules/settings.js');
 		const { default: Bookmarks } = await import('./modules/bookmarks.js');
 		const { default: ViewToggle } = await import('./modules/viewToggle.js');
 		const { default: TaskButtons } = await import('./modules/taskButtons.js');
@@ -53,7 +52,6 @@ swup.hooks.on('page:view', async () => {
 		}
 
 		new Menu();
-		new Settings();
 		new WindowManager();
 		new TaskButtons();
 		new MinimizeWindows();
