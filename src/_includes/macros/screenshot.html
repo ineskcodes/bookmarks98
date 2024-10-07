@@ -12,7 +12,9 @@
         {% if loopIndex > 4 %}
         class="lazy"
         data-srcset="{{ imgSrcset }}"
+        loading="lazy"
         {% else %}
+        fetchpriority="high"
         srcset="{{ imgSrcset }}"
         {% endif %}
         data-requires-js
