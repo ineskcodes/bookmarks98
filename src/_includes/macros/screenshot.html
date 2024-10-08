@@ -3,15 +3,11 @@
     {% set imgPath = "/bookmarks98/" + (name | filenamify) %}
     {% set imgBlurry = urlEndpoint + 'tr:w-10,q:10' + imgPath %}
 
-    {% set img_249 = urlEndpoint + "tr:w-249" + imgPath  %}
-    {% set img_498 = urlEndpoint + "tr:w-498" + imgPath  %}
-    {% set img_747 = urlEndpoint + "tr:w-747" + imgPath  %}
-    {% set img_930 = urlEndpoint + "tr:w-930" + imgPath  %}
-    {% set img_996 = urlEndpoint + "tr:w-996" + imgPath  %}
-    {% set img_1240 = urlEndpoint + "tr:w-1240" + imgPath  %}
-
-    {% set imgSrcset = img_249 + " 249w, " + img_498 + " 498w, " + img_747 + " 747w, " + img_930 + " 930w, " + img_996 + " 996w, " + img_1240 + " 1240w"  %}
-    {% set imgSizes = "(min-width: 1140px) 282px, (min-width: 900px) calc(45.91vw - 232px), (min-width: 820px) 310px, (min-width: 700px) calc(96vw - 458px), (min-width: 500px) calc(50.56vw - 72px), (min-width: 440px) 310px, calc(67.5vw + 27px)" %}
+    {% set imgSmall = urlEndpoint + "tr:w-312" + imgPath  %}
+    {% set imgMedium = urlEndpoint + "tr:w-624" + imgPath %}
+    {% set imgBig = urlEndpoint + "tr:w-936" + imgPath %}
+    {% set imgSrcset = imgSmall + " 312w, " + imgMedium + " 624w, " + imgBig + " 936w"%}
+    {% set imgSizes = "(max-width: 467px) 90vw, (max-width: 699px) 50vw, (max-width: 851px) 37vw, 312px" %}
 
     <img width="500" height="310" alt=""
         {% if loopIndex > 4 %}
